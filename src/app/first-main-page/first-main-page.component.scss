@@ -1,0 +1,84 @@
+.container {
+  width: 84%;
+  margin: 0 auto;
+}
+.ng-main-page-body {
+  display: flex;
+  .ng-main-entranse {
+    display: flex;
+    .offer-box {
+      display: inherit;
+      .text-block {
+        display: inherit;
+        flex-direction: column;
+        position: relative;
+        h2 {
+          margin-top: 179px;
+          font-family: Forum;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 60px;
+          line-height: 114.9%;
+          width: 392px;
+          height: 69px;
+
+          letter-spacing: -0.005em;
+          color: #ab760b;
+          text-shadow: 2px 3px 4px rgba(114, 78, 7, 0.28);
+        }
+        h4,
+        p,
+        .btn-application {
+          font-family: Montserrat;
+          font-style: normal;
+          font-weight: 300;
+          font-size: 18px;
+          line-height: 22px;
+          /* identical to box height */
+
+          color: #4f3606;
+        }
+        h4 {
+          width: 293px;
+          height: 22px;
+          margin-top: -7px;
+        }
+        p {
+          margin-top: 13px;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 17px;
+          width: 340px;
+          height: 34px;
+          color: #4f3606;
+        }
+        .btn-application {
+          margin-top: 44px;
+          font-size: 14px;
+          line-height: 17px;
+          background: #f3344b;
+          border-radius: 50px;
+          color: #ffffff;
+          width: 185px;
+          height: 48px;
+          border: none;
+          box-shadow: 0px 8px 17px #931f2d;
+        }
+        .corona-img {
+          position: absolute;
+          top: 316px;
+          left: 148px;
+        }
+        .img-vector {
+          position: absolute;
+          top: 54px;
+          left: -87px;
+        }
+      }
+    }
+    .img-box {
+      .back-gr-box {
+      }
+    }
+  }
+}

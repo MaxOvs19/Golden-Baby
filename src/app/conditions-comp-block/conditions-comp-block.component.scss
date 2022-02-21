@@ -29,6 +29,10 @@
       width: 233px;
       height: 163px;
 
+      &_first {
+        margin-top: 128px;
+      }
+
       h2,
       p,
       .box-item_number {
@@ -51,6 +55,22 @@
         line-height: 17px;
       }
 
+      .box-item {
+        &_number {
+          display: inherit;
+          justify-content: center;
+          align-items: center;
+          width: 33px !important;
+          height: 33px !important;
+          background: #b285ff;
+          border-radius: 50%;
+          font-weight: normal;
+          font-size: 20px;
+          line-height: 24px;
+          color: #ffffff;
+        }
+      }
+
       .box-item_number {
         display: inherit;
         justify-content: center;
@@ -62,7 +82,6 @@
         font-weight: normal;
         font-size: 20px;
         line-height: 24px;
-
         color: #ffffff;
       }
     }

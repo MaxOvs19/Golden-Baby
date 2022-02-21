@@ -2,20 +2,24 @@
   width: 1180px;
   margin: 0 auto;
 }
+
 .ng-main-page-body {
   display: flex;
-
   flex-direction: column;
+
   .ng-main-entranse {
     display: flex;
     justify-content: space-between;
     flex-grow: 1;
+
     .offer-box {
       display: inherit;
+
       .text-block {
         display: inherit;
         flex-direction: column;
         position: relative;
+
         h2 {
           margin-top: 179px;
           font-family: Forum;
@@ -76,6 +80,7 @@
         position: relative;
 
         .BlockfonImg {
+          // Fix name
           position: absolute;
           top: -103px;
           z-index: -1;
@@ -98,6 +103,7 @@
     position: relative;
     height: 552px;
     background: url(../../assets/img/superheroesImg.png) no-repeat;
+
     .text-box {
       display: inherit;
       flex-direction: column;
@@ -127,9 +133,22 @@
       }
     }
     .vectorImg2 {
+      // Fix name
       position: absolute;
       top: -64px;
       right: -92px;
     }
+  }
+}
+
+.main {
+  &-page {
+    // main-page
+    margin: 0;
+  }
+
+  &__page {
+    // main__page
+    margin: 0;
   }
 }

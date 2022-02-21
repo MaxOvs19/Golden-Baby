@@ -1,52 +1,58 @@
-.container {
-  width: 1180px;
-  margin: 0 auto;
-}
+@import 'variables';
+@import 'layout';
+
 .ng-header {
   display: flex;
   height: 97px;
-  background: #ffb522;
-  box-shadow: 0px 4px 28px rgba(0, 0, 0, 0.1);
+  background: $orange;
+  box-shadow: $base-box-shadow;
   border-radius: 0px 0px 10px 10px;
 
   .ng-header-main-body {
     display: flex;
     height: inherit;
-    font-family: Montserrat;
+    font-family: $base-font;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
+    font-size: $size;
     line-height: 17px;
     justify-content: space-between;
 
     ul {
       display: inherit;
       color: #ffffff;
+
       li {
         margin-right: 48px;
         margin-top: 32px;
       }
     }
+
     img {
       padding-right: 17px;
     }
+
     .contacts-block {
       margin-top: 30px;
-      color: #ffffff;
+      color: $white;
+
       h2 {
         font-weight: bold;
         font-size: 16px;
         line-height: 20px;
       }
-      h3 {
-        font-size: 12px;
-        line-height: 15px;
-      }
-      h4 {
-        font-size: 10px;
-        line-height: 12px;
-      }
+
+      // h3 {
+      //   font-size: 12px;
+      //   line-height: 15px;
+      // } title title_small
+
+      // h4 {
+      //   font-size: 10px;
+      //   line-height: 12px;
+      // } title title_micro
     }
+
     .nav-bar-item {
       display: inherit;
     }

@@ -13,18 +13,18 @@
   border: none;
   box-shadow: 0px 8px 17px #931f2d;
   z-index: 89999;
-  :hover {
-    cursor: pointer;
-    background: #ff5d70;
-  }
+  outline: none;
 }
-
-.btn-application_coron::before {
-  content: '';
-  background-image: url(../../assets/img/coronaImg.png);
-  position: absolute;
-  left: 145px;
-  top: 317px;
-  width: 73px;
-  height: 70px;
+.btn-application:hover {
+  cursor: pointer;
+  background: #ff5d70;
 }
+// .btn-application_coron::before {
+//   content: '';
+//   background-image: url(../../assets/img/coronaImg.png);
+//   position: absolute;
+//   left: 145px;
+//   top: 317px;
+//   width: 73px;
+//   height: 70px;
+// }

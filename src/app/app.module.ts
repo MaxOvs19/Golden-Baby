@@ -9,6 +9,11 @@ import { ButtonRedAppComponent } from './button-red-app/button-red-app.component
 import { ConditionsCompBlockComponent } from './conditions-comp-block/conditions-comp-block.component';
 import { GroupsViewComponent } from './groups-view/groups-view.component';
 import { SliderMainPageComponent } from './slider-main-page/slider-main-page.component';
+import { AdaptationChildrenComponent } from './adaptation-children/adaptation-children.component';
+import { ApplicationBodyFirstPageComponent } from './application-body-first-page/application-body-first-page.component';
+import { ApplicationFormComponent } from './application-form/application-form.component';
+import { FooterComponent } from './footer/footer.component';
+import { DailyRoutinePageComponent } from './daily-routine-page/daily-routine-page.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,12 @@ import { SliderMainPageComponent } from './slider-main-page/slider-main-page.com
     ButtonRedAppComponent,
     ConditionsCompBlockComponent,
     GroupsViewComponent,
-    SliderMainPageComponent
+    SliderMainPageComponent,
+    AdaptationChildrenComponent,
+    ApplicationBodyFirstPageComponent,
+    ApplicationFormComponent,
+    FooterComponent,
+    DailyRoutinePageComponent
   ],
   imports: [
     BrowserModule,

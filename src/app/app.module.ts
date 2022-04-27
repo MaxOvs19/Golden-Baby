@@ -8,12 +8,15 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { ButtonRedAppComponent } from './button-red-app/button-red-app.component';
 import { ConditionsBlockComponent } from './conditions-block/conditions-block.component';
 import { GroupsViewComponent } from './groups-view/groups-view.component';
+import { DailyRoutinePageComponent } from './daily-routine-page/daily-routine-page.component';
 import { SliderMainPageComponent } from './slider-main-page/slider-main-page.component';
 import { AdaptationChildrenComponent } from './adaptation-children/adaptation-children.component';
-import { ApplicationBodyFirstPageComponent } from './application-body-first-page/application-body-first-page.component';
-import { ApplicationFormComponent } from './application-form/application-form.component';
+import { BidBodyMainPageComponent } from './bid-body-main-page/bid-body-main-page.component';
+import { BidFormIntroductionComponent } from './bid-form-introduction/bid-form-introduction.component';
 import { FooterComponent } from './footer/footer.component';
-import { DailyRoutinePageComponent } from './daily-routine-page/daily-routine-page.component';
+import { PricePageComponent } from './price-page/price-page.component';
+import { BlockBigQuotesComponent } from './block-big-quotes/block-big-quotes.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +26,15 @@ import { DailyRoutinePageComponent } from './daily-routine-page/daily-routine-pa
     ButtonRedAppComponent,
     ConditionsBlockComponent,
     GroupsViewComponent,
+    DailyRoutinePageComponent,
     SliderMainPageComponent,
     AdaptationChildrenComponent,
-    ApplicationBodyFirstPageComponent,
-    ApplicationFormComponent,
+    BidBodyMainPageComponent,
+    BidFormIntroductionComponent,
+    PricePageComponent,
     FooterComponent,
-    DailyRoutinePageComponent,
+    BlockBigQuotesComponent,
+    MenuComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

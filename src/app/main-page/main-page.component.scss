@@ -1,6 +1,9 @@
 @import 'variables';
 @import 'layout';
 
+* {
+  position: relative;
+}
 .main-page-body {
   display: flex;
   flex-direction: column;
@@ -15,8 +18,6 @@
 
   .entranse-block {
     display: inherit;
-    justify-content: space-between;
-    flex-grow: 1;
 
     .offer-box {
       display: inherit;
@@ -24,7 +25,6 @@
       &__text-elem {
         display: inherit;
         flex-direction: column;
-        position: relative;
 
         h2 {
           margin-top: 197px;
@@ -40,7 +40,6 @@
         .btn-application {
           font-weight: 300;
           font-size: 18px;
-          line-height: 22px;
           color: $ocher;
         }
 
@@ -54,7 +53,7 @@
           margin-top: 13px;
           width: 340px;
           height: 34px;
-          color: #4f3606;
+          color: $ocher;
         }
 
         .img-vector-first {
@@ -78,21 +77,18 @@
     }
   }
 
-  .parent-info-block {
-    display: inherit;
-    justify-content: center;
+  .parent-info-block,
+  &__body,
+  &__text-box {
     align-items: center;
-    position: relative;
+    justify-content: center;
+    display: inherit;
+    flex-direction: column;
+  }
+
+  .parent-info-block {
     height: 552px;
     background: url(~/src/assets/img/superheroesImg.png) no-repeat;
-
-    &__body,
-    &__text-box {
-      align-items: center;
-      justify-content: center;
-      display: inherit;
-      flex-direction: column;
-    }
 
     &__body {
       background: url(~/src/assets/img/quotes.png) no-repeat;

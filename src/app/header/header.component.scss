@@ -8,10 +8,20 @@
   box-shadow: $base-box-shadow;
   border-radius: 0px 0px 10px 10px;
 
+  a {
+    color: $white;
+    text-decoration: none;
+    transition: 0.5ms;
+    &:hover {
+      transition: 0.5ms;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+  }
+
   .header-main-body {
     display: flex;
     height: inherit;
-    font-family: $base-font;
     font-size: $size;
     line-height: 17px;
     justify-content: space-between;
@@ -30,7 +40,7 @@
       padding-right: 17px;
     }
 
-    .contacts-block {
+    &__contacts-block {
       margin-top: 30px;
       color: $white;
 
@@ -41,7 +51,7 @@
       }
     }
 
-    .nav-bar-item {
+    &__nav-bar-item {
       display: inherit;
     }
   }

@@ -1,32 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { MainPageComponent } from './main-page/main-page.component';
-import { GroupsViewComponent } from './groups-view/groups-view.component';
-import { DailyRoutinePageComponent } from './daily-routine-page/daily-routine-page.component';
-import { PricePageComponent } from './price-page/price-page.component';
-import { MenuComponent } from './menu/menu.component';
-
 const routes: Routes = [
   {
     path: '',
-    component: MainPageComponent,
+    loadChildren: () => import('./home/home.module').then((home) => home.HomeModule),
   },
   {
-    path: 'contacts',
-    component: GroupsViewComponent,
+    path: 'schedule',
+    loadChildren: () =>
+      import('./schedule/schedule.module').then((schedule) => schedule.ScheduleModule),
   },
   {
-    path: 'routine',
-    component: DailyRoutinePageComponent,
-  },
-  {
-    path: 'price',
-    component: PricePageComponent,
+    path: 'prices',
+    loadChildren: () => import('./prices/prices.module').then((prices) => prices.PricesModule),
   },
   {
     path: 'menu',
-    component: MenuComponent,
+    loadChildren: () => import('./menu/menu.module').then((menu) => menu.MenuModule),
   },
 ];
 

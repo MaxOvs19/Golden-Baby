@@ -1,0 +1,21 @@
+@import 'variables';
+@import 'layout';
+
+.menu-page {
+  &__logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 17px;
+  }
+
+  &__link-return {
+    font-size: 12px;
+    margin-top: 45px;
+  }
+
+  &__description-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

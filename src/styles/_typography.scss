@@ -1,0 +1,18 @@
+.small-title {
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.title {
+  font-size: 24px;
+
+  &_small {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  &_micro {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}

@@ -1,0 +1,97 @@
+@import 'variables';
+@import 'layout';
+
+.daily-routine {
+  .baby-boy-routine,
+  .giants-routine,
+  .letterlend-routine {
+    position: relative;
+    &__link-return {
+      margin-top: 45px;
+      font-size: 12px;
+    }
+
+    &__text-block {
+      h2 {
+        font-size: 18px;
+        margin-left: 100px;
+      }
+
+      .routine {
+        width: 940px;
+        display: flex;
+        box-shadow: 0px 4px 28px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        margin: 20px 0 100px 100px;
+        background: $white;
+
+        &__giants,
+        &__letterlend {
+          height: 834px;
+        }
+        .routine-body {
+          display: flex;
+          width: 834px;
+          padding: 59px 50px 51px 50px;
+          flex-grow: 1;
+          &__giants,
+          &__letterlend {
+            padding: 59px 50px 72px 50px;
+          }
+        }
+
+        &__time {
+          display: inherit;
+          flex-direction: column;
+          align-items: flex-end;
+          border-right: $border-routine-table;
+
+          h3 {
+            font-weight: 600;
+            font-size: $size;
+            line-height: 17px;
+            padding: 9.5px;
+          }
+        }
+
+        p,
+        h3 {
+          border-bottom: $border-routine-table;
+        }
+
+        &__description {
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+
+          p {
+            font-size: 13px;
+            line-height: 16px;
+            padding: 10px;
+          }
+        }
+      }
+    }
+
+    &__title-box {
+      h1 {
+        font-family: $forum-font;
+        font-size: 30px;
+      }
+      text-align: center;
+      margin-top: 27px;
+      margin-bottom: 106px;
+    }
+    &__fon {
+      position: absolute;
+      bottom: -35px;
+      left: -118px;
+      z-index: -1;
+    }
+  }
+  .giants-routine {
+    &__fon {
+      left: -104px;
+    }
+  }
+}

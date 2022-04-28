@@ -1,0 +1,152 @@
+@import 'variables';
+@import 'layout';
+
+.price-page {
+  position: relative;
+
+  &__link-return {
+    margin-top: 45px;
+    font-size: 12px;
+  }
+
+  &__main-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 27px;
+
+    h1 {
+      font-family: $forum-font;
+      font-weight: 400;
+      font-size: 30px;
+    }
+
+    h4 {
+      margin-top: 11px;
+      font-weight: 400;
+      font-size: 18px;
+    }
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  h5 {
+    font-weight: 500;
+    font-size: $size;
+    line-height: 17px;
+  }
+
+  h6 {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #ffbf43;
+  }
+
+  .price-list {
+    height: 319px;
+
+    &__title {
+      display: inherit;
+      justify-content: center;
+      margin: 31px 0 25px 0;
+    }
+
+    &__body {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0 96px 0 96px;
+    }
+
+    &__age,
+    &__time,
+    &__description {
+      h5 {
+        margin-bottom: 15px;
+      }
+    }
+
+    &__description {
+      p {
+        line-height: 18px;
+      }
+      padding-left: 80px;
+    }
+
+    &__end {
+      display: flex;
+      justify-content: space-between;
+      margin: 36px 96px 0 96px;
+    }
+
+    &__orange-button {
+      width: 175px;
+      height: 39px;
+
+      background: #ff8515;
+      border-radius: 50px;
+      border: none;
+      color: $white;
+      box-shadow: 0px 8px 14px #bb6413;
+      transition: ease 0.5s;
+      &:hover {
+        transition: ease 0.5s;
+        cursor: pointer;
+        width: 178px;
+        height: 43px;
+        box-shadow: 0px 8px 18px #bb6413;
+      }
+    }
+  }
+
+  .fee,
+  .price-list {
+    display: flex;
+    flex-direction: column;
+    width: 740px;
+    box-shadow: 0px 4px 28px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 20px auto 10px;
+
+    background: $white;
+  }
+
+  .fee {
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    height: 128px;
+
+    h2 {
+      margin-bottom: 5px;
+    }
+  }
+  app-button {
+    display: flex;
+    justify-content: flex-end;
+    margin: -22px 62px 37px 0;
+  }
+
+  .super-hero-prise {
+    &__top {
+      position: absolute;
+      right: 118px;
+      top: 26px;
+    }
+
+    &__bottom {
+      position: absolute;
+      bottom: 87px;
+      left: 137px;
+    }
+  }
+}

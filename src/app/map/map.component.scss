@@ -1,0 +1,74 @@
+@import 'variables';
+@import 'layout';
+
+.map {
+  &__title {
+    display: flex;
+    justify-content: center;
+
+    h1 {
+      font-family: $forum-font;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 33px;
+    }
+    margin: 27px 0 50px 0;
+  }
+
+  &__box-body {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__contact-box {
+    display: flex;
+    flex-direction: row;
+    margin: 45px 26px 120px 26px;
+  }
+
+  h6 {
+    color: #a4a4a4;
+  }
+
+  &__requisites {
+    width: 480px;
+    height: 245px;
+    background: $white;
+    box-shadow: $base-box-shadow;
+    border-radius: 10px;
+
+    &_title {
+      display: flex;
+      justify-content: center;
+      padding: 25px 0 15px 0;
+    }
+
+    &_text {
+      display: flex;
+      flex-direction: row;
+      width: 405px;
+      padding-bottom: 15px;
+      margin: 0 auto;
+      font-size: 13px;
+
+      h6 {
+        width: 70px;
+        line-height: 16px;
+      }
+
+      p,
+      h5 {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__data {
+    margin-left: 55px;
+
+    &_text {
+      margin-bottom: 10px;
+      font-size: $size;
+    }
+  }
+}

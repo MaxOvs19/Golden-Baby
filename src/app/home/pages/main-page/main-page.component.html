@@ -37,7 +37,16 @@
       <app-conditions-block></app-conditions-block>
       <app-groups-view></app-groups-view>
       <app-adaptation-children></app-adaptation-children>
+
+      <div>Some tags before</div>
+      <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide>Slide 1</ng-template>
+        <ng-template carouselSlide>Slide 2</ng-template>
+        <ng-template carouselSlide>Slide 3</ng-template>
+      </owl-carousel-o>
+      <div>Some tags after</div>
     </div>
   </div>
+  <!-- <app-slider-main-page></app-slider-main-page> -->
   <app-bid-body-main-page></app-bid-body-main-page>
 </div>

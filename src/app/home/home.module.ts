@@ -10,6 +10,10 @@ import { BlockBigQuotesComponent } from './components/block-big-quotes/block-big
 import { BidFormIntroductionComponent } from './components/bid-form-introduction/bid-form-introduction.component';
 import { ButtonModule } from '../ui/button';
 
+import { CarouselModule } from 'ngx-owl-carousel-o';
+
+import { SliderMainPageComponent } from './components/slider-main-page/slider-main-page.component';
+
 @NgModule({
   declarations: [
     MainPageComponent,
@@ -19,7 +23,8 @@ import { ButtonModule } from '../ui/button';
     BidBodyMainPageComponent,
     BlockBigQuotesComponent,
     BidFormIntroductionComponent,
+    SliderMainPageComponent,
   ],
-  imports: [CommonModule, HomeRoutingModule, ButtonModule],
+  imports: [CommonModule, HomeRoutingModule, ButtonModule, CarouselModule],
 })
 export class HomeModule {}

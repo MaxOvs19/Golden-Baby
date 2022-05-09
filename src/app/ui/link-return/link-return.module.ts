@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FooterComponent } from './footer.component';
+import { LinkReturnComponent } from './link-return.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [FooterComponent],
+  declarations: [LinkReturnComponent],
   imports: [CommonModule, RouterModule],
-  exports: [FooterComponent],
+  exports: [LinkReturnComponent],
 })
-export class FooterModule {}
+export class LinkReturnModule {}

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
-  selector: 'app-main-page',
-  templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.scss'],
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
 })
-export class MainPageComponent implements OnInit {
+export class HomeComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
@@ -16,9 +16,12 @@ export class MainPageComponent implements OnInit {
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
-    dots: false,
+    dots: true,
     navSpeed: 700,
-    navText: ['', ''],
+    navText: ['<i class="fa-chevron-left"></i>', ''],
+    margin: 30,
+    center: true,
+
     responsive: {
       0: {
         items: 1,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
     pullDrag: false,
     dots: true,
     navSpeed: 700,
-    navText: ['<i class="fa-chevron-left"></i>', ''],
+    navText: ['<i class="left"></i>', '<i class="right"></i>'],
     margin: 30,
     center: true,
 

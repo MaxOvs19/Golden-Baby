@@ -11,6 +11,7 @@ import { BidFormIntroductionComponent } from './components/bid-form-introduction
 import { ButtonModule } from '../ui/button';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SliderMainPageComponent } from './components/slider-main-page/slider-main-page.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,6 @@ import { SliderMainPageComponent } from './components/slider-main-page/slider-ma
     BidFormIntroductionComponent,
     SliderMainPageComponent,
   ],
-  imports: [CommonModule, HomeRoutingModule, ButtonModule, CarouselModule],
+  imports: [CommonModule, HomeRoutingModule, ButtonModule, CarouselModule, FormsModule],
 })
 export class HomeModule {}

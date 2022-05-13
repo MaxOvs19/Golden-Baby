@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IFeedback } from '../../interfaces/feedback.interface';
 
 @Component({
   selector: 'app-bid-form-introduction',
@@ -6,11 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bid-form-introduction.component.scss'],
 })
 export class BidFormIntroductionComponent implements OnInit {
-  constructor() {}
-  ngOnInit(): void {}
+  feedback: IFeedback = {
+    parentName: '',
+    phone: '',
+    childName: '',
+    birthday: new Date(),
+    agreement: false,
+  };
 
-  // feedback: any = {
-  //   parentsName: '',
-  //   telNamber: '',
-  // };
+  constructor() {}
+
+  ngOnInit(): void {}
 }

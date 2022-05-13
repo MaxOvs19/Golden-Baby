@@ -1,9 +1,8 @@
 export interface IFeedback {
-  firstName: string;
-  birthday?: Date; // optional
+  parentName: string;
+  phone: string;
+  childName: string;
+  birthday: Date;
+  comment?: string;
+  agreement: boolean;
 }
-
-const f: IFeedback = {
-  firstName: '',
-  // birthday: new Date()
-};

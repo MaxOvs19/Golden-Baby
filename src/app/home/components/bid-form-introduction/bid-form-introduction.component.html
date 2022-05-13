@@ -2,11 +2,47 @@
   <h2>Оставьте заявку</h2>
   <h4>Заполните форму и мы Вам перезвоним</h4>
 
-  <input type="text" required placeholder="Ваше имя" />
-  <input type="text" required placeholder="Имя ребенка" />
-  <input type="date" required placeholder="Дата рождения ребенка" name="date" />
-  <input type="text" required placeholder="Телефон" />
-  <input type="text" required placeholder="Комментарий" />
+  <div class="application-form-body__form-field">
+    <!-- <input
+      type="text"
+      required
+      placeholder="*Ваше имя"
+      name="parentsName"
+      #parentsName="ngModel"
+      #errorName="ngModel"
+      [(ngModel)]="feedback.parentsName"
+      class="name-parent"
+    /> -->
+
+    <!-- <span class="application-form-body__form-field_error" [hidden]="errorName.valid"
+      >Это поле необъодимо заполнить</span
+    > -->
+  </div>
+
+  <div class="application-form-body__form-field">
+    <input type="text" required placeholder="Имя ребенка" />
+  </div>
+
+  <div class="application-form-body__form-field">
+    <input type="date" placeholder="Дата рождения ребенка" name="date" />
+  </div>
+
+  <div class="application-form-body__form-field">
+    <!-- <input
+      type="tel"
+      name="phone"
+      required
+      placeholder="*Телефон"
+      name="telNamber"
+      [(ngModel)]="feedback.telNamber"
+    /> -->
+
+    <span class="application-form-body__form-field_error">Неверно введен номер</span>
+  </div>
+
+  <div class="application-form-body__form-field">
+    <input type="text" placeholder="Комментарий" />
+  </div>
 
   <app-button titleButton="Отправить"></app-button>
   <div class="checkbox-block">

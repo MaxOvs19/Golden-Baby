@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BidFormIntroductionComponent implements OnInit {
   constructor() {}
-
   ngOnInit(): void {}
+
+  // feedback: any = {
+  //   parentsName: '',
+  //   telNamber: '',
+  // };
 }

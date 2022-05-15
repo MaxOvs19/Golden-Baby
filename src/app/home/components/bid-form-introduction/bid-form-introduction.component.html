@@ -5,24 +5,20 @@
   <div class="application-form-body__form-field">
     <input
       type="text"
-      required
       placeholder="*Ваше имя"
       name="parentsName"
       #parentsName="ngModel"
-      #errorName="ngModel"
       [(ngModel)]="feedback.parentName"
-      class="name-parent"
     />
 
-    <span class="application-form-body__form-field_error" [hidden]="errorName.valid"
-      >Это поле необъодимо заполнить</span
-    >
+    <div *ngIf="parentsName.invalid && (parentsName.dirty || parentsName.touched)">
+      <span class="application-form-body__form-field_error"> Это поле необъодимо заполнить </span>
+    </div>
   </div>
 
   <div class="application-form-body__form-field">
     <input
       type="text"
-      required
       placeholder="Имя ребенка"
       #childName="ngModel"
       [(ngModel)]="feedback.childName"
@@ -37,7 +33,6 @@
     <input
       type="tel"
       name="phone"
-      required
       placeholder="*Телефон"
       #phone="ngModel"
       [(ngModel)]="feedback.phone"
@@ -55,7 +50,8 @@
     />
   </div>
 
-  <app-button titleButton="Отправить"></app-button>
+  <app-button titleButton="Отправить" (click)="onsubmid()"></app-button>
+
   <div class="checkbox-block">
     <input
       type="checkbox"

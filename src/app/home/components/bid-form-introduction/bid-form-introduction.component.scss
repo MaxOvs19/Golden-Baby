@@ -47,8 +47,8 @@
     font-weight: 300;
     font-size: $size;
     line-height: 17px;
-
-    color: #bebebe;
+    font-weight: 500;
+    color: $black;
     z-index: 55;
     width: 296px;
     height: 22px;
@@ -57,11 +57,6 @@
     text-indent: 8px;
     margin-top: 30px;
     outline: none;
-  }
-
-  input::-webkit-calendar-picker-indicator {
-    background: url(/assets/img/calendarImg.png) no-repeat;
-    margin-right: 80px;
   }
 
   .checkbox-block {
@@ -83,6 +78,6 @@
   border-bottom: 1px solid #bebebe !important;
 }
 
-.ng-invalid:not(form) {
-  border-bottom: 1px solid rgba(255, 0, 0, 0.664) !important;
-}
+// .ng-invalid:not(form) {
+//   border-bottom: 1px solid rgba(255, 0, 0, 0.664) !important;
+// }

@@ -2,13 +2,29 @@
   <h2>Оставьте заявку</h2>
   <h4>Заполните форму и мы Вам перезвоним</h4>
 
+  <!-- One Way Binding (Однонаправленное связывание)
+    Пример: [src]="'assets/images/' + title"
+    Результат: src <---------- title
+  -->
+  <img [src]="'assets/images/' + title" />
+
   <div class="application-form-body__form-field">
+    <!--
+      One-time binding (Единоразовое связывание)
+      Пример: [type]="'text'"
+
+      Two way binding
+
+      [(attr)]
+    -->
+
     <input
       type="text"
       placeholder="*Ваше имя"
       name="parentsName"
       #parentsName="ngModel"
       [(ngModel)]="feedback.parentName"
+      (ngModelChange)="test($event)"
     />
 
     <div *ngIf="parentsName.invalid && (parentsName.dirty || parentsName.touched)">
@@ -50,7 +66,7 @@
     />
   </div>
 
-  <app-button titleButton="Отправить" (click)="onsubmid()"></app-button>
+  <app-button titleButton="Отправить" (click)="submit()"></app-button>
 
   <div class="checkbox-block">
     <input

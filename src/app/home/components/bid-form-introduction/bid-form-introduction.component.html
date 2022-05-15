@@ -1,33 +1,32 @@
-<div class="application-form-body">
+<form class="application-form-body" (submit)="submit()">
+  <!-- <h2>{{ 'Оставьте заявку' | uppercase | example}}</h2>
+    uppercase , example - @Pipe
+  -->
   <h2>Оставьте заявку</h2>
   <h4>Заполните форму и мы Вам перезвоним</h4>
 
-  <!-- One Way Binding (Однонаправленное связывание)
-    Пример: [src]="'assets/images/' + title"
-    Результат: src <---------- title
-  -->
-  <img [src]="'assets/images/' + title" />
+  <!-- <div>
+    <span #sveta>Hello!</span>
+
+    <div>
+      <button (click)="sveta.innerText = 'Kek!!!!'">Set text</button>
+    </div>
+  </div> -->
 
   <div class="application-form-body__form-field">
-    <!--
-      One-time binding (Единоразовое связывание)
-      Пример: [type]="'text'"
-
-      Two way binding
-
-      [(attr)]
-    -->
-
     <input
       type="text"
       placeholder="*Ваше имя"
       name="parentsName"
+      [class.application-form-body__form-field_input-error]="
+        feedback.parentName.length === 0 && parentsName.dirty
+      "
       #parentsName="ngModel"
       [(ngModel)]="feedback.parentName"
-      (ngModelChange)="test($event)"
+      (ngModelChange)="validate()"
     />
 
-    <div *ngIf="parentsName.invalid && (parentsName.dirty || parentsName.touched)">
+    <div *ngIf="feedback.parentName.length === 0 && parentsName.dirty">
       <span class="application-form-body__form-field_error"> Это поле необъодимо заполнить </span>
     </div>
   </div>
@@ -36,13 +35,21 @@
     <input
       type="text"
       placeholder="Имя ребенка"
+      name="childName"
       #childName="ngModel"
       [(ngModel)]="feedback.childName"
+      (ngModelChange)="validate()"
     />
   </div>
 
   <div class="application-form-body__form-field">
-    <input type="date" placeholder="Дата рождения ребенка" name="date" />
+    <input
+      type="date"
+      placeholder="Дата рождения ребенка"
+      name="date"
+      [(ngModel)]="feedback.birthday"
+      (ngModelChange)="validate()"
+    />
   </div>
 
   <div class="application-form-body__form-field">
@@ -50,8 +57,10 @@
       type="tel"
       name="phone"
       placeholder="*Телефон"
+      name="phone"
       #phone="ngModel"
       [(ngModel)]="feedback.phone"
+      (ngModelChange)="validate()"
     />
 
     <span class="application-form-body__form-field_error">Неверно введен номер</span>
@@ -61,12 +70,14 @@
     <input
       type="text"
       placeholder="Комментарий"
+      name="comment"
       #comment="ngModel"
       [(ngModel)]="feedback.comment"
+      (ngModelChange)="validate()"
     />
   </div>
 
-  <app-button titleButton="Отправить" (click)="submit()"></app-button>
+  <app-button title="Отправить" [disabled]="!formValid"></app-button>
 
   <div class="checkbox-block">
     <input
@@ -76,9 +87,10 @@
       id="checkbox-id"
       #agreement="ngModel"
       [(ngModel)]="feedback.agreement"
+      (ngModelChange)="validate()"
     />
     <label for="checkbox-id" style="font-size: 12px; line-height: 15px; color: #3c3c3c"
       >Я согласен(а) на обработку персональных данных и принимаю политику конфиденциальности</label
     >
   </div>
-</div>
+</form>

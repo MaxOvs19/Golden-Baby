@@ -22,4 +22,16 @@
     background: #ff5d70;
     transition: 1s;
   }
+
+  &_disabled {
+    background-color: gray;
+    color: white;
+    box-shadow: none;
+
+    &:hover {
+      background-color: gray;
+      color: white;
+      box-shadow: none;
+    }
+  }
 }

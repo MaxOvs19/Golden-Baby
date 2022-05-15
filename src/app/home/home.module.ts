@@ -12,6 +12,7 @@ import { ButtonModule } from '../ui/button';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SliderMainPageComponent } from './components/slider-main-page/slider-main-page.component';
 import { FormsModule } from '@angular/forms';
+import { ExamplePipe } from './pipes/emaxple.pipe';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FormsModule } from '@angular/forms';
     BlockBigQuotesComponent,
     BidFormIntroductionComponent,
     SliderMainPageComponent,
+    ExamplePipe,
   ],
   imports: [CommonModule, HomeRoutingModule, ButtonModule, CarouselModule, FormsModule],
 })

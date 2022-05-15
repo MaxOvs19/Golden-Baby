@@ -2,7 +2,7 @@ export interface IFeedback {
   parentName: string;
   phone: string;
   childName: string;
-  birthday: Date;
+  birthday: string;
   comment?: string;
   agreement: boolean;
 }

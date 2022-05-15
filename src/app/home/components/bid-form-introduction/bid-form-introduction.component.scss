@@ -30,19 +30,6 @@
     line-height: 15px;
   }
 
-  app-button {
-    margin-top: -40px;
-  }
-
-  &__form-field {
-    display: flex;
-    flex-direction: column;
-    &_error {
-      color: red;
-      font-size: 10px;
-    }
-  }
-
   input {
     font-weight: 300;
     font-size: $size;
@@ -71,13 +58,22 @@
       width: 25px;
     }
   }
-}
 
-.ng-valid[required],
-.ng-valid.required {
-  border-bottom: 1px solid #bebebe !important;
-}
+  &__form-field {
+    display: flex;
+    flex-direction: column;
 
-// .ng-invalid:not(form) {
-//   border-bottom: 1px solid rgba(255, 0, 0, 0.664) !important;
-// }
+    &_error {
+      color: red;
+      font-size: 10px;
+    }
+
+    &_input-error {
+      border-bottom: 1px solid red !important;
+
+      &::placeholder {
+        color: red;
+      }
+    }
+  }
+}

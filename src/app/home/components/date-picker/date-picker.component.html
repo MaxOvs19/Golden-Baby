@@ -1,0 +1,66 @@
+<div class="date-picker">
+  <div class="date-picker__header">
+    <div class="date" (click)="show()">
+      <input class="date__control" [value]="dateForInput$ | async | date: format" />
+      <app-calendar class="date__icon"></app-calendar>
+    </div>
+  </div>
+  <div class="date-picker__body">
+    <div
+      class="calendar"
+      [class.calendar_active]="active$ | async"
+      [class.calendar_increased]="(dummyDays$ | async)?.length > 5"
+    >
+      <div class="calendar__header">
+        <button class="calendar__mode" (click)="toggleMode()">
+          <ng-container *ngIf="(mode$ | async) === 'month'">
+            {{ date$ | async | date: 'MMM YYYY' | uppercase }}
+          </ng-container>
+          <ng-container *ngIf="(mode$ | async) === 'years'">
+            {{ minYear$ | async }} - {{ maxYear$ | async }}
+          </ng-container>
+        </button>
+
+        <div class="actions">
+          <app-arrow-left (click)="previous()"></app-arrow-left>
+          <app-arrow-right (click)="next()"></app-arrow-right>
+        </div>
+      </div>
+      <ng-container *ngIf="(mode$ | async) === 'month'; else years">
+        <div class="calendar__week-days">
+          <ng-container *ngFor="let weekDay of daysOfWeek$ | async">
+            <div>{{ weekDay | numberToWeekDay | date: 'ccccc' }}</div>
+          </ng-container>
+        </div>
+
+        <div class="calendar__body">
+          <div class="calendar__days">
+            <ng-container *ngFor="let dummy of dummyDays$ | async">
+              <div class="calendar__dummy"></div>
+            </ng-container>
+            <ng-container *ngFor="let item of days$ | async; let index = index">
+              <div
+                class="calendar__day"
+                [class.calendar__day_active]="(day$ | async) === index + 1"
+                (click)="setDay(index + 1)"
+              >
+                {{ index + 1 }}
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-template #years>
+        <app-years
+          [years]="years$ | async"
+          [skip]="skip$ | async"
+          [length]="length"
+          (yearSelected)="yearSelected($event)"
+        ></app-years>
+      </ng-template>
+    </div>
+  </div>
+</div>
+
+<div class="back" [class.back_active]="active$ | async" (click)="hide()"></div>

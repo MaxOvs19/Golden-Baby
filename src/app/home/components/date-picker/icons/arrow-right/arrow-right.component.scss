@@ -1,0 +1,18 @@
+:host {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ececec;
+    transition: 0.3s ease-in;
+  }
+}
+
+.icon {
+}

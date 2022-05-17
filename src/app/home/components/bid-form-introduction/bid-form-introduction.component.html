@@ -1,17 +1,6 @@
 <form class="application-form-body" (submit)="submit()">
-  <!-- <h2>{{ 'Оставьте заявку' | uppercase | example}}</h2>
-    uppercase , example - @Pipe
-  -->
   <h2>Оставьте заявку</h2>
   <h4>Заполните форму и мы Вам перезвоним</h4>
-
-  <!-- <div>
-    <span #sveta>Hello!</span>
-
-    <div>
-      <button (click)="sveta.innerText = 'Kek!!!!'">Set text</button>
-    </div>
-  </div> -->
 
   <div class="application-form-body__form-field">
     <input
@@ -59,11 +48,15 @@
       placeholder="*Телефон"
       name="phone"
       #phone="ngModel"
+      [class.application-form-body__form-field_input-error]="
+        feedback.phone.length === 0 && phone.dirty
+      "
       [(ngModel)]="feedback.phone"
       (ngModelChange)="validate()"
     />
-
-    <span class="application-form-body__form-field_error">Неверно введен номер</span>
+    <div *ngIf="feedback.phone.length === 0 && phone.dirty">
+      <span class="application-form-body__form-field_error">Неверно введен номер</span>
+    </div>
   </div>
 
   <div class="application-form-body__form-field">
@@ -77,7 +70,11 @@
     />
   </div>
 
-  <app-button title="Отправить" [disabled]="!formValid"></app-button>
+  <app-button
+    title="Отправить"
+    [disabled]="!formValid"
+    class="application-form-body__button"
+  ></app-button>
 
   <div class="checkbox-block">
     <input

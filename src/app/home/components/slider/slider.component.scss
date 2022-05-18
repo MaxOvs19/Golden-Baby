@@ -1,0 +1,85 @@
+@import 'variables';
+
+.slider-box {
+  position: relative;
+  background: url(~/src/assets/img/fon-slider.png);
+  height: 700px;
+  margin-top: 95px;
+
+  h1 {
+    z-index: 99;
+    display: flex;
+    padding: 167px 0 67px 0;
+    justify-content: center;
+    color: $white;
+    font-size: 24px;
+    font-family: $forum-font;
+  }
+
+  &__carusel {
+    width: 1180px;
+    margin: 0 auto;
+  }
+
+  &__fon {
+    width: 114%;
+    position: absolute;
+    left: -83px;
+    top: -158px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+  }
+}
+
+::ng-deep {
+  .owl-nav {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .right {
+    background-image: url('/assets/svg/right.svg');
+    width: 10px;
+    height: 17px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .left {
+    background-image: url('/assets/svg/left.svg');
+    width: 10px;
+    height: 17px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .owl-next,
+  .owl-prev {
+    display: flex !important;
+    align-items: center;
+    border-radius: 50% !important;
+    background: rgb(231 70 72 / 68%) !important;
+    width: 36px;
+    height: 36px;
+    box-sizing: border-box;
+    justify-content: center;
+    transition: 0.2s ease-out;
+
+    &:hover {
+      background: rgb(231 70 72 / 100%) !important;
+      transition: 0.2s ease-in;
+    }
+  }
+
+  .owl-dots {
+    margin-top: 15px;
+  }
+}

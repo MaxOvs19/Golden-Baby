@@ -10,9 +10,10 @@ import { BlockBigQuotesComponent } from './components/block-big-quotes/block-big
 import { BidFormIntroductionComponent } from './components/bid-form-introduction/bid-form-introduction.component';
 import { ButtonModule } from '../ui/button';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { SliderMainPageComponent } from './components/slider-main-page/slider-main-page.component';
+
 import { FormsModule } from '@angular/forms';
 import { ExamplePipe } from './pipes/emaxple.pipe';
+import { SliderComponent } from './components/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +24,8 @@ import { ExamplePipe } from './pipes/emaxple.pipe';
     BidBodyMainPageComponent,
     BlockBigQuotesComponent,
     BidFormIntroductionComponent,
-    SliderMainPageComponent,
     ExamplePipe,
+    SliderComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, ButtonModule, CarouselModule, FormsModule],
 })

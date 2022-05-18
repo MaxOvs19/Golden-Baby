@@ -6,6 +6,7 @@
 }
 
 .main-page-body {
+  position: relative;
   display: flex;
   flex-direction: column;
 
@@ -125,6 +126,7 @@
   }
   .slider-box {
     position: relative;
+
     margin: 212px 0 104px 0;
 
     h1 {
@@ -203,4 +205,8 @@
   .owl-dots {
     margin-top: 15px;
   }
+}
+
+.containerSlider {
+  max-width: 100% !important;
 }

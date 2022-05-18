@@ -36,8 +36,36 @@
       </div>
       <app-conditions-block></app-conditions-block>
       <app-groups-view></app-groups-view>
+
+      <div class="slider-box">
+        <h1>Фотогалерея</h1>
+        <img src="assets/img/fon-slider.png" class="slider-box__fon" />
+        <owl-carousel-o [options]="customOptions">
+          <ng-template carouselSlide>
+            <img src="assets/img/slide-1.png" alt="" class="img-vector-second" />
+          </ng-template>
+          <ng-template carouselSlide>
+            <img src="assets/img/slide-2.png" alt="" class="img-vector-second" />
+          </ng-template>
+          <ng-template carouselSlide>
+            <img src="assets/img/slide-3.png" alt="" class="img-vector-second" />
+          </ng-template>
+          <ng-template carouselSlide>
+            <img src="assets/img/slide-4.png" alt="" class="img-vector-second" />
+          </ng-template>
+          <ng-template carouselSlide>
+            <img src="assets/img/slide-5.png" alt="" class="img-vector-second" />
+          </ng-template>
+        </owl-carousel-o>
+
+        <div class="slider-box__button">
+          <app-button titleButton="Посмотреть больше"></app-button>
+        </div>
+      </div>
+
       <app-adaptation-children></app-adaptation-children>
     </div>
   </div>
+
   <app-bid-body-main-page></app-bid-body-main-page>
 </div>

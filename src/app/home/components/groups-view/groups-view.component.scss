@@ -10,9 +10,9 @@
   .Fon-Img-Group {
     position: absolute;
     z-index: -1;
-    top: 6px;
-    left: -163px;
-    width: 120%;
+    top: 33px;
+    left: -107px;
+    width: 116%;
   }
 
   &__title-box {
@@ -112,10 +112,9 @@
   }
 
   &__button-box {
-    margin-top: 33px;
     display: flex;
     justify-content: center;
-    margin-bottom: 138px;
+    margin: -5px 0 138px 0;
   }
 
   .video-monitoring-block {
@@ -130,8 +129,8 @@
 
     .cameraImg {
       position: absolute;
-      top: -30px;
-      right: -152px;
+      top: 5px;
+      right: -100px;
     }
 
     .pazl {

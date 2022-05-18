@@ -63,6 +63,17 @@
         margin-bottom: 2px;
       }
 
+      a {
+        color: $white;
+        text-decoration: none;
+        transition: 0.5ms;
+        &:hover {
+          transition: 0.5ms;
+          text-decoration: underline;
+          font-weight: 600;
+        }
+      }
+
       .img-box {
         img {
           padding: 4px;

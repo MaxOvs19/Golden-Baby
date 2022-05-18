@@ -8,14 +8,119 @@
     margin-top: 17px;
   }
 
-  &__link-return {
-    font-size: 12px;
-    margin-top: 45px;
-  }
-
   &__description-menu {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+
+  &__name-week {
+    margin: 25px 0 20px 124px;
+  }
+
+  &__menu-box {
+    position: relative;
+    display: flex;
+    width: 934px;
+    height: 336px;
+    background: $white;
+    box-shadow: $base-box-shadow;
+    border-radius: 10px;
+    font-size: $size;
+    margin: 0 auto;
+
+    .body-box {
+      display: flex;
+      margin: 50px;
+      flex-direction: column;
+
+      &__title {
+        display: flex;
+        height: 40px;
+
+        &_link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-grow: 1;
+
+          border: $border-menu;
+          border-top: none;
+          border-right: none;
+
+          font-weight: 600;
+
+          &:hover {
+            color: $white;
+            background-color: #915fe7;
+          }
+
+          a {
+            text-decoration: none;
+          }
+
+          &_first {
+            border-left: none;
+            background-color: $white !important;
+          }
+        }
+      }
+
+      &__content {
+        h3 {
+          display: flex;
+          align-items: center;
+
+          width: 83px;
+          height: 35px;
+          font-size: $size;
+          border-right: $border-menu;
+
+          font-weight: 600;
+        }
+
+        p {
+          width: 88%;
+        }
+      }
+
+      &__text {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: $border-menu;
+      }
+    }
+
+    &_bottom {
+      margin-bottom: 120px;
+    }
+  }
+
+  .cook {
+    &__right-top {
+      position: absolute;
+      right: -123px;
+      top: -142px;
+    }
+
+    &__left-top {
+      position: absolute;
+      left: -160px;
+      top: -155px;
+    }
+
+    &__right-bottom {
+      position: absolute;
+      right: -198px;
+      bottom: 1px;
+    }
+
+    &__left-bottom {
+      position: absolute;
+      bottom: 17px;
+      left: -139px;
+    }
   }
 }

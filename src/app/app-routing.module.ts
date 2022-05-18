@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'menu',
     loadChildren: () => import('./menu/menu.module').then((menu) => menu.MenuModule),
   },
+  {
+    path: 'map',
+    loadChildren: () => import('./map/map.module').then((map) => map.MapModule),
+  },
 ];
 
 @NgModule({

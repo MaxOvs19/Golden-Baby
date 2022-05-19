@@ -1,34 +1,121 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  AbstractControl,
-  FormControl,
-  ValidationErrors,
-  Validator,
-  ValidatorFn,
-  Validators,
-} from '@angular/forms';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { debounceTime, map, Subject, takeUntil, tap } from 'rxjs';
+import { IFeedback } from '../../interfaces/feedback.interface';
 
+// @ng-neat/until-destroy => npm package
+
+// @UntilDestroy()
 @Component({
   selector: 'app-bid-form-introduction',
   templateUrl: './bid-form-introduction.component.html',
   styleUrls: ['./bid-form-introduction.component.scss'],
 })
-export class BidFormIntroductionComponent implements OnInit {
-  constructor() {}
+export class BidFormIntroductionComponent implements OnInit, OnDestroy {
+  private _alive$ = new Subject<void>();
 
-  public parentsName!: FormControl;
+  public feedbackForm!: FormGroup;
+
+  // constructor should be used only by DI(Dependency Injection)
+  // (Without DI) fb = new FormBuilder() !!!!!!!!!BAD PRACTICE!!!!!!
+  // (DI) private readonly formBuilder: FormBuilder !!!!!!!!!BEST PRACTICE!!!!!!
+  constructor(private readonly formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
-    this.parentsName = new FormControl(null, [myValidator]);
-
-    this.parentsName.valueChanges.subscribe((value) => console.log(value));
-    this.parentsName.statusChanges.subscribe((status) => console.log(status));
+    this.createForm();
   }
-}
 
-function myValidator(control: AbstractControl): { [key: string]: boolean } | null {
-  if (control.value.length == 0 && control.dirty) {
-    return { errorName: true };
+  ngOnDestroy(): void {
+    this._alive$.next();
+    this._alive$.complete();
   }
-  return null;
+
+  public control(name: string): AbstractControl | null {
+    return this.feedbackForm?.get(name) || null;
+  }
+
+  public submit(): void {
+    const feedback: IFeedback = this.feedbackForm.getRawValue();
+
+    console.log(feedback);
+  }
+
+  private createForm(): void {
+    this.feedbackForm = this.formBuilder.group({
+      parentName: ['', [Validators.required]],
+      comment: [''],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', [Validators.pattern(/^\+7\s\d{3}\s\d{3}\s\d{2}\s\d{2}$/)]],
+    });
+
+    /*
+
+      ....
+
+      group.valueChanges = new Observable((observer) => {
+        ....
+      })
+
+      group.parentName.valueChanges = new Observable((observer) => {
+        ....
+
+        observer = ()=> {} , () => {}, () => {},
+
+        observer.next('.....');
+      })
+
+    */
+
+    this.onFormValuesChanges();
+
+    // this.feedbackForm.controls['parentName']?.valueChanges
+    //   .pipe(
+    //     tap((name: string) => {
+    //       console.log('name: ', name);
+    //     }),
+    //   )
+    //   .subscribe();
+
+    // this.feedbackForm.controls['parentName2']?.valueChanges
+    //   .pipe(
+    //     tap((name: string) => {
+    //       console.log('name: ', name);
+    //     }),
+    //   )
+    //   .subscribe();
+
+    // this.feedbackForm.valueChanges
+    //   .pipe(
+    //     tap((values) => {
+    //       console.log('values: ', values);
+    //     }),
+    //   )
+    //   .subscribe();
+  }
+
+  private onFormValuesChanges(): void {
+    this.feedbackForm.valueChanges
+      .pipe(
+        debounceTime(9000),
+        tap(() => {
+          console.log('HELLO!');
+        }),
+        // map((values: IFeedback) => {
+        //   return values.phone;
+        // } ),
+        // tap((phone) => {
+
+        // }),
+        // tap(({ phone, email, parentName }) => {
+        //   // console.log('values: ', values);
+        //   console.log('phone: ', phone);
+        //   console.log('email: ', email);
+        //   console.log('parentName: ', parentName);
+        // }),
+
+        takeUntil(this._alive$),
+        // untilDestroy(this)
+      )
+      .subscribe();
+  }
 }

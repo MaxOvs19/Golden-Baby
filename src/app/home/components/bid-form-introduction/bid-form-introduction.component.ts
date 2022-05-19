@@ -1,59 +1,34 @@
-import { formatDate, registerLocaleData } from '@angular/common';
-import { Component, ViewChild, ElementRef } from '@angular/core';
-
-import ru from '@angular/common/locales/ru';
-
-registerLocaleData(ru, 'ru');
-
-import { IFeedback } from '../../interfaces/feedback.interface';
+import { Component, OnInit } from '@angular/core';
+import {
+  AbstractControl,
+  FormControl,
+  ValidationErrors,
+  Validator,
+  ValidatorFn,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-bid-form-introduction',
   templateUrl: './bid-form-introduction.component.html',
   styleUrls: ['./bid-form-introduction.component.scss'],
 })
-export class BidFormIntroductionComponent {
-  @ViewChild('parentsName')
-  public first!: ElementRef;
+export class BidFormIntroductionComponent implements OnInit {
+  constructor() {}
 
-  static amount = 0;
+  public parentsName!: FormControl;
 
-  public formValid = false;
+  ngOnInit(): void {
+    this.parentsName = new FormControl(null, [myValidator]);
 
-  public feedback: IFeedback = {
-    parentName: '',
-    phone: '',
-    childName: '',
-    birthday: formatDate(new Date(), 'yyyy-MM-dd', 'ru'),
-    agreement: false,
-  };
-
-  submit(): void {
-    if (this.feedback.parentName != '') {
-      console.log(this.feedback.parentName);
-    } else {
-      console.log('Error: parentName');
-    }
+    this.parentsName.valueChanges.subscribe((value) => console.log(value));
+    this.parentsName.statusChanges.subscribe((status) => console.log(status));
   }
+}
 
-  checkName(name: string): boolean {
-    BidFormIntroductionComponent.amount++;
-
-    console.log('amount: ', BidFormIntroductionComponent.amount);
-
-    return name.length > 0;
+function myValidator(control: AbstractControl): { [key: string]: boolean } | null {
+  if (control.value.length == 0 && control.dirty) {
+    return { errorName: true };
   }
-
-  validate(): void {
-    const phoneRegExp = /^\+7\d{10}$/;
-
-    this.formValid =
-      !!this.feedback.phone.match(phoneRegExp) &&
-      this.feedback.agreement &&
-      !!this.feedback.birthday &&
-      !!this.feedback.childName &&
-      !!this.feedback.parentName;
-
-    console.log(this.feedback);
-  }
+  return null;
 }

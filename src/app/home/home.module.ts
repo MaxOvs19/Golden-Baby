@@ -11,7 +11,7 @@ import { BidFormIntroductionComponent } from './components/bid-form-introduction
 import { ButtonModule } from '../ui/button';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ExamplePipe } from './pipes/emaxple.pipe';
 import { SliderComponent } from './components/slider/slider.component';
 
@@ -27,6 +27,13 @@ import { SliderComponent } from './components/slider/slider.component';
     ExamplePipe,
     SliderComponent,
   ],
-  imports: [CommonModule, HomeRoutingModule, ButtonModule, CarouselModule, FormsModule],
+  imports: [
+    CommonModule,
+    HomeRoutingModule,
+    ButtonModule,
+    CarouselModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
 export class HomeModule {}

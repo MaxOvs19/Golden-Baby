@@ -8,9 +8,9 @@ import { HomeComponent } from './home.component';
 import { ConditionsBlockComponent } from './components/conditions-block/conditions-block.component';
 import { GroupsViewComponent } from './components/groups-view/groups-view.component';
 import { AdaptationChildrenComponent } from './components/adaptation-children/adaptation-children.component';
-import { BidBodyMainPageComponent } from './components/bid-body-main-page/bid-body-main-page.component';
+import { FeedbackBodyComponent } from './components/feedback-body/feedback-body.component';
 import { BlockBigQuotesComponent } from './components/block-big-quotes/block-big-quotes.component';
-import { BidFormIntroductionComponent } from './components/bid-form-introduction/bid-form-introduction.component';
+import { FeedbackComponent } from './components/feedback/feedback.component';
 import { ButtonModule } from '../ui/button';
 
 import { SliderComponent } from './components/slider/slider.component';
@@ -21,9 +21,9 @@ import { SliderComponent } from './components/slider/slider.component';
     ConditionsBlockComponent,
     GroupsViewComponent,
     AdaptationChildrenComponent,
-    BidBodyMainPageComponent,
+    FeedbackBodyComponent,
     BlockBigQuotesComponent,
-    BidFormIntroductionComponent,
+    FeedbackComponent,
     SliderComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, ButtonModule, CarouselModule, ReactiveFormsModule],

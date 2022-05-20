@@ -1,7 +1,7 @@
 @import 'variables';
 @import 'layout';
 
-.application-form-body {
+.feedback-body {
   width: 416px;
   height: 558px;
   margin: 120px auto 0 auto;
@@ -22,10 +22,7 @@
   }
 
   h4 {
-    margin-top: 20px;
-
-    margin-bottom: 5px;
-
+    margin: 20px 0 5px 0;
     font-size: 12px;
     line-height: 15px;
   }
@@ -36,12 +33,10 @@
     line-height: 17px;
     font-weight: 500;
     color: $black;
-    z-index: 55;
     width: 296px;
     height: 22px;
     border: none;
     border-bottom: 1px solid #bebebe;
-    text-indent: 8px;
     margin-top: 30px;
     outline: none;
   }
@@ -60,6 +55,12 @@
     .cb-block {
       margin: -2px 5px 0 0;
       width: 25px;
+    }
+
+    &__label {
+      font-size: 12px;
+      line-height: 15px;
+      color: #3c3c3c;
     }
   }
 

@@ -7,11 +7,11 @@ import { IFeedback } from '../../interfaces/feedback.interface';
 
 // @UntilDestroy()
 @Component({
-  selector: 'app-bid-form-introduction',
-  templateUrl: './bid-form-introduction.component.html',
-  styleUrls: ['./bid-form-introduction.component.scss'],
+  selector: 'app-feedback',
+  templateUrl: './feedback.component.html',
+  styleUrls: ['./feedback.component.scss'],
 })
-export class BidFormIntroductionComponent implements OnInit, OnDestroy {
+export class FeedbackComponent implements OnInit, OnDestroy {
   private _alive$ = new Subject<void>();
 
   public feedbackForm!: FormGroup;
@@ -19,6 +19,7 @@ export class BidFormIntroductionComponent implements OnInit, OnDestroy {
   // constructor should be used only by DI(Dependency Injection)
   // (Without DI) fb = new FormBuilder() !!!!!!!!!BAD PRACTICE!!!!!!
   // (DI) private readonly formBuilder: FormBuilder !!!!!!!!!BEST PRACTICE!!!!!!
+
   constructor(private readonly formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
@@ -43,15 +44,16 @@ export class BidFormIntroductionComponent implements OnInit, OnDestroy {
   private createForm(): void {
     this.feedbackForm = this.formBuilder.group({
       parentName: ['', [Validators.required]],
+      childName: ['', [Validators.required]],
+      phone: ['', [Validators.pattern(/^\+7\s\d{3}\s\d{3}\s\d{2}\s\d{2}$/), Validators.required]],
       comment: [''],
-      email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.pattern(/^\+7\s\d{3}\s\d{3}\s\d{2}\s\d{2}$/)]],
+      checkbox: [false, [Validators.requiredTrue]],
     });
 
     /*
 
       ....
-
+ 
       group.valueChanges = new Observable((observer) => {
         ....
       })

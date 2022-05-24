@@ -3,12 +3,12 @@
 
 .conditions {
   background: url(~/src/assets/img/dash-line.png);
-  background-position-y: 219px;
-  background-position-x: -82px;
+  background-position-y: 222px;
+  background-position-x: -77px;
   background-repeat: repeat-x;
 
   &__title,
-  .main-box-item {
+  .box-item {
     align-items: center;
   }
 
@@ -22,15 +22,15 @@
     line-height: 26px;
   }
 
-  .main-box-up {
+  &__box-up {
     margin-top: 50px;
   }
 
-  .main-box-up,
-  .main-box-down {
+  &__box-up,
+  &__box-down {
     display: flex;
 
-    .main-box-item {
+    .box-item {
       flex-grow: 1;
       display: inherit;
       flex-direction: column;
@@ -55,7 +55,7 @@
       }
 
       &_fifth {
-        margin-top: 18px;
+        margin-top: 27px;
       }
 
       &_sixth {
@@ -64,7 +64,7 @@
 
       h2,
       p,
-      .box-item_number {
+      .number {
         text-align: center;
       }
 
@@ -81,24 +81,22 @@
         line-height: 17px;
       }
 
-      .box-item {
-        &_number {
-          display: inherit;
-          justify-content: center;
-          align-items: center;
-          width: 33px !important;
-          height: 33px !important;
-          background: #b285ff;
-          border-radius: 50%;
+      .number {
+        display: inherit;
+        justify-content: center;
+        align-items: center;
+        width: 33px !important;
+        height: 33px !important;
+        background: #b285ff;
+        border-radius: 50%;
 
-          font-size: 20px;
-          line-height: 24px;
-          color: $white;
-        }
+        font-size: 20px;
+        line-height: 24px;
+        color: $white;
       }
     }
 
-    .main-box-item:nth-child(2n + 1) {
+    .box-item:nth-child(2n + 1) {
       margin: 0 57px 0 30px;
     }
   }

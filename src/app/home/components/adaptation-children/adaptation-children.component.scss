@@ -148,4 +148,31 @@
       left: 210px;
     }
   }
+  &__fon {
+    &_first {
+      position: absolute;
+      top: 38px;
+      right: 127px;
+    }
+
+    &_second {
+      position: absolute;
+      top: -32px;
+      left: 302px;
+      z-index: -1;
+    }
+
+    &_third {
+      position: absolute;
+      top: 60px;
+      right: 194px;
+      z-index: -1;
+    }
+    &_fourth {
+      z-index: -1;
+      position: absolute;
+      top: 34px;
+      left: 255px;
+    }
+  }
 }

@@ -1,13 +1,15 @@
 @import 'variables';
 @import 'layout';
 
-.groups-block {
+.groups {
   margin-top: 140px;
   position: relative;
+
   p {
     font-size: $size;
   }
-  .Fon-Img-Group {
+
+  .fon-group {
     position: absolute;
     z-index: -1;
     top: 33px;
@@ -35,13 +37,13 @@
     }
   }
 
-  &__main-body {
+  &__body {
     flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
   }
 
-  &__item-body {
+  &__item {
     transition: 0.4s ease-out;
     margin-top: 70px;
     display: flex;
@@ -111,13 +113,13 @@
     }
   }
 
-  &__button-box {
+  &__button {
     display: flex;
     justify-content: center;
     margin: 39px 0 138px 0;
   }
 
-  .video-monitoring-block {
+  &__video-monitoring {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -127,7 +129,7 @@
     align-items: center;
     margin: 0 auto;
 
-    .cameraImg {
+    .camera {
       position: absolute;
       top: 5px;
       right: -100px;

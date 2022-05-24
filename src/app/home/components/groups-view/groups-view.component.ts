@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 export class GroupsViewComponent {
   constructor(private router: Router) {}
 
-  goPrices() {
-    this.router.navigate(['/prices']);
-  }
+  // goPrices() {
+  //   this.router.navigate(['/prices']);
+  //   this.router.navigate;
+  // }
 }

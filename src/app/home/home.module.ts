@@ -5,7 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { ConditionsBlockComponent } from './components/conditions-block/conditions-block.component';
+import { ConditionsComponent } from './components/conditions/conditions.component';
 import { GroupsViewComponent } from './components/groups-view/groups-view.component';
 import { AdaptationChildrenComponent } from './components/adaptation-children/adaptation-children.component';
 import { FeedbackBodyComponent } from './components/feedback-body/feedback-body.component';
@@ -19,7 +19,7 @@ import { InputModule } from '../ui/input';
 @NgModule({
   declarations: [
     HomeComponent,
-    ConditionsBlockComponent,
+    ConditionsComponent,
     GroupsViewComponent,
     AdaptationChildrenComponent,
     FeedbackBodyComponent,

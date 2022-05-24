@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { FooterModule } from './ui/footer';
 import { HeaderModule } from './ui/header';
 import { LinkReturnModule } from './ui/link-return';
+import { InputModule } from './ui/input/input.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +16,7 @@ import { LinkReturnModule } from './ui/link-return';
     HeaderModule,
     FooterModule,
     LinkReturnModule,
+    InputModule,
     BrowserAnimationsModule,
   ],
   bootstrap: [AppComponent],

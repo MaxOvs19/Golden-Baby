@@ -4,6 +4,23 @@
 
   <!-- parentName -->
   <div class="feedback-body__form-field">
+    <app-input
+      type="text"
+      placeholder="Ваше имя*"
+      formControlName="parentName"
+      [class.feedback-body__form-field_input-error]="
+        control('parentName')?.invalid && control('parentName')?.dirty
+      "
+    ></app-input>
+
+    <ng-container *ngIf="control('parentName')?.invalid && control('parentName')?.dirty">
+      <div>
+        <span class="feedback-body__form-field_error"> Это поле необъодимо заполнить </span>
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- <div class="feedback-body__form-field">
     <input
       type="text"
       placeholder="Ваше имя*"
@@ -18,7 +35,7 @@
         <span class="feedback-body__form-field_error"> Это поле необъодимо заполнить </span>
       </div>
     </ng-container>
-  </div>
+  </div> -->
   <!-- childName  -->
 
   <div class="feedback-body__form-field">

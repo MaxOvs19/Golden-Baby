@@ -14,6 +14,7 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
 import { ButtonModule } from '../ui/button';
 
 import { SliderComponent } from './components/slider/slider.component';
+import { InputModule } from '../ui/input';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,13 @@ import { SliderComponent } from './components/slider/slider.component';
     FeedbackComponent,
     SliderComponent,
   ],
-  imports: [CommonModule, HomeRoutingModule, ButtonModule, CarouselModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    HomeRoutingModule,
+    ButtonModule,
+    CarouselModule,
+    ReactiveFormsModule,
+    InputModule,
+  ],
 })
 export class HomeModule {}

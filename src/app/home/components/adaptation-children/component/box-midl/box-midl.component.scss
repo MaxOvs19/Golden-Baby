@@ -1,0 +1,45 @@
+@import '../../adaptation-children.component.scss';
+
+.adaptation-block {
+  .paragraph-item {
+    &__second {
+      margin: 0 0 0 215px;
+      background: url(~/src/assets/svg/fon-adaptation2.svg) no-repeat;
+      padding-top: 40px;
+      background-position: top 11px left 48px;
+      z-index: -1;
+    }
+
+    &__third {
+      margin: 122px 0 0 0;
+      padding-top: 50px;
+      background: url(~/src/assets/svg/fon-adaptation3.svg) no-repeat;
+      background-position: top 16px left 31px;
+      z-index: -1;
+    }
+
+    .number-box {
+      &__third {
+        background: rgba(134, 73, 239, 0.65);
+      }
+
+      &__fourth {
+        background: rgba(134, 73, 239, 0.8);
+      }
+    }
+  }
+
+  &__arrow {
+    &_third {
+      position: absolute;
+      top: 104px;
+      right: 433px;
+    }
+
+    &_fourth {
+      position: absolute;
+      top: 275px;
+      right: 314px;
+    }
+  }
+}

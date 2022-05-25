@@ -42,7 +42,7 @@
   }
 
   &__box-top {
-    margin-bottom: 100px;
+    margin-bottom: 40px;
   }
 
   &__box-top,
@@ -58,22 +58,6 @@
       height: 155px;
       width: 400px;
 
-      &__first {
-        margin: 75px 0 0 0;
-      }
-
-      &__second {
-        margin: 0 0 0 215px;
-      }
-
-      &__third {
-        margin: 96px 0 0 0;
-      }
-
-      &__fourth {
-        margin: 71px 43% 0 0;
-      }
-
       .number-box {
         display: flex;
         justify-content: center;
@@ -85,22 +69,6 @@
         border-radius: 50%;
         width: 50px;
         height: 50px;
-
-        &__first {
-          background: rgba(134, 73, 239, 0.2);
-        }
-
-        &__second {
-          background: rgba(134, 73, 239, 0.4);
-        }
-
-        &__third {
-          background: rgba(134, 73, 239, 0.65);
-        }
-
-        &__fourth {
-          background: rgba(134, 73, 239, 0.8);
-        }
 
         h3 {
           font-size: 24px;
@@ -114,65 +82,6 @@
         width: 277px;
         height: 88px;
       }
-    }
-  }
-
-  &__arrow {
-    &_first {
-      position: absolute;
-      top: -62px;
-      left: 416px;
-    }
-
-    &_second {
-      position: absolute;
-      top: 135px;
-      right: 435px;
-    }
-
-    &_third {
-      position: absolute;
-      top: 47px;
-      right: 443px;
-    }
-
-    &_fourth {
-      position: absolute;
-      top: 199px;
-      right: 290px;
-    }
-
-    &_fifth {
-      position: absolute;
-      top: 149px;
-      left: 210px;
-    }
-  }
-  &__fon {
-    &_first {
-      position: absolute;
-      top: 38px;
-      right: 127px;
-    }
-
-    &_second {
-      position: absolute;
-      top: -32px;
-      left: 302px;
-      z-index: -1;
-    }
-
-    &_third {
-      position: absolute;
-      top: 60px;
-      right: 194px;
-      z-index: -1;
-    }
-    &_fourth {
-      z-index: -1;
-      position: absolute;
-      top: 34px;
-      left: 255px;
     }
   }
 }

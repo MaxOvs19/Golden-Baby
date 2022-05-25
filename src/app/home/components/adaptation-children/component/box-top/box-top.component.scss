@@ -1,0 +1,35 @@
+@import '../../adaptation-children.component.scss';
+
+.adaptation-block {
+  .paragraph-item {
+    &__first {
+      padding-top: 65px;
+      background: url(~/src/assets/svg/fon-adaptation1.svg) no-repeat;
+      background-position: right 30px bottom 25px;
+    }
+
+    .number-box {
+      &__first {
+        background: rgba(134, 73, 239, 0.2);
+      }
+
+      &__second {
+        background: rgba(134, 73, 239, 0.4);
+      }
+    }
+  }
+
+  &__arrow {
+    &_first {
+      position: absolute;
+      top: -62px;
+      left: 416px;
+    }
+
+    &_second {
+      position: absolute;
+      top: 135px;
+      right: 435px;
+    }
+  }
+}

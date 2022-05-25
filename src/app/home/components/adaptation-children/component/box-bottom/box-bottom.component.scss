@@ -1,0 +1,21 @@
+@import '../../adaptation-children.component.scss';
+
+.adaptation-block {
+  .paragraph-item {
+    &__fourth {
+      margin: 0px 467px 0 0;
+      padding: 34px 0px 0 0;
+      background: url(~/src/assets/svg/fon-adaptation4.svg) no-repeat;
+      background-position: top right 55px;
+      z-index: -1;
+    }
+  }
+
+  &__arrow {
+    &_fifth {
+      position: absolute;
+      top: 130px;
+      left: 258px;
+    }
+  }
+}

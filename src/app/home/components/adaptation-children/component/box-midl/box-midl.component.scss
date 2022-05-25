@@ -1,13 +1,23 @@
 @import '../../adaptation-children.component.scss';
 
 .adaptation-block {
+  &__box-midl {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+  }
+
   .paragraph-item {
+    display: inherit;
+    height: 155px;
+    width: 400px;
+
     &__second {
       margin: 0 0 0 215px;
       background: url(~/src/assets/svg/fon-adaptation2.svg) no-repeat;
       padding-top: 40px;
       background-position: top 11px left 48px;
-      z-index: -1;
     }
 
     &__third {
@@ -15,10 +25,16 @@
       padding-top: 50px;
       background: url(~/src/assets/svg/fon-adaptation3.svg) no-repeat;
       background-position: top 16px left 31px;
-      z-index: -1;
     }
 
     .number-box {
+      h3 {
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+        color: $white;
+      }
+
       &__third {
         background: rgba(134, 73, 239, 0.65);
       }
@@ -26,6 +42,11 @@
       &__fourth {
         background: rgba(134, 73, 239, 0.8);
       }
+    }
+
+    &__text-box {
+      width: 277px;
+      height: 88px;
     }
   }
 

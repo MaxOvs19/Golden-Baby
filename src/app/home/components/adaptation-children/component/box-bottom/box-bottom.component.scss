@@ -1,13 +1,37 @@
 @import '../../adaptation-children.component.scss';
 
 .adaptation-block {
+  &__box-botm {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+  }
+
   .paragraph-item {
+    display: inherit;
+    height: 155px;
+    width: 400px;
+
     &__fourth {
       margin: 0px 467px 0 0;
       padding: 34px 0px 0 0;
       background: url(~/src/assets/svg/fon-adaptation4.svg) no-repeat;
       background-position: top right 55px;
-      z-index: -1;
+    }
+
+    .number-box {
+      h3 {
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+        color: $white;
+      }
+    }
+
+    &__text-box {
+      width: 277px;
+      height: 88px;
     }
   }
 

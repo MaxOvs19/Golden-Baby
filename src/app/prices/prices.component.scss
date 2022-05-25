@@ -42,7 +42,6 @@
     font-weight: 800;
     font-size: 20px;
     line-height: 24px;
-
     color: #ffbf43;
   }
 
@@ -71,10 +70,11 @@
     }
 
     &__description {
+      padding-left: 80px;
+
       p {
         line-height: 18px;
       }
-      padding-left: 80px;
     }
 
     &__end {
@@ -93,6 +93,7 @@
       color: $white;
       box-shadow: 0px 8px 14px #bb6413;
       transition: ease 0.5s;
+
       &:hover {
         transition: ease 0.5s;
         cursor: pointer;
@@ -125,6 +126,7 @@
       margin-bottom: 5px;
     }
   }
+
   app-button {
     display: flex;
     justify-content: flex-end;

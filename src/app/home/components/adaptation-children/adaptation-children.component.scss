@@ -1,16 +1,11 @@
 @import 'variables';
 @import 'layout';
 
-.flex-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+* {
+  position: relative;
 }
 
 .adaptation-block {
-  // @include flex();
-  // @extend .flex-container;
-
   background: url(~/src/assets/img/Adaptation-fonImg.png) no-repeat;
   background-position-y: 48%;
   background-position-x: -25px;
@@ -38,6 +33,12 @@
     }
   }
 
+  &__box-top,
+  &__box-midl,
+  &__box-bottom {
+    @include Adaptation-box();
+  }
+
   p {
     line-height: 17px;
     text-align: center;
@@ -51,6 +52,42 @@
   }
 
   .paragraph-item {
+    display: inherit;
+    height: 155px;
+    width: 400px;
+
+    &__text-box {
+      width: 277px;
+      height: 88px;
+    }
+
+    &__first {
+      padding-top: 65px;
+      background: url(~/src/assets/svg/fon-adaptation1.svg) no-repeat;
+      background-position: right 30px bottom 25px;
+    }
+
+    &__second {
+      margin: 0 0 0 215px;
+      background: url(~/src/assets/svg/fon-adaptation2.svg) no-repeat;
+      padding-top: 40px;
+      background-position: top 11px left 48px;
+    }
+
+    &__third {
+      margin: 122px 0 0 0;
+      padding-top: 50px;
+      background: url(~/src/assets/svg/fon-adaptation3.svg) no-repeat;
+      background-position: top 16px left 31px;
+    }
+
+    &__fourth {
+      margin: -63px 0px 0px 167px;
+      padding: 34px 0px 0px 0px;
+      background: url(~/src/assets/svg/fon-adaptation4.svg) no-repeat;
+      background-position: top right 55px;
+    }
+
     .number-box {
       display: flex;
       justify-content: center;
@@ -58,10 +95,65 @@
       margin-right: 10px;
       margin-top: -33px;
 
-      background: #8649ef;
+      background: $violet;
       border-radius: 50%;
       width: 50px;
       height: 50px;
+
+      h3 {
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+        color: $white;
+      }
+
+      &__first {
+        background: rgba(134, 73, 239, 0.2);
+      }
+
+      &__second {
+        background: rgba(134, 73, 239, 0.4);
+      }
+
+      &__third {
+        background: rgba(134, 73, 239, 0.65);
+      }
+
+      &__fourth {
+        background: rgba(134, 73, 239, 0.8);
+      }
+    }
+  }
+
+  &__arrow {
+    &_first {
+      position: absolute;
+      top: -62px;
+      left: 416px;
+    }
+
+    &_second {
+      position: absolute;
+      top: 135px;
+      right: 435px;
+    }
+
+    &_third {
+      position: absolute;
+      top: 104px;
+      right: 433px;
+    }
+
+    &_fourth {
+      position: absolute;
+      top: 275px;
+      right: 314px;
+    }
+
+    &_fifth {
+      position: absolute;
+      left: 258px;
+      top: 58px;
     }
   }
 }

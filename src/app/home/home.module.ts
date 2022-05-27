@@ -12,9 +12,6 @@ import { FeedbackBodyComponent } from './components/feedback-body/feedback-body.
 import { BlockBigQuotesComponent } from './components/block-big-quotes/block-big-quotes.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { ButtonModule } from '../ui/button';
-import { AdaptationChildrenTopBlockComponent } from './components/adaptation-children-top-block/adaptation-children-top-block.component';
-import { AdaptationChildrenMidlBlockComponent } from './components/adaptation-children-midl-block/adaptation-children-midl-block.component';
-import { AdaptationChildreBottomBlockComponent } from './components/adaptation-children-bottom-block/adaptation-children-bottom-block.component';
 
 import { SliderComponent } from './components/slider/slider.component';
 import { InputModule } from '../ui/input';
@@ -29,9 +26,6 @@ import { InputModule } from '../ui/input';
     BlockBigQuotesComponent,
     FeedbackComponent,
     SliderComponent,
-    AdaptationChildrenTopBlockComponent,
-    AdaptationChildrenMidlBlockComponent,
-    AdaptationChildreBottomBlockComponent,
   ],
   imports: [
     CommonModule,

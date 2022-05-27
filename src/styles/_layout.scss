@@ -3,8 +3,10 @@
   margin: 0 auto;
 }
 
-@mixin flex {
+@mixin Adaptation-box {
+  margin-bottom: 40px;
+  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-grow: 1;
+  justify-content: space-around;
 }

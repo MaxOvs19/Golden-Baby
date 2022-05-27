@@ -2,3 +2,9 @@
   width: 1180px;
   margin: 0 auto;
 }
+
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

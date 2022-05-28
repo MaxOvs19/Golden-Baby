@@ -3,14 +3,14 @@
   margin: 0 auto;
 }
 
-@mixin Adaptation-box {
-  margin-bottom: 40px;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  justify-content: space-around;
-}
+// @mixin Adaptation-box {
+//   margin-bottom: 40px;
+//   position: relative;
+//   display: flex;
+//   flex-direction: row;
+//   flex-grow: 1;
+//   justify-content: space-around;
+// }
 
 @mixin flex-col-centr {
   display: flex;

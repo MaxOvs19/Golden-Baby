@@ -8,8 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
 export class BlockBigQuotesComponent implements OnInit {
   @Input()
   titleBlock!: string;
+
   @Input()
   paragraphFirst!: string;
+
   @Input()
   paragraphSecond!: string;
 

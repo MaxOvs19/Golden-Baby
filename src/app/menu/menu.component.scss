@@ -14,12 +14,11 @@
     align-items: center;
   }
 
-
   &__name-week {
     margin: 25px 0 20px 124px;
   }
 
-  &__menu-box {
+  &__menu {
     position: relative;
     display: flex;
     width: 934px;
@@ -30,7 +29,7 @@
     font-size: $size;
     margin: 0 auto;
 
-    .body-box {
+    .body {
       display: flex;
       margin: 50px;
       flex-direction: column;

@@ -45,14 +45,14 @@
     margin-top: 20px;
   }
 
-  .checkbox-block {
+  .checkbox {
     display: flex;
     flex-direction: row;
     width: 283px;
     height: 45px;
     margin-top: 35px;
 
-    .cb-block {
+    &__item {
       margin: -2px 5px 0 0;
       width: 25px;
     }

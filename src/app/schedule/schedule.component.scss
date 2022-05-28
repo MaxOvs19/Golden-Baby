@@ -7,7 +7,7 @@
 
 .schedule {
   .schedule-body {
-    &__text-block {
+    &__text {
       h2 {
         font-size: 18px;
         margin-left: 100px;
@@ -39,7 +39,7 @@
           align-items: flex-end;
           border-right: $border-routine-table;
 
-          h3 {
+          span {
             font-weight: 600;
             font-size: $size;
             line-height: 17px;
@@ -48,7 +48,7 @@
         }
 
         p,
-        h3 {
+        span {
           border-bottom: $border-routine-table;
         }
 
@@ -66,7 +66,7 @@
       }
     }
 
-    &__title-box {
+    &__title {
       h1 {
         font-family: $forum-font;
         font-size: 30px;

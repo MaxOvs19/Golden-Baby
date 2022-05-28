@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-block-big-quotes',
-  templateUrl: './block-big-quotes.component.html',
-  styleUrls: ['./block-big-quotes.component.scss'],
+  selector: 'app-big-quotes',
+  templateUrl: './big-quotes.component.html',
+  styleUrls: ['./big-quotes.component.scss'],
 })
-export class BlockBigQuotesComponent implements OnInit {
+export class BigQuotesComponent implements OnInit {
   @Input()
   titleBlock!: string;
 

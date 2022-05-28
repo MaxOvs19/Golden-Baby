@@ -12,6 +12,7 @@
     color: $white;
     text-decoration: none;
     transition: 0.5ms;
+
     &:hover {
       transition: 0.5ms;
       text-decoration: underline;
@@ -19,7 +20,7 @@
     }
   }
 
-  .header-main-body {
+  .header-body {
     display: flex;
     height: inherit;
     font-size: $size;
@@ -40,7 +41,7 @@
       padding-right: 17px;
     }
 
-    &__contacts-block {
+    &__contacts {
       margin-top: 30px;
       color: $white;
 
@@ -51,7 +52,7 @@
       }
     }
 
-    &__nav-bar-item {
+    &__nav-item {
       display: inherit;
     }
   }

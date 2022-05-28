@@ -2,25 +2,27 @@
 @import 'layout';
 
 .adaptation {
-  margin-top: 100px;
   background: url(~/src/assets/img/Adaptation-fonImg.png) no-repeat;
   background-position-y: 48%;
   background-position-x: -25px;
+  text-align: center;
 
   &__title {
-    @include flex-col-centr();
-    width: 596px;
-    margin: 0 auto;
-    padding-top: 100px;
+    @include flex-col-center();
+
+    margin: 85px auto 100px auto;
+
+    width: 650px;
 
     h2 {
       font-family: $forum-font;
-
+      font-size: 24px;
       line-height: 26px;
+      margin-bottom: 15px;
     }
   }
 
-  &_bottom {
+  .bottom {
     justify-content: flex-start !important;
   }
 
@@ -31,24 +33,6 @@
     flex-direction: row;
     flex-grow: 1;
     justify-content: space-around;
-  }
-
-  // &_top,
-  // &_midl,
-  // &_bottom {
-  //   // @include Adaptation-box();
-
-  //   margin-bottom: 40px;
-  //   position: relative;
-  //   display: flex;
-  //   flex-direction: row;
-  //   flex-grow: 1;
-  //   justify-content: space-around;
-  // }
-
-  p {
-    line-height: 17px;
-    text-align: center;
   }
 
   &__arrow {
@@ -67,7 +51,7 @@
     &_third {
       position: absolute;
       top: 104px;
-      right: 433px;
+      right: 465px;
     }
 
     &_fourth {
@@ -100,7 +84,7 @@
   }
 
   &_second {
-    margin: 0 0 0 215px;
+    margin: 0px 0 0 175px;
     background: url(~/src/assets/svg/fon-adaptation2.svg) no-repeat;
     padding-top: 40px;
     background-position: top 11px left 48px;
@@ -121,7 +105,7 @@
   }
 
   .number {
-    @include flex-col-centr();
+    @include flex-col-center();
 
     justify-content: center;
     margin-right: 10px;

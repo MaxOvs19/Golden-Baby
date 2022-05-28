@@ -3,12 +3,13 @@
 
 .conditions {
   background: url(~/src/assets/img/dash-line.png);
-  background-position-y: 222px;
+  background-position-y: 225px;
   background-position-x: -77px;
   background-repeat: repeat-x;
+  text-align: center;
 
   &__title,
-  .box-item {
+  .item {
     align-items: center;
   }
 
@@ -26,17 +27,25 @@
     margin-top: 50px;
   }
 
-  &__box-up,
-  &__box-down {
+  &__up {
+    margin-top: 55px;
+  }
+
+  &__up,
+  &__down {
     display: flex;
 
-    .box-item {
+    .item {
       flex-grow: 1;
       display: inherit;
       flex-direction: column;
 
       width: 233px;
       height: 163px;
+
+      &_null {
+        height: 170px;
+      }
 
       &_first {
         margin-top: 128px !important;
@@ -51,21 +60,15 @@
       }
 
       &_fourth {
-        margin-top: -82px;
+        margin-top: -82px !important;
       }
 
       &_fifth {
-        margin-top: 27px;
+        margin-top: 27px !important;
       }
 
       &_sixth {
-        margin-top: -44px;
-      }
-
-      h2,
-      p,
-      .number {
-        text-align: center;
+        margin-top: -44px !important;
       }
 
       h2 {
@@ -82,9 +85,9 @@
       }
 
       .number {
-        display: inherit;
+        @include flex-col-center();
         justify-content: center;
-        align-items: center;
+
         width: 33px !important;
         height: 33px !important;
         background: #b285ff;
@@ -96,7 +99,7 @@
       }
     }
 
-    .box-item:nth-child(2n + 1) {
+    .item:nth-child(2n + 1) {
       margin: 0 57px 0 30px;
     }
   }

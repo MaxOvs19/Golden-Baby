@@ -1,9 +1,12 @@
 @import 'variables';
 @import 'layout';
 
+* {
+  position: relative;
+}
+
 .groups {
   margin-top: 140px;
-  position: relative;
 
   p {
     font-size: $size;
@@ -17,10 +20,8 @@
     width: 116%;
   }
 
-  &__title-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  &__title {
+    @include flex-col-center();
 
     h1 {
       font-family: $forum-font;
@@ -92,7 +93,7 @@
       height: 267px;
     }
 
-    .text-box {
+    .text {
       display: inherit;
       flex-direction: column;
       li {
@@ -120,13 +121,12 @@
   }
 
   &__video-monitoring {
-    position: relative;
-    display: flex;
-    flex-direction: column;
+    @include flex-col-center();
+
     width: 710px;
     height: 333px;
     justify-content: center;
-    align-items: center;
+
     margin: 0 auto;
 
     .camera {

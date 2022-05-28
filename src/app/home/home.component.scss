@@ -17,13 +17,13 @@
     font-family: $forum-font;
   }
 
-  .entranse-block {
+  .entranse {
     display: inherit;
 
     .offer-box {
       display: inherit;
 
-      &__text-elem {
+      &__text {
         display: inherit;
         flex-direction: column;
 
@@ -38,7 +38,7 @@
         }
 
         h4,
-        .btn-application {
+        .btn {
           font-weight: 300;
           font-size: 18px;
           color: $ocher;
@@ -57,18 +57,18 @@
           color: $ocher;
         }
 
-        .img-vector-first {
-          position: absolute;
-          top: 50px;
-          left: -75px;
-          z-index: -99;
-        }
-
-        .btn-application_coron {
+        .btn_corona {
           position: absolute;
           left: 145px;
           top: 317px;
         }
+      }
+
+      &__vector {
+        position: absolute;
+        top: 50px;
+        left: -75px;
+        z-index: -99;
       }
     }
 
@@ -78,16 +78,14 @@
     }
   }
 
-  .parent-info-block,
+  .parent-info,
   &__body,
   &__text-box {
-    align-items: center;
+    @include flex-col-center();
     justify-content: center;
-    display: inherit;
-    flex-direction: column;
   }
 
-  .parent-info-block {
+  .parent-info {
     height: 552px;
     background: url(~/src/assets/img/superheroesImg.png) no-repeat;
 
@@ -98,24 +96,7 @@
       margin: 60px 53px 0 0;
     }
 
-    &__text-box {
-      width: 635px;
-      height: 279px;
-      border-radius: 10px;
-      box-shadow: $base-box-shadow;
-
-      h2 {
-        font-size: 24px;
-        line-height: 26px;
-      }
-
-      p {
-        margin-top: 20px;
-        width: 530px;
-      }
-    }
-
-    .img-vector-second {
+    &__vector {
       position: absolute;
       z-index: -99;
       top: -64px;

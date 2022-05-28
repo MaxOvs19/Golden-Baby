@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./schedule.component.scss'],
 })
 export class ScheduleComponent implements OnInit {
-  constructor() {}
+  user: any; // eslint => warning (yellow)
+  constructor() {} // eslint => error (red)
 
-  ngOnInit(): void {}
+  ngOnInit(): void {} // eslint => error (red)
 }

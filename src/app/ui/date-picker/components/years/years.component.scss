@@ -1,0 +1,22 @@
+.years {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  margin-top: 10px;
+  border-top: 1px solid #bababa;
+
+  &__item {
+    width: 70px;
+    padding: 2px 5px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: 0.1s ease-out;
+
+    &:hover {
+      background-color: #3a89ff;
+      color: white;
+      transition: 0.1s ease-in;
+    }
+  }
+}

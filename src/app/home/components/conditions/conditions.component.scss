@@ -1,0 +1,106 @@
+@import 'variables';
+@import 'layout';
+
+.conditions {
+  background: url(~/src/assets/img/dash-line.png);
+  background-position-y: 225px;
+  background-position-x: -77px;
+  background-repeat: repeat-x;
+  text-align: center;
+
+  &__title,
+  .item {
+    align-items: center;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+    font-family: $forum-font;
+
+    font-size: 24px;
+    line-height: 26px;
+  }
+
+  &__box-up {
+    margin-top: 50px;
+  }
+
+  &__up {
+    margin-top: 55px;
+  }
+
+  &__up,
+  &__down {
+    display: flex;
+
+    .item {
+      flex-grow: 1;
+      display: inherit;
+      flex-direction: column;
+
+      width: 233px;
+      height: 163px;
+
+      &_null {
+        height: 170px;
+      }
+
+      &_first {
+        margin-top: 128px !important;
+      }
+
+      &_second {
+        margin-top: 50px !important;
+      }
+
+      &_third {
+        margin-top: 81px !important;
+      }
+
+      &_fourth {
+        margin-top: -82px !important;
+      }
+
+      &_fifth {
+        margin-top: 27px !important;
+      }
+
+      &_sixth {
+        margin-top: -44px !important;
+      }
+
+      h2 {
+        margin: 7px 0 7px 0;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      p {
+        font-weight: 300;
+        font-size: $size;
+        line-height: 17px;
+      }
+
+      .number {
+        @include flex-col-center();
+        justify-content: center;
+
+        width: 33px !important;
+        height: 33px !important;
+        background: #b285ff;
+        border-radius: 50%;
+
+        font-size: 20px;
+        line-height: 24px;
+        color: $white;
+      }
+    }
+
+    .item:nth-child(2n + 1) {
+      margin: 0 57px 0 30px;
+    }
+  }
+}

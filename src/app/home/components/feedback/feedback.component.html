@@ -1,0 +1,74 @@
+<form class="feedback-body" [formGroup]="feedbackForm">
+  <h2>Оставьте заявку</h2>
+  <h4>Заполните форму и мы Вам перезвоним</h4>
+
+  <div class="feedback-body__form-field">
+    <app-input
+      type="text"
+      placeholder="Ваше имя*"
+      formControlName="parentName"
+      [class.feedback-body__form-field_input-error]="
+        control('parentName')?.invalid && control('parentName')?.dirty
+      "
+    ></app-input>
+
+    <ng-container *ngIf="control('parentName')?.invalid && control('parentName')?.dirty">
+      <div>
+        <span class="feedback-body__form-field_error"> Это поле необъодимо заполнить </span>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="feedback-body__form-field">
+    <input
+      type="text"
+      placeholder="Имя ребенка"
+      formControlName="childName"
+      [class.feedback-body__form-field_input-error]="
+        control('childName')?.invalid && control('childName')?.dirty
+      "
+    />
+  </div>
+
+  <div class="feedback-body__form-field">
+    <input type="date" placeholder="Дата рождения ребенка" name="date" />
+  </div>
+
+  <div class="feedback-body__form-field">
+    <input
+      type="text"
+      placeholder="+7 000 000 00 00*"
+      formControlName="phone"
+      [class.feedback-body__form-field_input-error]="
+        control('phone')?.invalid && control('phone')?.dirty
+      "
+    />
+
+    <ng-container *ngIf="control('phone')?.invalid && control('phone')?.dirty">
+      <div>
+        <span class="feedback-body__form-field_error">
+          Телефон должен иметь формат +7 000 000 00 00
+        </span>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="feedback-body__form-field">
+    <input type="text" placeholder="Комментарий" name="comment" />
+  </div>
+
+  <div class="checkbox">
+    <input type="checkbox" class="checkbox__item" id="checkbox-id" formControlName="checkbox" />
+    <label for="checkbox-id" class="checkbox__label">
+      Я согласен(а) на обработку персональных данных и принимаю политику конфиденциальности
+    </label>
+  </div>
+
+  <div class="feedback-body__button">
+    <app-button
+      title="Отправить"
+      [disabled]="!!feedbackForm?.invalid"
+      (click)="submit()"
+    ></app-button>
+  </div>
+</form>

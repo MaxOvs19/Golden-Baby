@@ -7,5 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class ButtonComponent {
   @Input()
-  titleButton!: string;
+  public title!: string;
+
+  @Input()
+  public disabled = false;
 }

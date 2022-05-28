@@ -1,0 +1,144 @@
+@import 'variables';
+@import 'layout';
+
+* {
+  position: relative;
+}
+
+.groups {
+  margin-top: 140px;
+
+  p {
+    font-size: $size;
+  }
+
+  .fon-group {
+    position: absolute;
+    z-index: -1;
+    top: 33px;
+    left: -107px;
+    width: 116%;
+  }
+
+  &__title {
+    @include flex-col-center();
+
+    h1 {
+      font-family: $forum-font;
+      font-size: 24px;
+      line-height: 26px;
+    }
+
+    p {
+      font-weight: 300;
+      line-height: 17px;
+      text-align: center;
+      width: 666px;
+      height: 55px;
+    }
+  }
+
+  &__body {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    transition: 0.4s ease-out;
+    margin-top: 70px;
+    display: flex;
+    width: 548px;
+    background: $white;
+    box-shadow: 0px 4px 28px rgba(0, 0, 0, 20%);
+    border-radius: 10px;
+    justify-content: space-around;
+    padding: 30px 18px 30px 11px;
+
+    h3 {
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    h3,
+    h4 {
+      margin: 0 auto;
+      font-weight: 500;
+    }
+
+    h4 {
+      font-size: $size;
+      line-height: 17px;
+    }
+
+    h5 {
+      margin: 0 auto;
+      font-weight: 300;
+      font-size: 9px;
+      line-height: 11px;
+      color: #ababab;
+    }
+
+    p {
+      padding-top: 10px;
+      font-weight: 300;
+      line-height: 17px;
+      width: 325px;
+      height: 172px;
+      margin-bottom: 18px;
+    }
+
+    img {
+      width: 133px;
+      height: 267px;
+    }
+
+    .text {
+      display: inherit;
+      flex-direction: column;
+      li {
+        display: inline;
+        a {
+          font-size: 10px;
+          line-height: 12px;
+          color: #ababab;
+        }
+        margin: 0 15px 0 0;
+      }
+    }
+
+    &:hover {
+      box-shadow: 0px 4px 28px rgba(0, 0, 0, 30%);
+      cursor: pointer;
+      transition: 0.4s ease-out;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    margin: 39px 0 138px 0;
+  }
+
+  &__video-monitoring {
+    @include flex-col-center();
+
+    width: 710px;
+    height: 333px;
+    justify-content: center;
+
+    margin: 0 auto;
+
+    .camera {
+      position: absolute;
+      top: 5px;
+      right: -100px;
+    }
+
+    .pazl {
+      position: absolute;
+      top: -68px;
+      left: -124px;
+    }
+  }
+}

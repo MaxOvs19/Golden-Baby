@@ -5,6 +5,7 @@
   &__title {
     display: flex;
     justify-content: center;
+    margin: 27px 0 50px 0;
 
     h1 {
       font-family: $forum-font;
@@ -12,15 +13,14 @@
       font-size: 30px;
       line-height: 33px;
     }
-    margin: 27px 0 50px 0;
   }
 
-  &__box-body {
+  &__-body {
     display: flex;
     justify-content: center;
   }
 
-  &__contact-box {
+  &__contacts {
     display: flex;
     flex-direction: row;
     margin: 45px 26px 120px 26px;

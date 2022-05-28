@@ -1,25 +1,36 @@
 @import 'variables';
 
-.btn-application {
-  font-family: $base-font;
+.btn {
   font-weight: 300;
-  margin-top: 44px;
+
   font-size: $size;
   line-height: 17px;
-  background: #f3344b;
-  border-radius: 50px;
+
+  box-shadow: 0px 8px 17px #931f2d;
   color: $white;
   width: 185px;
   height: 48px;
+  background: #f3344b;
   border: none;
-  box-shadow: 0px 8px 17px #931f2d;
+  border-radius: 50px;
   z-index: 89999;
-  outline: none;
   transition: 1s;
 
   &:hover {
     cursor: pointer;
     background: #ff5d70;
     transition: 1s;
+  }
+
+  &_disabled {
+    background-color: gray;
+    color: white;
+    box-shadow: none;
+
+    &:hover {
+      background-color: gray;
+      color: white;
+      box-shadow: none;
+    }
   }
 }

@@ -1,29 +1,39 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { ConditionsBlockComponent } from './components/conditions-block/conditions-block.component';
-import { GroupsViewComponent } from './components/groups-view/groups-view.component';
+import { ConditionsComponent } from './components/conditions/conditions.component';
+import { GroupsComponent } from './components/groups/groups.component';
 import { AdaptationChildrenComponent } from './components/adaptation-children/adaptation-children.component';
-import { BidBodyMainPageComponent } from './components/bid-body-main-page/bid-body-main-page.component';
-import { BlockBigQuotesComponent } from './components/block-big-quotes/block-big-quotes.component';
-import { BidFormIntroductionComponent } from './components/bid-form-introduction/bid-form-introduction.component';
+import { FeedbackBodyComponent } from './components/feedback-body/feedback-body.component';
+import { BigQuotesComponent } from './components/big-quotes/big-quotes.component';
+import { FeedbackComponent } from './components/feedback/feedback.component';
 import { ButtonModule } from '../ui/button';
-import { CarouselModule } from 'ngx-owl-carousel-o';
-import { SliderMainPageComponent } from './components/slider-main-page/slider-main-page.component';
-import { FormsModule } from '@angular/forms';
+
+import { SliderComponent } from './components/slider/slider.component';
+import { InputModule } from '../ui/input';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    ConditionsBlockComponent,
-    GroupsViewComponent,
+    ConditionsComponent,
+    GroupsComponent,
     AdaptationChildrenComponent,
-    BidBodyMainPageComponent,
-    BlockBigQuotesComponent,
-    BidFormIntroductionComponent,
-    SliderMainPageComponent,
+    FeedbackBodyComponent,
+    BigQuotesComponent,
+    FeedbackComponent,
+    SliderComponent,
   ],
-  imports: [CommonModule, HomeRoutingModule, ButtonModule, CarouselModule, FormsModule],
+  imports: [
+    CommonModule,
+    HomeRoutingModule,
+    ButtonModule,
+    CarouselModule,
+    ReactiveFormsModule,
+    InputModule,
+  ],
 })
 export class HomeModule {}

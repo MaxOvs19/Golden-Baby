@@ -42,7 +42,6 @@
     font-weight: 800;
     font-size: 20px;
     line-height: 24px;
-
     color: #ffbf43;
   }
 
@@ -71,10 +70,11 @@
     }
 
     &__description {
+      padding-left: 80px;
+
       p {
         line-height: 18px;
       }
-      padding-left: 80px;
     }
 
     &__end {
@@ -93,6 +93,7 @@
       color: $white;
       box-shadow: 0px 8px 14px #bb6413;
       transition: ease 0.5s;
+
       &:hover {
         transition: ease 0.5s;
         cursor: pointer;
@@ -108,7 +109,7 @@
     display: flex;
     flex-direction: column;
     width: 740px;
-    box-shadow: 0px 4px 28px rgba(0, 0, 0, 0.1);
+    box-shadow: $base-box-shadow;
     border-radius: 10px;
     margin: 20px auto 10px;
 
@@ -125,10 +126,11 @@
       margin-bottom: 5px;
     }
   }
+
   app-button {
     display: flex;
     justify-content: flex-end;
-    margin: -22px 62px 37px 0;
+    margin: 22px 62px 37px 0;
   }
 
   .super-hero-prise {

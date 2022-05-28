@@ -7,6 +7,13 @@
   margin-bottom: 40px;
   position: relative;
   display: flex;
+  flex-direction: row;
   flex-grow: 1;
   justify-content: space-around;
+}
+
+@mixin flex-col-centr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

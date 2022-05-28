@@ -1,41 +1,32 @@
 @import 'variables';
 @import 'layout';
 
-* {
-  position: relative;
-}
-
-.adaptation-block {
+.adaptation {
+  margin-top: 100px;
   background: url(~/src/assets/img/Adaptation-fonImg.png) no-repeat;
   background-position-y: 48%;
   background-position-x: -25px;
 
-  .adaptation-block,
-  &__title-box {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__title-box {
-    align-items: center;
+  &__title {
+    @include flex-col-centr();
+    width: 596px;
     margin: 0 auto;
     padding-top: 100px;
 
     h2 {
       font-family: $forum-font;
-      font-size: 24px;
-      line-height: 26px;
-    }
 
-    p {
-      width: 596px;
-      height: 56px;
+      line-height: 26px;
     }
   }
 
-  &__box-top,
-  &__box-midl,
-  &__box-bottom {
+  &_bottom {
+    justify-content: flex-start !important;
+  }
+
+  &_top,
+  &_midl,
+  &_bottom {
     @include Adaptation-box();
   }
 
@@ -44,54 +35,46 @@
     text-align: center;
   }
 
-  &__paragraph-box {
-    margin-top: 93px;
-    display: inherit;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .paragraph-item {
+  &__item {
     display: inherit;
     height: 155px;
     width: 400px;
 
-    &__text-box {
+    &_text {
       width: 277px;
-      height: 88px;
     }
 
-    &__first {
+    &_first {
       padding-top: 65px;
       background: url(~/src/assets/svg/fon-adaptation1.svg) no-repeat;
       background-position: right 30px bottom 25px;
     }
 
-    &__second {
+    &_second {
       margin: 0 0 0 215px;
       background: url(~/src/assets/svg/fon-adaptation2.svg) no-repeat;
       padding-top: 40px;
       background-position: top 11px left 48px;
     }
 
-    &__third {
+    &_third {
       margin: 122px 0 0 0;
       padding-top: 50px;
       background: url(~/src/assets/svg/fon-adaptation3.svg) no-repeat;
       background-position: top 16px left 31px;
     }
 
-    &__fourth {
+    &_fourth {
       margin: -63px 0px 0px 167px;
       padding: 34px 0px 0px 0px;
       background: url(~/src/assets/svg/fon-adaptation4.svg) no-repeat;
       background-position: top right 55px;
     }
 
-    .number-box {
-      display: flex;
+    .number {
+      @include flex-col-centr();
+
       justify-content: center;
-      align-items: center;
       margin-right: 10px;
       margin-top: -33px;
 

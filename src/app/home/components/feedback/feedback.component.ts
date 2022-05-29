@@ -16,6 +16,10 @@ export class FeedbackComponent implements OnInit, OnDestroy {
 
   public feedbackForm!: FormGroup;
 
+  // constructor should be used only by DI(Dependency Injection)
+  // (Without DI) fb = new FormBuilder() !!!!!!!!!BAD PRACTICE!!!!!!
+  // (DI) private readonly formBuilder: FormBuilder !!!!!!!!!BEST PRACTICE!!!!!!
+
   constructor(private readonly formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
@@ -46,7 +50,49 @@ export class FeedbackComponent implements OnInit, OnDestroy {
       checkbox: [false, [Validators.requiredTrue]],
     });
 
+    /*
+
+      ....
+ 
+      group.valueChanges = new Observable((observer) => {
+        ....
+      })
+
+      group.parentName.valueChanges = new Observable((observer) => {
+        ....
+
+        observer = ()=> {} , () => {}, () => {},
+
+        observer.next('.....');
+      })
+
+    */
+
     this.onFormValuesChanges();
+
+    // this.feedbackForm.controls['parentName']?.valueChanges
+    //   .pipe(
+    //     tap((name: string) => {
+    //       console.log('name: ', name);
+    //     }),
+    //   )
+    //   .subscribe();
+
+    // this.feedbackForm.controls['parentName2']?.valueChanges
+    //   .pipe(
+    //     tap((name: string) => {
+    //       console.log('name: ', name);
+    //     }),
+    //   )
+    //   .subscribe();
+
+    // this.feedbackForm.valueChanges
+    //   .pipe(
+    //     tap((values) => {
+    //       console.log('values: ', values);
+    //     }),
+    //   )
+    //   .subscribe();
   }
 
   private onFormValuesChanges(): void {

@@ -56,21 +56,7 @@ export class FeedbackComponent implements OnInit, OnDestroy {
         tap(() => {
           console.log('HELLO!');
         }),
-        // map((values: IFeedback) => {
-        //   return values.phone;
-        // } ),
-        // tap((phone) => {
-
-        // }),
-        // tap(({ phone, email, parentName }) => {
-        //   // console.log('values: ', values);
-        //   console.log('phone: ', phone);
-        //   console.log('email: ', email);
-        //   console.log('parentName: ', parentName);
-        // }),
-
         takeUntil(this._alive$),
-        // untilDestroy(this)
       )
       .subscribe();
   }

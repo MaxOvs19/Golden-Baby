@@ -1,13 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-schedule',
   templateUrl: './schedule.component.html',
   styleUrls: ['./schedule.component.scss'],
 })
-export class ScheduleComponent implements OnInit {
-  user: any; // eslint => warning (yellow)
-  constructor() {} // eslint => error (red)
-
-  ngOnInit(): void {} // eslint => error (red)
+export class ScheduleComponent {
+  constructor() {}
 }

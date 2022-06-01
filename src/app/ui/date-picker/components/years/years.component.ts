@@ -1,11 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-years',
@@ -13,7 +6,7 @@ import {
   styleUrls: ['./years.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class YearsComponent implements OnInit {
+export class YearsComponent {
   @Input()
   public years: number[] = [];
 
@@ -25,8 +18,6 @@ export class YearsComponent implements OnInit {
 
   @Output()
   public yearSelected = new EventEmitter<number>();
-
-  ngOnInit(): void {}
 
   public setYear(year: number): void {
     this.yearSelected.emit(year);

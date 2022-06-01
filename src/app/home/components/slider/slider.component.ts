@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
@@ -6,10 +6,9 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss'],
 })
-export class SliderComponent implements OnInit {
+export class SliderComponent {
   constructor() {}
 
-  ngOnInit(): void {}
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,

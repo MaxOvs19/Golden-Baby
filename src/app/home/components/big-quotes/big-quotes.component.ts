@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-big-quotes',
   templateUrl: './big-quotes.component.html',
   styleUrls: ['./big-quotes.component.scss'],
 })
-export class BigQuotesComponent implements OnInit {
+export class BigQuotesComponent {
   @Input()
   titleBlock!: string;
 
@@ -16,6 +16,4 @@ export class BigQuotesComponent implements OnInit {
   paragraphSecond!: string;
 
   constructor() {}
-
-  ngOnInit(): void {}
 }

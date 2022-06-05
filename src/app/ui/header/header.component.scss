@@ -1,5 +1,7 @@
 @import 'variables';
 @import 'layout';
+@import 'colors';
+@import 'typography';
 
 .header {
   display: flex;
@@ -49,6 +51,16 @@
         font-weight: bold;
         font-size: 16px;
         line-height: 20px;
+      }
+
+      h3 {
+        font-size: 12px;
+        line-height: 15px;
+      }
+
+      h4 {
+        font-size: 10px;
+        line-height: 12px;
       }
     }
 

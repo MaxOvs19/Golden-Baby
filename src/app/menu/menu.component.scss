@@ -46,7 +46,7 @@
           justify-content: center;
           flex-grow: 1;
 
-          border: $border-menu;
+          border: $border-base;
           border-top: none;
           border-right: none;
 
@@ -76,7 +76,7 @@
           width: 83px;
           height: 35px;
           font-size: $size;
-          border-right: $border-menu;
+          border-right: $border-base;
 
           font-weight: 600;
         }
@@ -90,7 +90,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: $border-menu;
+        border-bottom: $border-base;
       }
     }
 

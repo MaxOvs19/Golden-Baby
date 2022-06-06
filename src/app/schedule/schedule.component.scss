@@ -1,5 +1,7 @@
 @import 'variables';
 @import 'layout';
+@import 'colors';
+@import 'typography';
 
 * {
   position: relative;
@@ -37,7 +39,7 @@
           display: inherit;
           flex-direction: column;
           align-items: flex-end;
-          border-right: $border-routine-table;
+          border-right: $border-base;
 
           span {
             font-weight: 600;
@@ -49,7 +51,7 @@
 
         p,
         span {
-          border-bottom: $border-routine-table;
+          border-bottom: $border-base;
         }
 
         &__description {

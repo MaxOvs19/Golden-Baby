@@ -1,6 +1,6 @@
 .container {
-  width: 1180px;
-  margin: 0 auto;
+  width: 1180px !important;
+  margin: 0 auto !important;
 }
 
 @mixin flex-col-center {

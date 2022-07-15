@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, forwardRef, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -14,18 +15,14 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   ],
 })
 export class InputComponent implements ControlValueAccessor {
-  private _onChange(value: any) {}
-
-  private _value: any;
+  @Input()
+  public set value(val: any) {
+    this._value = val;
+    this._onChange(this._value);
+  }
 
   public get value() {
     return this._value;
-  }
-
-  @Input()
-  public set value(val) {
-    this._value = val;
-    this._onChange(this._value);
   }
 
   @Input()
@@ -37,6 +34,17 @@ export class InputComponent implements ControlValueAccessor {
   @Input()
   public formControlName!: string;
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  private _onChange: (value: any) => void = () => {};
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  private _onTouched: (value: any) => void = () => {};
+  private _value: any;
+
+  // constructor
+  // ngHooks (ngOnInit, ngOnChanges , ...)
+  // public fns
+  // private fns
+
   public writeValue(value: any): void {
     this.placeholder = value;
   }
@@ -46,6 +54,6 @@ export class InputComponent implements ControlValueAccessor {
   }
 
   public registerOnTouched(fn: any): void {
-    // throw new Error('Method not implemented.');
+    this._onTouched = fn;
   }
 }

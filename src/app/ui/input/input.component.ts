@@ -1,5 +1,5 @@
-import { Component, forwardRef, Input, OnInit } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Component, forwardRef, Input } from '@angular/core';
+import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -13,7 +13,23 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     },
   ],
 })
-export class InputComponent implements OnInit, ControlValueAccessor {
+export class InputComponent implements ControlValueAccessor {
+  constructor() {}
+
+  private _onChange(value: any) {}
+
+  private _value: any;
+
+  get value() {
+    return this._value;
+  }
+
+  @Input()
+  set value(val) {
+    this._value = val;
+    this._onChange(this._value);
+  }
+
   @Input()
   placeholder!: string;
 
@@ -23,17 +39,15 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   @Input()
   formControlName!: string;
 
-  constructor() {}
+  writeValue(value: any): void {
+    this.placeholder = value;
+  }
 
-  writeValue(obj: any): void {
-    throw new Error('Method not implemented.');
-  }
   registerOnChange(fn: any): void {
-    throw new Error('Method not implemented.');
+    this._onChange = fn;
   }
+
   registerOnTouched(fn: any): void {
     // throw new Error('Method not implemented.');
   }
-
-  ngOnInit(): void {}
 }

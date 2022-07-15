@@ -1,51 +1,47 @@
-<div class="main-page">
-  <div class="container">
-    <div class="main-page-body">
-      <!-- Entranse selection -->
-      <div class="entranse-block">
-        <div class="offer-box">
-          <div class="offer-box__text-elem">
-            <img src="assets/img/Vector-Img.png" alt="" class="img-vector-first" />
-            <h2>Золотой малыш</h2>
-            <h4>Интелектуальный детский сад</h4>
-            <p>В нашем саду вы найдете комплексный и экологичный подход в воспитании ребенка.</p>
-            <app-button title="Оставить заявку"></app-button>
-            <img src="assets/img/coronaImg.png" alt="" class="btn-application_coron" />
-          </div>
-        </div>
-
-        <div class="img-box">
-          <img src="assets/img/Img-entrance-main-page.png" alt="" />
+<div class="container">
+  <div class="main-page">
+    <div class="entranse">
+      <div class="offer-box">
+        <div class="offer-box__text">
+          <img src="assets/img/Vector-Img.png" class="offer-box__vector" />
+          <h2>Золотой малыш</h2>
+          <h4>Интелектуальный детский сад</h4>
+          <p>В нашем саду вы найдете комплексный и экологичный подход в воспитании ребенка.</p>
+          <app-button title="Оставить заявку"></app-button>
+          <img src="assets/img/corona-img.png" class="btn_corona" />
         </div>
       </div>
 
-      <!-- Parent selection -->
-      <div class="parent-info-block">
-        <app-block-big-quotes
-          titleBlock="Дорогие родители!"
-          paragraphFirst="Детский сад “Золотой малыш” - это закрытое премиальное клубное пространство, на
+      <div class="img-box">
+        <img src="assets/img/Img-entrance-main-page.png" />
+      </div>
+    </div>
+
+    <div class="parent-info">
+      <app-big-quotes
+        titleBlock="Дорогие родители!"
+        paragraphFirst="Детский сад “Золотой малыш” - это закрытое премиальное клубное пространство, на
           площадке которого осуществяется не просто базовый присмотр и уход. Это комфортная,
           здоровая, веселая, душевная среда игрового времяпровождения детей."
-          paragraphSecond="Наша задача, что бы ваши дети выросли здоровыми, счастливыми и успешными. Ребенок, его
+        paragraphSecond="Наша задача, что бы ваши дети выросли здоровыми, счастливыми и успешными. Ребенок, его
           свобода, любознательность, интерес к познанию - главные ценности нашего проекта. Мы
           создали Детский сад, который нравится не только родителям, но и детям!"
-        >
-        </app-block-big-quotes>
+      >
+      </app-big-quotes>
 
-        <img src="assets/img/Vector-Img-Block2.png" alt="" class="img-vector-second" />
-      </div>
-      <app-conditions-block></app-conditions-block>
-      <app-groups-view></app-groups-view>
+      <img src="assets/img/Vector-Img-Block2.png" class="parent-info__vector" />
     </div>
+    <app-conditions></app-conditions>
+    <app-groups></app-groups>
   </div>
-
-  <app-slider></app-slider>
-
-  <div class="container">
-    <div class="main-page-body">
-      <app-adaptation-children></app-adaptation-children>
-    </div>
-  </div>
-  <!-- <app-years></app-years> -->
-  <app-feedback-body></app-feedback-body>
 </div>
+
+<app-slider></app-slider>
+
+<div class="container">
+  <div class="main-page-body">
+    <app-adaptation-children></app-adaptation-children>
+  </div>
+</div>
+
+<app-feedback-body></app-feedback-body>

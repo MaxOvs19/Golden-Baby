@@ -1,5 +1,7 @@
 @import 'variables';
 @import 'layout';
+@import 'colors';
+@import 'typography';
 
 .menu-page {
   &__logo {
@@ -14,12 +16,11 @@
     align-items: center;
   }
 
-
   &__name-week {
     margin: 25px 0 20px 124px;
   }
 
-  &__menu-box {
+  &__menu {
     position: relative;
     display: flex;
     width: 934px;
@@ -30,7 +31,7 @@
     font-size: $size;
     margin: 0 auto;
 
-    .body-box {
+    .body {
       display: flex;
       margin: 50px;
       flex-direction: column;
@@ -45,7 +46,7 @@
           justify-content: center;
           flex-grow: 1;
 
-          border: $border-menu;
+          border: $border-base;
           border-top: none;
           border-right: none;
 
@@ -75,7 +76,7 @@
           width: 83px;
           height: 35px;
           font-size: $size;
-          border-right: $border-menu;
+          border-right: $border-base;
 
           font-weight: 600;
         }
@@ -89,7 +90,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: $border-menu;
+        border-bottom: $border-base;
       }
     }
 

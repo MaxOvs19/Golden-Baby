@@ -1,10 +1,17 @@
-@import 'variables';
 @import 'layout';
+@import 'colors';
+
+* {
+  font-size: 12px;
+  line-height: 15px;
+  color: $white;
+}
 
 .contanier {
   width: 1180px;
   margin: 0 auto;
 }
+
 .footer {
   display: flex;
   flex: 0 0 auto;
@@ -32,7 +39,7 @@
         padding-bottom: 88px;
       }
 
-      .text-box {
+      .text {
         &__img-logo {
           width: 56%;
           margin-top: -35px;
@@ -42,16 +49,6 @@
           font-size: 9px;
           line-height: 9px;
         }
-      }
-
-      p,
-      li,
-      h3,
-      h4 {
-        font-size: 12px;
-        line-height: 15px;
-
-        color: $white;
       }
 
       h4 {
@@ -67,6 +64,7 @@
         color: $white;
         text-decoration: none;
         transition: 0.5ms;
+
         &:hover {
           transition: 0.5ms;
           text-decoration: underline;
@@ -74,7 +72,7 @@
         }
       }
 
-      .img-box {
+      .img {
         img {
           padding: 4px;
         }

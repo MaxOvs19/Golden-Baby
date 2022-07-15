@@ -1,17 +1,15 @@
 @import 'variables';
 @import 'layout';
+@import 'colors';
+@import 'typography';
 
-.daily-routine {
-  .baby-boy-routine,
-  .giants-routine,
-  .letterlend-routine {
-    position: relative;
-    &__link-return {
-      margin-top: 45px;
-      font-size: 12px;
-    }
+* {
+  position: relative;
+}
 
-    &__text-block {
+.schedule {
+  .schedule-body {
+    &__text {
       h2 {
         font-size: 18px;
         margin-left: 100px;
@@ -25,15 +23,12 @@
         margin: 20px 0 100px 100px;
         background: $white;
 
-        &__giants,
-        &__letterlend {
-          height: 834px;
-        }
         .routine-body {
           display: flex;
           width: 834px;
           padding: 59px 50px 51px 50px;
           flex-grow: 1;
+
           &__giants,
           &__letterlend {
             padding: 59px 50px 72px 50px;
@@ -44,9 +39,9 @@
           display: inherit;
           flex-direction: column;
           align-items: flex-end;
-          border-right: $border-routine-table;
+          border-right: $border-base;
 
-          h3 {
+          span {
             font-weight: 600;
             font-size: $size;
             line-height: 17px;
@@ -55,8 +50,8 @@
         }
 
         p,
-        h3 {
-          border-bottom: $border-routine-table;
+        span {
+          border-bottom: $border-base;
         }
 
         &__description {
@@ -73,25 +68,30 @@
       }
     }
 
-    &__title-box {
+    &__title {
       h1 {
         font-family: $forum-font;
         font-size: 30px;
       }
+
       text-align: center;
       margin-top: 27px;
       margin-bottom: 106px;
     }
+
     &__fon {
-      position: absolute;
-      bottom: -35px;
-      left: -118px;
-      z-index: -1;
-    }
-  }
-  .giants-routine {
-    &__fon {
-      left: -104px;
+      &_first,
+      &_second,
+      &_third {
+        position: absolute;
+        bottom: -35px;
+        left: -118px;
+        z-index: -1;
+      }
+
+      &_second {
+        left: -104px;
+      }
     }
   }
 }

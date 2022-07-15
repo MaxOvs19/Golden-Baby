@@ -1,6 +1,8 @@
-@import 'variables';
+@import 'layout';
+@import 'colors';
+@import 'typography';
 
-.slider-box {
+.slider {
   position: relative;
   background: url(~/src/assets/img/fon-slider.png);
   height: 700px;

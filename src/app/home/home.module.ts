@@ -5,11 +5,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { ConditionsBlockComponent } from './components/conditions-block/conditions-block.component';
-import { GroupsViewComponent } from './components/groups-view/groups-view.component';
+import { ConditionsComponent } from './components/conditions/conditions.component';
+import { GroupsComponent } from './components/groups/groups.component';
 import { AdaptationChildrenComponent } from './components/adaptation-children/adaptation-children.component';
 import { FeedbackBodyComponent } from './components/feedback-body/feedback-body.component';
-import { BlockBigQuotesComponent } from './components/block-big-quotes/block-big-quotes.component';
+import { BigQuotesComponent } from './components/big-quotes/big-quotes.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { ButtonModule } from '../ui/button';
 
@@ -19,11 +19,11 @@ import { InputModule } from '../ui/input';
 @NgModule({
   declarations: [
     HomeComponent,
-    ConditionsBlockComponent,
-    GroupsViewComponent,
+    ConditionsComponent,
+    GroupsComponent,
     AdaptationChildrenComponent,
     FeedbackBodyComponent,
-    BlockBigQuotesComponent,
+    BigQuotesComponent,
     FeedbackComponent,
     SliderComponent,
   ],

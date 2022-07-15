@@ -1,120 +1,39 @@
-@import 'variables';
 @import 'layout';
+@import 'colors';
+@import 'typography';
 
-.adaptation-block {
+.adaptation {
   background: url(~/src/assets/img/Adaptation-fonImg.png) no-repeat;
   background-position-y: 48%;
   background-position-x: -25px;
+  text-align: center;
 
-  .adaptation-block,
-  &__title-box {
-    display: flex;
-    flex-direction: column;
-  }
+  &__title {
+    @include flex-col-center();
 
-  &__title-box {
-    align-items: center;
-    margin: 0 auto;
-    padding-top: 100px;
+    margin: 85px auto 100px auto;
+
+    width: 650px;
 
     h2 {
       font-family: $forum-font;
       font-size: 24px;
       line-height: 26px;
-    }
-
-    p {
-      width: 596px;
-      height: 56px;
+      margin-bottom: 15px;
     }
   }
 
-  p {
-    line-height: 17px;
-    text-align: center;
+  .bottom {
+    justify-content: flex-start !important;
   }
 
-  &__paragraph-box {
-    margin-top: 93px;
-    display: inherit;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  &__box-top {
-    margin-bottom: 100px;
-  }
-
-  &__box-top,
-  &__box-midl,
-  &__box-botm {
+  &_align {
+    margin-bottom: 40px;
     position: relative;
     display: flex;
+    flex-direction: row;
     flex-grow: 1;
     justify-content: space-around;
-
-    .paragraph-item {
-      display: inherit;
-      height: 155px;
-      width: 400px;
-
-      &__first {
-        margin: 75px 0 0 0;
-      }
-
-      &__second {
-        margin: 0 0 0 215px;
-      }
-
-      &__third {
-        margin: 96px 0 0 0;
-      }
-
-      &__fourth {
-        margin: 71px 43% 0 0;
-      }
-
-      .number-box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 10px;
-        margin-top: -33px;
-
-        background: #8649ef;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-
-        &__first {
-          background: rgba(134, 73, 239, 0.2);
-        }
-
-        &__second {
-          background: rgba(134, 73, 239, 0.4);
-        }
-
-        &__third {
-          background: rgba(134, 73, 239, 0.65);
-        }
-
-        &__fourth {
-          background: rgba(134, 73, 239, 0.8);
-        }
-
-        h3 {
-          font-size: 24px;
-          line-height: 29px;
-          text-align: center;
-          color: $white;
-        }
-      }
-
-      &__text-box {
-        width: 277px;
-        height: 88px;
-      }
-    }
   }
 
   &__arrow {
@@ -132,20 +51,93 @@
 
     &_third {
       position: absolute;
-      top: 47px;
-      right: 443px;
+      top: 104px;
+      right: 465px;
     }
 
     &_fourth {
       position: absolute;
-      top: 199px;
-      right: 290px;
+      top: 275px;
+      right: 314px;
     }
 
     &_fifth {
       position: absolute;
-      top: 149px;
-      left: 210px;
+      left: 258px;
+      top: 58px;
+    }
+  }
+}
+
+.item {
+  display: inherit;
+  height: 155px;
+  width: 400px;
+
+  &_text {
+    width: 277px;
+  }
+
+  &_first {
+    padding-top: 65px;
+    background: url(~/src/assets/svg/fon-adaptation1.svg) no-repeat;
+    background-position: right 30px bottom 25px;
+  }
+
+  &_second {
+    margin: 0px 0 0 175px;
+    background: url(~/src/assets/svg/fon-adaptation2.svg) no-repeat;
+    padding-top: 40px;
+    background-position: top 11px left 48px;
+  }
+
+  &_third {
+    margin: 122px 0 0 0;
+    padding-top: 50px;
+    background: url(~/src/assets/svg/fon-adaptation3.svg) no-repeat;
+    background-position: top 16px left 31px;
+  }
+
+  &_fourth {
+    margin: -63px 0px 0px 167px;
+    padding: 34px 0px 0px 0px;
+    background: url(~/src/assets/svg/fon-adaptation4.svg) no-repeat;
+    background-position: top right 55px;
+  }
+
+  .number {
+    @include flex-col-center();
+
+    justify-content: center;
+    margin-right: 10px;
+    margin-top: -33px;
+
+    background: $violet;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+
+    h3 {
+      font-size: 24px;
+      line-height: 29px;
+      text-align: center;
+      color: $white;
+    }
+
+    &__first {
+      background: rgba(134, 73, 239, 0.2);
+    }
+
+    &__second {
+      background: rgba(134, 73, 239, 0.4);
+    }
+
+    &__third {
+      background: rgba(134, 73, 239, 0.65);
+    }
+
+    &__fourth {
+      background: rgba(134, 73, 239, 0.8);
     }
   }
 }

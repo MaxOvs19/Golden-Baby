@@ -3,9 +3,11 @@
   <h4>Заполните форму и мы Вам перезвоним</h4>
 
   <div class="feedback-body__form-field">
-    <app-input
-      type="text"
+    <!--
+            type="text"
       placeholder="Ваше имя*"
+     -->
+    <app-input
       formControlName="parentName"
       [class.feedback-body__form-field_input-error]="
         control('parentName')?.invalid && control('parentName')?.dirty

@@ -12,7 +12,7 @@ export class FeedbackComponent implements OnInit {
 
   constructor(private readonly formBuilder: FormBuilder) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.createForm();
   }
 
@@ -27,11 +27,43 @@ export class FeedbackComponent implements OnInit {
 
   private createForm(): void {
     this.feedbackForm = this.formBuilder.group({
-      parentName: ['', [Validators.required]],
+      parentName: this.formBuilder.control({
+        value: '1',
+        placeholder: 'xxx',
+        disabled: true,
+      }),
       childName: ['', [Validators.required]],
       phone: ['', [Validators.pattern(/^\+7\s\d{3}\s\d{3}\s\d{2}\s\d{2}$/), Validators.required]],
       comment: [''],
       checkbox: [false, [Validators.requiredTrue]],
     });
+
+    // this.feedbackForm.valueChanges.subscribe((values) => {
+    //   console.log(values);
+    // });
+
+    const foo = (values: any) => {
+      console.log(values);
+    };
+
+    // $s = [1] => tap - x4 => v % 2 !== 0 => ...
+
+    // this.feedbackForm.controls['childName']?.valueChanges
+    //   .pipe(
+    //     tap((values: any) => {
+    //       console.log(values);
+    //     }),
+    //     tap((values: any) => {
+    //       console.log(values);
+    //     }),
+    //     tap((values: any) => {
+    //       console.log(values);
+    //     }),
+    //     tap((values: any) => {
+    //       console.log(values);
+    //     }),
+    //     takeWhile((v) => Number(v) % 2 !== 0),
+    //   )
+    //   .subscribe();
   }
 }

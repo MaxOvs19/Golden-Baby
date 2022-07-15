@@ -25,20 +25,16 @@ export class InputComponent implements ControlValueAccessor {
     return this._value;
   }
 
-  @Input()
-  public placeholder!: string;
-
-  @Input()
-  public type!: string;
-
-  @Input()
-  public formControlName!: string;
+  public get disabled() {
+    return this._disabled;
+  }
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   private _onChange: (value: any) => void = () => {};
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   private _onTouched: (value: any) => void = () => {};
   private _value: any;
+  private _disabled = false;
 
   // constructor
   // ngHooks (ngOnInit, ngOnChanges , ...)
@@ -46,7 +42,8 @@ export class InputComponent implements ControlValueAccessor {
   // private fns
 
   public writeValue(value: any): void {
-    this.placeholder = value;
+    debugger;
+    this.value = value;
   }
 
   public registerOnChange(fn: any): void {
@@ -55,5 +52,9 @@ export class InputComponent implements ControlValueAccessor {
 
   public registerOnTouched(fn: any): void {
     this._onTouched = fn;
+  }
+
+  public setDisabledState?(isDisabled: boolean): void {
+    this._disabled = isDisabled;
   }
 }

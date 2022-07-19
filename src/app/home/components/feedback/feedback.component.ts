@@ -20,6 +20,10 @@ export class FeedbackComponent implements OnInit {
     return this.feedbackForm?.get(name) || null;
   }
 
+  public invalid(name: string): boolean {
+    return !!(this.feedbackForm?.get(name)?.invalid && this.feedbackForm?.get(name)?.dirty);
+  }
+
   public submit(): void {
     const feedback: IFeedback = this.feedbackForm.getRawValue();
     console.log(feedback);
@@ -27,13 +31,7 @@ export class FeedbackComponent implements OnInit {
 
   private createForm(): void {
     this.feedbackForm = this.formBuilder.group({
-      // parentName: this.formBuilder.control({
-      //   value: '1',
-      //   placeholder: 'xxx',
-      //   disabled: true,
-      // }),
-
-      parentName: ['', []],
+      parentName: ['', [Validators.required, Validators.pattern(/^[а-я\s]+$/i)]],
       childName: ['', [Validators.required]],
       phone: ['', [Validators.pattern(/^\+7\s\d{3}\s\d{3}\s\d{2}\s\d{2}$/), Validators.required]],
       comment: [''],
@@ -41,11 +39,7 @@ export class FeedbackComponent implements OnInit {
     });
 
     this.feedbackForm.valueChanges.subscribe((values) => {
-      console.log(values);
+      console.log(' this.feedbackForm.errors: ', this.feedbackForm.errors);
     });
-
-    // const foo = (values: any) => {
-    //   console.log(values);
-    // };
   }
 }

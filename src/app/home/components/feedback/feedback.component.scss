@@ -75,10 +75,14 @@
     }
 
     &_input-error {
-      border-bottom: 1px solid red !important;
+      ::ng-deep {
+        input {
+          border-bottom: 1px solid red !important;
+        }
 
-      &::placeholder {
-        color: red;
+        ::placeholder {
+          color: red;
+        }
       }
     }
   }

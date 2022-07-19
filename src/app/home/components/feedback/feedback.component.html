@@ -6,12 +6,10 @@
     <app-input
       placeholder="Ваше имя*"
       formControlName="parentName"
-      [class.feedback-body__form-field_input-error]="
-        control('parentName')?.invalid && control('parentName')?.dirty
-      "
+      [class.feedback-body__form-field_input-error]="invalid('parentName')"
     ></app-input>
 
-    <ng-container *ngIf="control('parentName')?.invalid && control('parentName')?.dirty">
+    <ng-container *ngIf="invalid('parentName')">
       <div>
         <span class="feedback-body__form-field_error"> Это поле необъодимо заполнить </span>
       </div>
@@ -23,9 +21,7 @@
       type="text"
       placeholder="Имя ребенка"
       formControlName="childName"
-      [class.feedback-body__form-field_input-error]="
-        control('childName')?.invalid && control('childName')?.dirty
-      "
+      [class.feedback-body__form-field_input-error]="invalid('childName')"
     />
   </div>
 
@@ -38,12 +34,10 @@
       type="text"
       placeholder="+7 000 000 00 00*"
       formControlName="phone"
-      [class.feedback-body__form-field_input-error]="
-        control('phone')?.invalid && control('phone')?.dirty
-      "
+      [class.feedback-body__form-field_input-error]="invalid('phone')"
     />
 
-    <ng-container *ngIf="control('phone')?.invalid && control('phone')?.dirty">
+    <ng-container *ngIf="invalid('phone')">
       <div>
         <span class="feedback-body__form-field_error">
           Телефон должен иметь формат +7 000 000 00 00

@@ -3,11 +3,8 @@ import { Component, forwardRef, Input } from '@angular/core';
 import {
   AbstractControl,
   ControlValueAccessor,
-  NG_VALIDATORS,
   NG_VALUE_ACCESSOR,
   ValidationErrors,
-  Validator,
-  Validators,
 } from '@angular/forms';
 
 @Component({
@@ -20,19 +17,14 @@ import {
       useExisting: forwardRef(() => InputComponent),
       multi: true,
     },
-
-    {
-      provide: NG_VALIDATORS,
-      useExisting: InputComponent,
-      multi: true,
-    },
   ],
 })
-export class InputComponent implements ControlValueAccessor, Validator {
+export class InputComponent implements ControlValueAccessor {
   @Input()
-  public set value(val: any) {
-    this._value = val;
+  public set value(value: any) {
+    this._value = value;
     this._onChange(this._value);
+    this._onTouched(this._value);
   }
 
   public get value() {
@@ -42,40 +34,23 @@ export class InputComponent implements ControlValueAccessor, Validator {
   @Input()
   public placeholder = '';
 
-  public get disabled() {
-    return this._disabled;
-  }
-
-  public get Placeholder() {
-    return this.placeholder;
-  }
-
-  // validate(control: AbstractControl): { [key: string]: any } | null {
-  //   if (control.invalid && control.dirty) {
-  //     return { parent: true };
-  //   }
-  //   return null;
-  // }
-
-  public validate(control: AbstractControl): ValidationErrors | null {
-    if (control.invalid && control.dirty) {
-      return { parent: true };
-    }
-    return null;
-  }
-
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   private _onChange: (value: any) => void = () => {};
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  private _onValidationChange: () => void = () => {};
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   private _onTouched: (value: any) => void = () => {};
   private _value: any;
   private _disabled = false;
-  // private _placeholder = '';
+  private _invalid = false;
 
-  // constructor
-  // ngHooks (ngOnInit, ngOnChanges , ...)
-  // public fns
-  // private fns
+  public get disabled() {
+    return this._disabled;
+  }
+
+  public registerOnValidatorChange?(fn: () => void): void {
+    this._onValidationChange = fn;
+  }
 
   public writeValue(value: any): void {
     this.value = value;

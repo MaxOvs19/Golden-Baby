@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './feedback-body.component.html',
   styleUrls: ['./feedback-body.component.scss'],
 })
-export class FeedbackBodyComponent {
-  constructor() {}
-}
+export class FeedbackBodyComponent {}

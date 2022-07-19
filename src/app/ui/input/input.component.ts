@@ -1,6 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, forwardRef, Input } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  AbstractControl,
+  ControlValueAccessor,
+  NG_VALIDATORS,
+  NG_VALUE_ACCESSOR,
+  ValidationErrors,
+  Validator,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -12,9 +20,15 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
       useExisting: forwardRef(() => InputComponent),
       multi: true,
     },
+
+    {
+      provide: NG_VALIDATORS,
+      useExisting: InputComponent,
+      multi: true,
+    },
   ],
 })
-export class InputComponent implements ControlValueAccessor {
+export class InputComponent implements ControlValueAccessor, Validator {
   @Input()
   public set value(val: any) {
     this._value = val;
@@ -25,8 +39,29 @@ export class InputComponent implements ControlValueAccessor {
     return this._value;
   }
 
+  @Input()
+  public placeholder = '';
+
   public get disabled() {
     return this._disabled;
+  }
+
+  public get Placeholder() {
+    return this.placeholder;
+  }
+
+  // validate(control: AbstractControl): { [key: string]: any } | null {
+  //   if (control.invalid && control.dirty) {
+  //     return { parent: true };
+  //   }
+  //   return null;
+  // }
+
+  public validate(control: AbstractControl): ValidationErrors | null {
+    if (control.invalid && control.dirty) {
+      return { parent: true };
+    }
+    return null;
   }
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
@@ -35,6 +70,7 @@ export class InputComponent implements ControlValueAccessor {
   private _onTouched: (value: any) => void = () => {};
   private _value: any;
   private _disabled = false;
+  // private _placeholder = '';
 
   // constructor
   // ngHooks (ngOnInit, ngOnChanges , ...)
@@ -42,7 +78,6 @@ export class InputComponent implements ControlValueAccessor {
   // private fns
 
   public writeValue(value: any): void {
-    debugger;
     this.value = value;
   }
 
@@ -56,5 +91,9 @@ export class InputComponent implements ControlValueAccessor {
 
   public setDisabledState?(isDisabled: boolean): void {
     this._disabled = isDisabled;
+  }
+
+  public setplaceholder(_placeholder: string): void {
+    this.placeholder = _placeholder;
   }
 }

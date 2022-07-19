@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './adaptation-children.component.html',
   styleUrls: ['./adaptation-children.component.scss'],
 })
-export class AdaptationChildrenComponent {
-  constructor() {}
-}
+export class AdaptationChildrenComponent {}

@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './schedule.component.html',
   styleUrls: ['./schedule.component.scss'],
 })
-export class ScheduleComponent {
-  constructor() {}
-}
+export class ScheduleComponent {}

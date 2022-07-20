@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class PricesComponent {
   constructor(private router: Router) {}
 
-  goShcedule() {
+  public goShcedule() {
     this.router.navigate(['/schedule']);
   }
 }

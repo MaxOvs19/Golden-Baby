@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './link-return.component.html',
   styleUrls: ['./link-return.component.scss'],
 })
-export class LinkReturnComponent {
-  constructor() {}
-}
+export class LinkReturnComponent {}

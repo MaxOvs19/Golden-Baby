@@ -7,9 +7,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./slider.component.scss'],
 })
 export class SliderComponent {
-  constructor() {}
-
-  customOptions: OwlOptions = {
+  public customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,
     touchDrag: false,

@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'numberToWeekDay',
 })
 export class NumberToWeekDayPipe implements PipeTransform {
-  transform(value: number): Date {
+  public transform(value: number): Date {
     const date = new Date();
     date.setDate(value + 1);
 

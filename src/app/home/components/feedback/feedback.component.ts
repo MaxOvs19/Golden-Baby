@@ -37,9 +37,5 @@ export class FeedbackComponent implements OnInit {
       comment: [''],
       checkbox: [false, [Validators.requiredTrue]],
     });
-
-    this.feedbackForm.valueChanges.subscribe((values) => {
-      console.log(' this.feedbackForm.errors: ', this.feedbackForm.errors);
-    });
   }
 }

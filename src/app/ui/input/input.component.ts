@@ -1,11 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, forwardRef, Input } from '@angular/core';
-import {
-  AbstractControl,
-  ControlValueAccessor,
-  NG_VALUE_ACCESSOR,
-  ValidationErrors,
-} from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -42,7 +37,6 @@ export class InputComponent implements ControlValueAccessor {
   private _onTouched: (value: any) => void = () => {};
   private _value: any;
   private _disabled = false;
-  private _invalid = false;
 
   public get disabled() {
     return this._disabled;

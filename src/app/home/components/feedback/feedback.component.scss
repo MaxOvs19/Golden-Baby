@@ -2,7 +2,7 @@
 @import 'colors';
 @import 'typography';
 
-.feedback-body {
+.feedback {
   width: 416px;
   height: 558px;
   margin: 120px auto 0 auto;
@@ -72,6 +72,10 @@
     &_error {
       color: red;
       font-size: 10px;
+    }
+
+    div {
+      margin-bottom: -19px;
     }
 
     &_input-error {

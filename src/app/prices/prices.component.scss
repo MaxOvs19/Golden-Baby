@@ -3,6 +3,12 @@
 @import 'colors';
 @import 'typography';
 
+// Apply styles to current host-element (app-prices)
+// Doesn't work with "encapsulation: ViewEncapsulation.None"
+// :host {
+//   background-color: red;
+// }
+
 .price-page {
   position: relative;
 
@@ -133,10 +139,9 @@
     display: flex;
     justify-content: flex-end;
     margin: 22px 62px 37px 0;
-    ::ng-deep {
-      button {
-        font-size: 12px;
-      }
+
+    button.btn {
+      font-size: 12px;
     }
   }
 
@@ -154,3 +159,7 @@
     }
   }
 }
+
+// .foo {
+//   border: 1px solid black;
+// }

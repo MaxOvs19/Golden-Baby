@@ -9,6 +9,7 @@ q:before,
 q:after {
   content: '';
 }
+
 a {
   &:hover {
     cursor: pointer;
@@ -27,3 +28,12 @@ a {
   line-height: 17px;
   text-decoration: none;
 }
+
+// div {
+//   border: 67px solid black;
+// }
+
+// BAD PRACTICE
+// app-prices {
+//   border: 10px solid black;
+// }

@@ -8,6 +8,7 @@ import { ArrowRightComponent } from './icons/arrow-right/arrow-right.component';
 import { YearsComponent } from './components/years/years.component';
 import { CalendarComponent } from './icons/calendar/calendar.component';
 import { NumberToWeekDayPipe } from './pipes/number-to-week-day.pipe';
+import { InputModule } from '../input';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { NumberToWeekDayPipe } from './pipes/number-to-week-day.pipe';
     CalendarComponent,
     NumberToWeekDayPipe,
   ],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, InputModule],
   exports: [DatePickerComponent],
 })
 export class DatePickerModule {}

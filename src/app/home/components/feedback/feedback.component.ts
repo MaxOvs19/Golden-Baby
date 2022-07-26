@@ -33,6 +33,7 @@ export class FeedbackComponent implements OnInit {
     this.feedbackForm = this.formBuilder.group({
       parentName: ['', [Validators.required, Validators.pattern(/^[а-я\s]+$/i)]],
       childName: ['', [Validators.required]],
+      // birthday: ['', [Validators.required]],
       phone: ['', [Validators.pattern(/^\+7\s\d{3}\s\d{3}\s\d{2}\s\d{2}$/), Validators.required]],
       comment: [''],
       checkbox: [false, [Validators.requiredTrue]],

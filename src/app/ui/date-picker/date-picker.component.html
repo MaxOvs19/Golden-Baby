@@ -1,7 +1,11 @@
 <div class="date-picker">
   <div class="date-picker__header">
     <div class="date" (click)="show()">
-      <app-input class="date__control" [value]="dateForInput$ | async | date: format"></app-input>
+      <app-input
+        class="date__control"
+        [value]="dateForInput$ | async | date: format"
+        placeholder="Дата рождения ребенка"
+      ></app-input>
       <app-calendar class="date__icon"></app-calendar>
     </div>
   </div>

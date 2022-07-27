@@ -1,33 +1,31 @@
 .date-picker {
-  position: absolute;
-  z-index: 99999999999;
-
   &__body {
+    position: absolute;
     border-radius: 0 0 4px 4px;
+    z-index: 99999999999;
   }
 }
 
 .date {
   position: relative;
   display: flex;
+
   align-items: center;
-  max-width: 225px;
 
   &__control {
     position: relative;
     z-index: 999999999;
-    width: 225px;
-    max-width: 225px;
-    padding: 10px 35px 10px 8px;
-    border-radius: 4px;
-    border: 1px solid #dfe3e9;
     outline: none;
     cursor: pointer;
   }
 
   &__icon {
     position: absolute;
-    right: 10px;
+    background-image: url(./icons/calendar/date-picker-calendar.png);
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    bottom: 5px;
     z-index: 999999999999;
     cursor: pointer;
   }
@@ -41,7 +39,6 @@
   &_active {
     position: fixed;
     background: none;
-
     top: 0;
     left: 0;
     width: 100%;

@@ -27,6 +27,15 @@ export class InputComponent implements ControlValueAccessor {
   }
 
   @Input()
+  public set disabled(disabled: boolean) {
+    this._disabled = disabled;
+  }
+
+  public get disabled() {
+    return this._disabled;
+  }
+
+  @Input()
   public placeholder = '';
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
@@ -37,10 +46,6 @@ export class InputComponent implements ControlValueAccessor {
   private _onTouched: (value: any) => void = () => {};
   private _value: any;
   private _disabled = false;
-
-  public get disabled() {
-    return this._disabled;
-  }
 
   public registerOnValidatorChange?(fn: () => void): void {
     this._onValidationChange = fn;

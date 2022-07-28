@@ -79,7 +79,8 @@ export class DatePickerComponent implements OnInit, ControlValueAccessor {
 
   private readonly _length = 35;
 
-  private _onChange!: (value: any) => void;
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  private _onChange: (value: any) => void = (v: any) => {};
 
   public get date$(): Observable<Date> {
     return this._date$.asObservable();

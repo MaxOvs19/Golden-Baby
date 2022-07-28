@@ -13,4 +13,8 @@ input {
   border-bottom: 1px solid #bebebe;
   margin-top: 30px;
   outline: none;
+
+  &:disabled {
+    background-color: $white;
+  }
 }

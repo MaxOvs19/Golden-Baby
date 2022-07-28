@@ -3,10 +3,11 @@
     <div class="date" (click)="show()">
       <app-input
         class="date__control"
-        [value]="dateForInput$ | async | date: format"
         placeholder="Дата рождения ребенка"
+        [disabled]="true"
+        [value]="dateForInput$ | async | date: format"
       ></app-input>
-      <app-calendar class="date__icon"></app-calendar>
+      <app-calendar></app-calendar>
     </div>
   </div>
   <div class="date-picker__body">

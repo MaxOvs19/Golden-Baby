@@ -23,6 +23,16 @@ const routes: Routes = [
     path: 'map',
     loadChildren: () => import('./map/map.module').then((map) => map.MapModule),
   },
+  // TODO: remove before production
+  {
+    path: 'lessons',
+    loadChildren: () =>
+      import('./lessons/lessons.module').then(({ LessonsModule }) => LessonsModule),
+  },
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
 
 @NgModule({

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { tap } from 'rxjs';
 import { IFeedback } from '../../interfaces/feedback.interface';
 
 @Component({
@@ -38,5 +39,13 @@ export class FeedbackComponent implements OnInit {
       comment: [''],
       checkbox: [false, [Validators.requiredTrue]],
     });
+
+    // this.feedbackForm.valueChanges
+    //   .pipe(
+    //     tap(({ parentName }) => { // Object destruction
+    //       console.log('parentName: ', parentName);
+    //     }),
+    //   )
+    //   .subscribe();
   }
 }

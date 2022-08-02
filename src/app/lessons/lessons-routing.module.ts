@@ -10,6 +10,14 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'observer',
+    loadChildren: () =>
+      import('./pages/observer-hw/observer-hw.module').then(
+        ({ ObserverHWModule }) => ObserverHWModule,
+      ),
+  },
+
+  {
     path: '',
     pathMatch: 'full',
     redirectTo: 'observables',

@@ -8,13 +8,12 @@ import { HomeComponent } from './home.component';
 import { ConditionsComponent } from './components/conditions/conditions.component';
 import { GroupsComponent } from './components/groups/groups.component';
 import { AdaptationChildrenComponent } from './components/adaptation-children/adaptation-children.component';
-import { FeedbackBodyComponent } from './components/feedback-body/feedback-body.component';
 import { BigQuotesComponent } from './components/big-quotes/big-quotes.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { ButtonModule } from '../ui/button';
-
 import { SliderComponent } from './components/slider/slider.component';
 import { InputModule } from '../ui/input';
+import { DatePickerModule } from '../ui/date-picker';
 
 @NgModule({
   declarations: [
@@ -22,7 +21,6 @@ import { InputModule } from '../ui/input';
     ConditionsComponent,
     GroupsComponent,
     AdaptationChildrenComponent,
-    FeedbackBodyComponent,
     BigQuotesComponent,
     FeedbackComponent,
     SliderComponent,
@@ -34,6 +32,7 @@ import { InputModule } from '../ui/input';
     CarouselModule,
     ReactiveFormsModule,
     InputModule,
+    DatePickerModule,
   ],
 })
 export class HomeModule {}

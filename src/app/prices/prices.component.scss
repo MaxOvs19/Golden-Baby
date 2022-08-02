@@ -133,6 +133,11 @@
     display: flex;
     justify-content: flex-end;
     margin: 22px 62px 37px 0;
+    ::ng-deep {
+      button {
+        font-size: 12px;
+      }
+    }
   }
 
   .super-hero-prise {

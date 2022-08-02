@@ -8,10 +8,10 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 })
 export class YearsComponent {
   @Input()
-  public years: number[] = [];
+  public years: number[] | null = [];
 
   @Input()
-  public skip = 0;
+  public skip: number | null = 0;
 
   @Input()
   public length = 35;

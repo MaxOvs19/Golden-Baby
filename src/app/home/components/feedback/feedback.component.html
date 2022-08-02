@@ -1,60 +1,51 @@
-<form class="feedback-body" [formGroup]="feedbackForm">
+<form class="feedback" [formGroup]="feedbackForm">
   <h2>Оставьте заявку</h2>
   <h4>Заполните форму и мы Вам перезвоним</h4>
 
-  <div class="feedback-body__form-field">
+  <div class="feedback__form-field">
     <app-input
-      type="text"
       placeholder="Ваше имя*"
       formControlName="parentName"
-      [class.feedback-body__form-field_input-error]="
-        control('parentName')?.invalid && control('parentName')?.dirty
-      "
+      [class.feedback__form-field_input-error]="invalid('parentName')"
     ></app-input>
 
-    <ng-container *ngIf="control('parentName')?.invalid && control('parentName')?.dirty">
+    <ng-container *ngIf="invalid('parentName')">
       <div>
-        <span class="feedback-body__form-field_error"> Это поле необъодимо заполнить </span>
+        <span class="feedback__form-field_error"> Это поле необъодимо заполнить </span>
       </div>
     </ng-container>
   </div>
 
-  <div class="feedback-body__form-field">
-    <input
-      type="text"
+  <div class="feedback__form-field">
+    <app-input
       placeholder="Имя ребенка"
       formControlName="childName"
-      [class.feedback-body__form-field_input-error]="
-        control('childName')?.invalid && control('childName')?.dirty
-      "
-    />
+      [class.feedback__form-field_input-error]="invalid('childName')"
+    ></app-input>
   </div>
 
-  <div class="feedback-body__form-field">
-    <input type="date" placeholder="Дата рождения ребенка" name="date" />
+  <div class="feedback__form-field">
+    <app-date-picker formControlName="birthday" [minYear]="2020" [maxYear]="2030"></app-date-picker>
   </div>
 
-  <div class="feedback-body__form-field">
-    <input
-      type="text"
+  <div class="feedback__form-field">
+    <app-input
       placeholder="+7 000 000 00 00*"
       formControlName="phone"
-      [class.feedback-body__form-field_input-error]="
-        control('phone')?.invalid && control('phone')?.dirty
-      "
-    />
+      [class.feedback__form-field_input-error]="invalid('phone')"
+    ></app-input>
 
-    <ng-container *ngIf="control('phone')?.invalid && control('phone')?.dirty">
+    <ng-container *ngIf="invalid('phone')">
       <div>
-        <span class="feedback-body__form-field_error">
+        <span class="feedback__form-field_error">
           Телефон должен иметь формат +7 000 000 00 00
         </span>
       </div>
     </ng-container>
   </div>
 
-  <div class="feedback-body__form-field">
-    <input type="text" placeholder="Комментарий" name="comment" />
+  <div class="feedback__form-field">
+    <app-input placeholder="Комментарий" formControlName="comment"></app-input>
   </div>
 
   <div class="checkbox">
@@ -64,7 +55,7 @@
     </label>
   </div>
 
-  <div class="feedback-body__button">
+  <div class="feedback__button">
     <app-button
       title="Отправить"
       [disabled]="!!feedbackForm?.invalid"

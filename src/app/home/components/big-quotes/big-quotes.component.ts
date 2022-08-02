@@ -7,13 +7,11 @@ import { Component, Input } from '@angular/core';
 })
 export class BigQuotesComponent {
   @Input()
-  titleBlock!: string;
+  public titleBlock!: string;
 
   @Input()
-  paragraphFirst!: string;
+  public paragraphFirst!: string;
 
   @Input()
-  paragraphSecond!: string;
-
-  constructor() {}
+  public paragraphSecond!: string;
 }

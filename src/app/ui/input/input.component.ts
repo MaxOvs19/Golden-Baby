@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, forwardRef, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -15,23 +16,58 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class InputComponent implements ControlValueAccessor {
   @Input()
-  placeholder!: string;
+  public set value(value: any) {
+    this._value = value;
+    this._onChange(this._value);
+    this._onTouched(this._value);
+  }
+
+  public get value() {
+    return this._value;
+  }
 
   @Input()
-  type!: string;
+  public set disabled(disabled: boolean) {
+    this._disabled = disabled;
+  }
+
+  public get disabled() {
+    return this._disabled;
+  }
 
   @Input()
-  formControlName!: string;
+  public placeholder = '';
 
-  constructor() {}
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  private _onChange: (value: any) => void = () => {};
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  private _onValidationChange: () => void = () => {};
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  private _onTouched: (value: any) => void = () => {};
+  private _value: any;
+  private _disabled = false;
 
-  writeValue(obj: any): void {
-    throw new Error('Method not implemented.');
+  public registerOnValidatorChange?(fn: () => void): void {
+    this._onValidationChange = fn;
   }
-  registerOnChange(fn: any): void {
-    throw new Error('Method not implemented.');
+
+  public writeValue(value: any): void {
+    this.value = value;
   }
-  registerOnTouched(fn: any): void {
-    // throw new Error('Method not implemented.');
+
+  public registerOnChange(fn: any): void {
+    this._onChange = fn;
+  }
+
+  public registerOnTouched(fn: any): void {
+    this._onTouched = fn;
+  }
+
+  public setDisabledState?(isDisabled: boolean): void {
+    this._disabled = isDisabled;
+  }
+
+  public setplaceholder(_placeholder: string): void {
+    this.placeholder = _placeholder;
   }
 }

@@ -1,5 +1,7 @@
-<div class="years">
-  <ng-container *ngFor="let year of years | slice: skip:skip + length">
-    <div class="years__item" (click)="setYear(year)">{{ year }}</div>
-  </ng-container>
-</div>
+<ng-container *ngIf="years && skip !== null">
+  <div class="years">
+    <ng-container *ngFor="let year of years | slice: skip:skip + length">
+      <div class="years__item" (click)="setYear(year)">{{ year }}</div>
+    </ng-container>
+  </div>
+</ng-container>

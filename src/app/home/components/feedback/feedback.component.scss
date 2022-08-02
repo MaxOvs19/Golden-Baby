@@ -2,7 +2,7 @@
 @import 'colors';
 @import 'typography';
 
-.feedback-body {
+.feedback {
   width: 416px;
   height: 558px;
   margin: 120px auto 0 auto;
@@ -74,11 +74,19 @@
       font-size: 10px;
     }
 
-    &_input-error {
-      border-bottom: 1px solid red !important;
+    div {
+      margin-bottom: -19px;
+    }
 
-      &::placeholder {
-        color: red;
+    &_input-error {
+      ::ng-deep {
+        input {
+          border-bottom: 1px solid red !important;
+        }
+
+        ::placeholder {
+          color: red;
+        }
       }
     }
   }

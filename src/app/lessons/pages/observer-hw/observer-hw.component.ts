@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ar } from 'date-fns/locale';
 import { from, take, tap } from 'rxjs';
 
 @Component({
@@ -13,8 +14,8 @@ export class ObserverHWComponent implements OnInit {
     // this.exemple3();
     // this.exemple4();
     // this.exemple5();
-    // this.exemple6();
-    this.exemple7();
+    this.exemple6();
+    // this.exemple7();
   }
   /*
         const stream$ = from(['this', ',' , 1 , 'is', 'a', 55 , 'simple', 'string', '!']);
@@ -23,7 +24,7 @@ export class ObserverHWComponent implements OnInit {
         со своим потоком. Если поток выше не подходит - подобрать свой для проверки
         Во входном потоке:
 
-        6. Выбрать только слова (*)
+
         8. Прервать поток при нахождении первого выражения полиндрома "АННА, 6556" (*)
     */
 
@@ -84,23 +85,31 @@ export class ObserverHWComponent implements OnInit {
     console.log(newArr);
   }
 
-  // public exemple6(): void {
-  //   const arr = ['see', 'c', 'test', 'a'];
+  // 6. Выбрать только слова (*)
+  public exemple6(): void {
+    const arr = [1, 2, 3, 'hello', 'a', '!'];
 
-  //   const newArr = arr.filter((word) => {
-  //     return word.length > 1;
-  //   });
-  //   console.log(newArr);
-  // }
+    // const newArr = arr
+    //   .map((word) => {
+    //     return word.toString();
+    //   })
+    //   .filter((word) => {
+    //     return word.replace(/\d/g, '');
+    //   });
 
-  /*7. Выбрать только те строки, которые начинаются/заканчиваются на xx*/
-  public exemple7(): void {
-    const arr = ['this', 'xxstring', 'set', 'angular', 'doorxx'];
-
-    const newArr = arr.filter((word) => {
-      return word.match(/[xx]/);
-    });
+    const newArr = arr.filter((value) => typeof value === 'string');
 
     console.log(newArr);
   }
+
+  /*7. Выбрать только те строки, которые начинаются/заканчиваются на xx*/
+  // public exemple7(): void {
+  //   const arr = ['this', 'xxstring', 'set', 'angular', 'doorxx'];
+
+  //   const newArr = arr.filter((word) => {
+  //     return word.match(/[xx]/);
+  //   });
+
+  //   console.log(newArr);
+  // }
 }

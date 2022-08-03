@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ar } from 'date-fns/locale';
 import { from, take, tap } from 'rxjs';
 
 @Component({
   selector: 'app-oserver-hw',
   templateUrl: './observer-hw.component.html',
+  // template: ` <h2>HELLO!</h2> `,
+  // template: '<h2>HELLO!</h2>' + '<div style='' >841908129801294</div>',
   styleUrls: ['./observer-hw.component.scss'],
 })
 export class ObserverHWComponent implements OnInit {
@@ -14,8 +15,8 @@ export class ObserverHWComponent implements OnInit {
     // this.exemple3();
     // this.exemple4();
     // this.exemple5();
-    this.exemple6();
-    // this.exemple7();
+    // this.exemple6();
+    this.exemple7();
   }
   /*
         const stream$ = from(['this', ',' , 1 , 'is', 'a', 55 , 'simple', 'string', '!']);
@@ -32,11 +33,16 @@ export class ObserverHWComponent implements OnInit {
   public exemple1(): void {
     const arr = ['this', 'string', 'love', 'angular'];
 
-    console.log(arr);
+    console.log('Before: ', arr);
 
     const newArr = arr.map((value) => {
-      return value[0].toUpperCase() + value.slice(1);
+      const capitalizedString = `${value[0].toUpperCase()} ${value.slice(1)}`;
+      // console.log('capitalizedString: ', capitalizedString);
+
+      return capitalizedString;
     });
+
+    console.log('After: ', newArr);
   }
 
   //2. Сделать первые буквы слов длинее 1го символа заглавными (capitalize)
@@ -56,10 +62,10 @@ export class ObserverHWComponent implements OnInit {
 
   //3. Заменить все гласные буквы на $
   public exemple3(): void {
-    const arr = ['this', 'string', 'love', 'angular'];
+    const arr = ['thIs', 'string', 'lovE', 'angular'];
 
     const newArr = arr.map((word) => {
-      return word.replace(/[aeiouy]/g, '$');
+      return word.replace(/[aeiouy]/gi, '$');
     });
 
     console.log(newArr);
@@ -67,10 +73,12 @@ export class ObserverHWComponent implements OnInit {
 
   //4. Перед каждой буквой s вставить строку 777
   public exemple4(): void {
-    const arr = ['this', 'string', 'set', 'angular'];
+    const arr = ['sthis', 'string', 'set', 'angular'];
+
+    console.log(arr);
 
     const newArr = arr.map((word) => {
-      return word.replace(/[s]/g, '777s');
+      return word.replace(/s/g, '777s');
     });
 
     console.log(newArr);
@@ -78,9 +86,19 @@ export class ObserverHWComponent implements OnInit {
 
   //5. Выбрать только цифры
   public exemple5(): void {
-    const arr = ['this', 1, 'string', 2, 'love', 55, 'angular'];
+    const arr = ['this', 1, 'string', 2, 'love', 55, 'angular', '1'];
 
-    const newArr = arr.filter(Number);
+    console.log(arr);
+
+    const newArr = arr
+      .filter((item) => {
+        return item.toString().match(/[0-9]/g);
+      })
+      .map((item) => {
+        // return +item;
+        return Number(item); // best way
+        // return parseInt(item.toString(), 10);
+      });
 
     console.log(newArr);
   }
@@ -103,13 +121,21 @@ export class ObserverHWComponent implements OnInit {
   }
 
   /*7. Выбрать только те строки, которые начинаются/заканчиваются на xx*/
-  // public exemple7(): void {
-  //   const arr = ['this', 'xxstring', 'set', 'angular', 'doorxx'];
+  public exemple7(): void {
+    const arr = ['xxthis', 'xstring', 'setx', 'angxxular', 'doorxx'];
 
-  //   const newArr = arr.filter((word) => {
-  //     return word.match(/[xx]/);
-  //   });
+    console.log(arr);
 
-  //   console.log(newArr);
-  // }
+    const newArr = arr.filter((word) => {
+      // return word.match(/[xx]/); Incorrect !
+      // return word.match(/^xx/); // startWith
+      // return word.match(/xx$/); // endWith
+      // return word.startsWith('xx');
+      // return word.endsWith('xx');
+      // return word.startsWith('xx') || word.endsWith('xx');
+      return word.match(/(^xx)|(xx$)/);
+    });
+
+    console.log(newArr);
+  }
 }

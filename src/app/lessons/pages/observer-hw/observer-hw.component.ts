@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { from, take, tap } from 'rxjs';
 
 @Component({
   selector: 'app-oserver-hw',
@@ -16,7 +15,8 @@ export class ObserverHWComponent implements OnInit {
     // this.exemple4();
     // this.exemple5();
     // this.exemple6();
-    this.exemple7();
+    // this.exemple7();
+    this.example8();
   }
   /*
         const stream$ = from(['this', ',' , 1 , 'is', 'a', 55 , 'simple', 'string', '!']);
@@ -137,5 +137,38 @@ export class ObserverHWComponent implements OnInit {
     });
 
     console.log(newArr);
+  }
+
+  public example8(): void {
+    const arr = [1, 2, 5, 8];
+    // const arr: any[] = [
+    //   {
+    //     value: 6,
+    //   },
+    //   1,
+    //   2,
+    // ];
+    // let summ = 0;
+
+    // arr.forEach((item) => {
+    //   summ += item;
+    // });
+    // console.log('summ: ', summ);
+
+    // const summ = arr.reduce((acc, current) => {
+    //   return acc + current;
+    // });
+
+    // const summ = arr.reduce((acc, current) => {
+    //   // debugger;
+    //   return current.value ? current.value + acc : acc + current;
+    // }, 0);
+
+    const evensCount = arr.reduce((acc, current) => {
+      return current % 2 === 0 ? acc + 1 : acc;
+    }, 0);
+
+    // console.log('summ: ', summ);
+    console.log('evens count: ', evensCount);
   }
 }

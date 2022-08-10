@@ -16,34 +16,45 @@
       <p>1 Неделя</p>
     </div>
 
-    <div class="menu-page__menu">
-      <img src="assets/img/menu-cook-first.png" class="cook__right-top" />
-      <img src="assets/img/menu-cook-third.png" class="cook__left-top" />
+    <mat-tab-group class="menu-page__menu " >
+      <!-- <img src="assets/img/menu-cook-first.png" class="cook__right-top" />
+      <img src="assets/img/menu-cook-third.png" class="cook__left-top" /> -->
 
-      <div class="body">
-        <div class="body__title">
-          <div class="body__title_link body__title_link_first"></div>
-          <div class="body__title_link">
-            <a>Понедельник</a>
-          </div>
+      <mat-tab label="Понедельник" class="body body__title body__title_link" >
+        <ng-container *ngFor="let item of Week">
+            <div class="body__content" >
+              <div class="body__text">
+                <h3>Завтрак</h3>
+                {{item.breakfast}}
+              </div>
 
-          <div class="body__title_link">
-            <a>Вторник</a>
-          </div>
+              <div class="body__text">
+                <h3>Перекус</h3>
+                <p>Фрукты</p>
+              </div>
 
-          <div class="body__title_link">
-            <a>Среда</a>
-          </div>
+              <div class="body__text">
+                <h3>Обед</h3>
+                <p>
+                  Свекла отворная, щи на мясном бульоне, ежики (мясо курицы) в томатном соусе, салат из
+                  свежых овощей, компот из свежих фруктов, хлеб ржаной
+                </p>
+              </div>
 
-          <div class="body__title_link">
-            <a>Четверг</a>
-          </div>
+              <div class="body__text">
+                <h3>Полдник</h3>
+                <p>Печенье, ряженка</p>
+              </div>
 
-          <div class="body__title_link">
-            <a>Пятница</a>
-          </div>
-        </div>
+              <div class="body__text">
+                <h3>Ужин</h3>
+                <p>Рыбная котлета, гречка, огурец</p>
+              </div>
+            </div>
+        </ng-container>
 
+      </mat-tab>
+      <mat-tab label="Вторник" class="body body__title body__title_link">
         <div class="body__content">
           <div class="body__text">
             <h3>Завтрак</h3>
@@ -73,8 +84,132 @@
             <p>Рыбная котлета, гречка, огурец</p>
           </div>
         </div>
+      </mat-tab>
+      <mat-tab label="Среда" class="body body__title body__title_link">
+        <div class="body__content">
+          <div class="body__text">
+            <h3>Завтрак</h3>
+            <p>Каша манная молочная, чай, хлеб пшеничный с малом и сыром</p>
+          </div>
+
+          <div class="body__text">
+            <h3>Перекус</h3>
+            <p>Фрукты</p>
+          </div>
+
+          <div class="body__text">
+            <h3>Обед</h3>
+            <p>
+              Свекла отворная, щи на мясном бульоне, ежики (мясо курицы) в томатном соусе, салат из
+              свежых овощей, компот из свежих фруктов, хлеб ржаной
+            </p>
+          </div>
+
+          <div class="body__text">
+            <h3>Полдник</h3>
+            <p>Печенье, ряженка</p>
+          </div>
+
+          <div class="body__text">
+            <h3>Ужин</h3>
+            <p>Рыбная котлета, гречка, огурец</p>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Четверг" class="body body__title body__title_link">
+        <div class="body__content">
+          <div class="body__text">
+            <h3>Завтрак</h3>
+            <p>Каша манная молочная, чай, хлеб пшеничный с малом и сыром</p>
+          </div>
+
+          <div class="body__text">
+            <h3>Перекус</h3>
+            <p>Фрукты</p>
+          </div>
+
+          <div class="body__text">
+            <h3>Обед</h3>
+            <p>
+              Свекла отворная, щи на мясном бульоне, ежики (мясо курицы) в томатном соусе, салат из
+              свежых овощей, компот из свежих фруктов, хлеб ржаной
+            </p>
+          </div>
+
+          <div class="body__text">
+            <h3>Полдник</h3>
+            <p>Печенье, ряженка</p>
+          </div>
+
+          <div class="body__text">
+            <h3>Ужин</h3>
+            <p>Рыбная котлета, гречка, огурец</p>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Пятница" class="body body__title body__title_link">
+        <div class="body__content">
+          <div class="body__text">
+            <h3>Завтрак</h3>
+            <p>Каша манная молочная, чай, хлеб пшеничный с малом и сыром</p>
+          </div>
+
+          <div class="body__text">
+            <h3>Перекус</h3>
+            <p>Фрукты</p>
+          </div>
+
+          <div class="body__text">
+            <h3>Обед</h3>
+            <p>
+              Свекла отворная, щи на мясном бульоне, ежики (мясо курицы) в томатном соусе, салат из
+              свежых овощей, компот из свежих фруктов, хлеб ржаной
+            </p>
+          </div>
+
+          <div class="body__text">
+            <h3>Полдник</h3>
+            <p>Печенье, ряженка</p>
+          </div>
+
+          <div class="body__text">
+            <h3>Ужин</h3>
+            <p>Рыбная котлета, гречка, огурец</p>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+
+
+    <!-- <div class="menu-page__menu">
+
+      <div class="body">
+        <div class="body__title">
+          <div class="body__title_link body__title_link_first"></div>
+          <div class="body__title_link">
+            <a>Понедельник</a>
+          </div>
+
+          <div class="body__title_link">
+            <a>Вторник</a>
+          </div>
+
+          <div class="body__title_link">
+            <a>Среда</a>
+          </div>
+
+          <div class="body__title_link">
+            <a>Четверг</a>
+          </div>
+
+          <div class="body__title_link">
+            <a>Пятница</a>
+          </div>
+        </div>
+
+
       </div>
-    </div>
+    </div> -->
 
     <div class="menu-page__name-week">
       <p>2 Неделя</p>
@@ -141,3 +276,4 @@
     </div>
   </div>
 </div>
+

@@ -23,18 +23,22 @@
   &__menu {
     position: relative;
     display: flex;
-    width: 934px;
-    height: 336px;
+
+    width: 835px;
+
+
     background: $white;
     box-shadow: $base-box-shadow;
     border-radius: 10px;
     font-size: $size;
+
     margin: 0 auto;
+    padding: 50px;
 
     .body {
-      display: flex;
-      margin: 50px;
-      flex-direction: column;
+      display: flex ;
+      margin: 50px ;
+      flex-direction: column ;
 
       &__title {
         display: flex;
@@ -125,3 +129,15 @@
     }
   }
 }
+
+::ng-deep{
+  .mat-tab-labels{
+    width: 140px;
+height: 40px;
+
+    .tab{
+      height: 40px;
+    }
+  }
+}
+

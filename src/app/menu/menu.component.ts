@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Imenu } from 'src/app/menu/interfaces/menu.interface';
+import { Imenu } from './interfaces/menu.interface';
 
 @Component({
   selector: 'app-menu',
@@ -8,15 +8,28 @@ import { Imenu } from 'src/app/menu/interfaces/menu.interface';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
-  public ngOnInit(): void {
-    for (const i of this.Week) {
-      console.log(i);
-    }
-  }
-
-  public Week: Imenu[] = [
+  // Mock
+  public week: Imenu[] = [
     {
-      dayWeek: 'Monday',
+      dayWeek: 'Понедельник',
+      breakfast: '1 Каша манная молочная, чай, хлеб пшеничный с малом и сыром',
+      snack: 'Фрукты',
+      lunch:
+        'Свекла отворная, щи на мясном бульоне, ежики (мясо курицы) в томатном соусе, салат из свежых овощей, компот из свежих фруктов, хлеб ржаной',
+      afternoonTea: 'Печенье, ряженка',
+      dinner: 'Рыбная котлета, гречка, огурец',
+    },
+    {
+      dayWeek: 'Вторник',
+      breakfast: '2 Каша манная молочная, чай, хлеб пшеничный с малом и сыром',
+      snack: 'Фрукты',
+      lunch:
+        'Свекла отворная, щи на мясном бульоне, ежики (мясо курицы) в томатном соусе, салат из свежых овощей, компот из свежих фруктов, хлеб ржаной',
+      afternoonTea: 'Печенье, ряженка',
+      dinner: 'Рыбная котлета, гречка, огурец',
+    },
+    {
+      dayWeek: 'Среда',
       breakfast: 'Каша манная молочная, чай, хлеб пшеничный с малом и сыром',
       snack: 'Фрукты',
       lunch:
@@ -25,7 +38,7 @@ export class MenuComponent implements OnInit {
       dinner: 'Рыбная котлета, гречка, огурец',
     },
     {
-      dayWeek: 'Tuesday',
+      dayWeek: 'Четверг',
       breakfast: 'Каша манная молочная, чай, хлеб пшеничный с малом и сыром',
       snack: 'Фрукты',
       lunch:
@@ -34,25 +47,7 @@ export class MenuComponent implements OnInit {
       dinner: 'Рыбная котлета, гречка, огурец',
     },
     {
-      dayWeek: 'Wednesday',
-      breakfast: 'Каша манная молочная, чай, хлеб пшеничный с малом и сыром',
-      snack: 'Фрукты',
-      lunch:
-        'Свекла отворная, щи на мясном бульоне, ежики (мясо курицы) в томатном соусе, салат из свежых овощей, компот из свежих фруктов, хлеб ржаной',
-      afternoonTea: 'Печенье, ряженка',
-      dinner: 'Рыбная котлета, гречка, огурец',
-    },
-    {
-      dayWeek: 'Thursday',
-      breakfast: 'Каша манная молочная, чай, хлеб пшеничный с малом и сыром',
-      snack: 'Фрукты',
-      lunch:
-        'Свекла отворная, щи на мясном бульоне, ежики (мясо курицы) в томатном соусе, салат из свежых овощей, компот из свежих фруктов, хлеб ржаной',
-      afternoonTea: 'Печенье, ряженка',
-      dinner: 'Рыбная котлета, гречка, огурец',
-    },
-    {
-      dayWeek: 'Friday',
+      dayWeek: 'Пятница',
       breakfast: 'Каша манная молочная, чай, хлеб пшеничный с малом и сыром',
       snack: 'Фрукты',
       lunch:
@@ -61,4 +56,10 @@ export class MenuComponent implements OnInit {
       dinner: 'Рыбная котлета, гречка, огурец',
     },
   ];
+
+  public values = [1, 2, 3, 4, 5];
+
+  public ngOnInit(): void {
+    console.log(this.week);
+  }
 }

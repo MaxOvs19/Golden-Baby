@@ -14,14 +14,62 @@
 
     <div class="menu-page__name-week">
       <p>1 Неделя</p>
+
+      <!-- <mat-tab-group class="menu-page__menu">
+        <ng-container *ngFor="let item of values; let index = index">
+          <mat-tab [label]="'' + index">{{ item }}</mat-tab>
+        </ng-container>
+      </mat-tab-group> -->
+
+      <!-- <ng-container
+        *ngFor="
+          let value of values;
+          let index = index;
+          let even = even;
+          let last = last;
+          let first = first
+        "
+      >
+        <div foo class="foo foo__ddsd fofoo__ddsd_d mbsmadasd" data-jszdl="123213213">
+          [{{ index }}]: {{ value }} (even: {{ even }}) (last: {{ last }})
+        </div>
+      </ng-container> -->
+
+      <mat-tab-group class="menu-page__menu">
+        <ng-container *ngFor="let dayOfWeek of week">
+          <mat-tab [label]="dayOfWeek.dayWeek">
+            <div class="body__text">
+              <h3>Завтрак</h3>
+              <p>{{ dayOfWeek.breakfast }}</p>
+            </div>
+            <div class="body__text">
+              <h3>snack</h3>
+              <p>{{ dayOfWeek.snack }}</p>
+            </div>
+            <div class="body__text">
+              <h3>lunch</h3>
+              <p>{{ dayOfWeek.lunch }}</p>
+            </div>
+            <div class="body__text">
+              <h3>afternoonTea</h3>
+              <p>{{ dayOfWeek.afternoonTea }}</p>
+            </div>
+            <div class="body__text">
+              <h3>dinner</h3>
+              <p>{{ dayOfWeek.dinner }}</p>
+            </div>
+          </mat-tab>
+        </ng-container>
+      </mat-tab-group>
     </div>
 
-    <mat-tab-group class="menu-page__menu">
-      <!-- <img src="assets/img/menu-cook-first.png" class="cook__right-top" />
+    <!-- <img src="assets/img/menu-cook-first.png" class="cook__right-top" />
       <img src="assets/img/menu-cook-third.png" class="cook__left-top" /> -->
 
+    <!-- <mat-tab-group class="menu-page__menu">
+
       <mat-tab label="Понедельник" class="body body__title body__title_link">
-        <ng-container *ngFor="let item of Week">
+        <ng-container *ngFor="let item of week">
           <div class="body__content">
             <div class="body__text">
               <h3>Завтрак</h3>
@@ -177,7 +225,7 @@
           </div>
         </div>
       </mat-tab>
-    </mat-tab-group>
+    </mat-tab-group> -->
 
     <!-- <div class="menu-page__menu">
 

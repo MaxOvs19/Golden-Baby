@@ -16,43 +16,42 @@
       <p>1 Неделя</p>
     </div>
 
-    <mat-tab-group class="menu-page__menu " >
+    <mat-tab-group class="menu-page__menu">
       <!-- <img src="assets/img/menu-cook-first.png" class="cook__right-top" />
       <img src="assets/img/menu-cook-third.png" class="cook__left-top" /> -->
 
-      <mat-tab label="Понедельник" class="body body__title body__title_link" >
+      <mat-tab label="Понедельник" class="body body__title body__title_link">
         <ng-container *ngFor="let item of Week">
-            <div class="body__content" >
-              <div class="body__text">
-                <h3>Завтрак</h3>
-                {{item.breakfast}}
-              </div>
-
-              <div class="body__text">
-                <h3>Перекус</h3>
-                <p>Фрукты</p>
-              </div>
-
-              <div class="body__text">
-                <h3>Обед</h3>
-                <p>
-                  Свекла отворная, щи на мясном бульоне, ежики (мясо курицы) в томатном соусе, салат из
-                  свежых овощей, компот из свежих фруктов, хлеб ржаной
-                </p>
-              </div>
-
-              <div class="body__text">
-                <h3>Полдник</h3>
-                <p>Печенье, ряженка</p>
-              </div>
-
-              <div class="body__text">
-                <h3>Ужин</h3>
-                <p>Рыбная котлета, гречка, огурец</p>
-              </div>
+          <div class="body__content">
+            <div class="body__text">
+              <h3>Завтрак</h3>
+              {{ item.breakfast }}
             </div>
-        </ng-container>
 
+            <div class="body__text">
+              <h3>Перекус</h3>
+              <p>Фрукты</p>
+            </div>
+
+            <div class="body__text">
+              <h3>Обед</h3>
+              <p>
+                Свекла отворная, щи на мясном бульоне, ежики (мясо курицы) в томатном соусе, салат
+                из свежых овощей, компот из свежих фруктов, хлеб ржаной
+              </p>
+            </div>
+
+            <div class="body__text">
+              <h3>Полдник</h3>
+              <p>Печенье, ряженка</p>
+            </div>
+
+            <div class="body__text">
+              <h3>Ужин</h3>
+              <p>Рыбная котлета, гречка, огурец</p>
+            </div>
+          </div>
+        </ng-container>
       </mat-tab>
       <mat-tab label="Вторник" class="body body__title body__title_link">
         <div class="body__content">
@@ -180,7 +179,6 @@
       </mat-tab>
     </mat-tab-group>
 
-
     <!-- <div class="menu-page__menu">
 
       <div class="body">
@@ -276,4 +274,3 @@
     </div>
   </div>
 </div>
-

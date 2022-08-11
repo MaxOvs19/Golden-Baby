@@ -23,7 +23,7 @@ const routes: Routes = [
     path: 'map',
     loadChildren: () => import('./map/map.module').then((map) => map.MapModule),
   },
-  // TODO: remove before production
+  // TODO: remove routes and folders before production
   {
     path: 'lessons',
     loadChildren: () =>

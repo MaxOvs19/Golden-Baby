@@ -10,6 +10,11 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'subjects',
+    loadChildren: () =>
+      import('./pages/subjects/subjects.module').then(({ SubjectsModule }) => SubjectsModule),
+  },
+  {
     path: '',
     pathMatch: 'full',
     redirectTo: 'observables',

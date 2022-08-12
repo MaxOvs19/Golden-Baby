@@ -57,8 +57,6 @@ export class MenuComponent implements OnInit {
     },
   ];
 
-  public values = [1, 2, 3, 4, 5];
-
   public ngOnInit(): void {
     console.log(this.week);
   }

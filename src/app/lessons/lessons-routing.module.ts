@@ -15,6 +15,13 @@ const routes: Routes = [
       import('./pages/subjects/subjects.module').then(({ SubjectsModule }) => SubjectsModule),
   },
   {
+    path: 'http-requests',
+    loadChildren: () =>
+      import('./pages/http-requests/http-requests.module').then(
+        ({ HttpRequestsModule }) => HttpRequestsModule,
+      ),
+  },
+  {
     path: '',
     pathMatch: 'full',
     redirectTo: 'observables',

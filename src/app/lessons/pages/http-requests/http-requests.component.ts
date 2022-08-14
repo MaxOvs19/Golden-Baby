@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { pluck, tap } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { pluck, tap, map } from 'rxjs';
 
 import { IUser } from './interfaces/user.interface';
 import { UsersService } from './services/users.service';
@@ -34,18 +34,35 @@ import { UsersService } from './services/users.service';
   templateUrl: './http-requests.component.html',
   styleUrls: ['./http-requests.component.scss'],
 })
-export class HttpRequestsComponent {
+export class HttpRequestsComponent implements OnInit {
   public users: IUser[] = [];
 
   constructor(private readonly _usersService: UsersService) {}
+  public ngOnInit(): void {
+    this.getUsers();
+  }
+
+  // public getUsers(): void {
+  //   this._usersService
+  //     .list2()
+  //     .pipe(
+  //       pluck('data'),
+  //       tap((users) => {
+  //         this.users = users;
+  //         console.log(users);
+  //       }),
+  //     )
+  //     .subscribe();
+  // }
 
   public getUsers(): void {
     this._usersService
-      .list()
+      .list2()
       .pipe(
         pluck('data'),
-        tap((users) => {
-          this.users = users;
+        tap((user) => {
+          this.users = user;
+          console.log(user);
         }),
       )
       .subscribe();

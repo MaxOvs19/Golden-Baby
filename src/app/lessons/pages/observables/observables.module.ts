@@ -4,14 +4,8 @@ import { CommonModule } from '@angular/common';
 import { ObservablesRoutingModule } from './observables-routing.module';
 import { ObservablesComponent } from './observables.component';
 
-
 @NgModule({
-  declarations: [
-    ObservablesComponent
-  ],
-  imports: [
-    CommonModule,
-    ObservablesRoutingModule
-  ]
+  declarations: [ObservablesComponent],
+  imports: [CommonModule, ObservablesRoutingModule],
 })
-export class ObservablesModule { }
+export class ObservablesModule {}

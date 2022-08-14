@@ -1,0 +1,29 @@
+@import 'variables';
+@import 'layout';
+@import 'colors';
+@import 'typography';
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-size: cover;
+  img {
+    max-width: 60px;
+    max-height: 60px;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+::ng-deep {
+  .mat-card {
+    margin: 50px;
+  }
+}

@@ -4,24 +4,28 @@
 
 <div class="container">
   <h2>Users:</h2>
+  <form [formGroup]="UsersForm">
+    <input type="number" placeholder="введите страницу" max="2" min="1" formControlName="User" />
+    <button type="submit" (click)="onSubmit()">Поиск</button>
 
-  <div class="row">
-    <ng-container *ngFor="let user of users">
-      <mat-card class="example-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image">
-            <img mat-card-image src="{{ user.avatar }}" />
-          </div>
-          <mat-card-title>{{ user.first_name }}</mat-card-title>
-          <mat-card-subtitle>{{ user.last_name }}</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="{{ user.avatar }}" />
-        <mat-card-content>
-          <p>
-            {{ user.email }}
-          </p>
-        </mat-card-content>
-      </mat-card>
-    </ng-container>
-  </div>
+    <div class="row">
+      <ng-container *ngFor="let user of users">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image">
+              <img mat-card-image src="{{ user.avatar }}" />
+            </div>
+            <mat-card-title>{{ user.first_name }}</mat-card-title>
+            <mat-card-subtitle>{{ user.last_name }}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="{{ user.avatar }}" />
+          <mat-card-content>
+            <p>
+              {{ user.email }}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </ng-container>
+    </div>
+  </form>
 </div>

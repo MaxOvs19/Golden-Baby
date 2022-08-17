@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { pluck, tap, map } from 'rxjs';
 
 import { IUser } from './interfaces/user.interface';
@@ -35,6 +36,8 @@ import { UsersService } from './services/users.service';
   styleUrls: ['./http-requests.component.scss'],
 })
 export class HttpRequestsComponent implements OnInit {
+  public UsersForm!: FormGroup;
+
   public users: IUser[] = [];
 
   constructor(private readonly _usersService: UsersService) {}
@@ -42,22 +45,11 @@ export class HttpRequestsComponent implements OnInit {
     this.getUsers();
   }
 
-  // public getUsers(): void {
-  //   this._usersService
-  //     .list2()
-  //     .pipe(
-  //       pluck('data'),
-  //       tap((users) => {
-  //         this.users = users;
-  //         console.log(users);
-  //       }),
-  //     )
-  //     .subscribe();
-  // }
+  // constructor(private readonly formBuilder: FormBuilder) {}
 
   public getUsers(): void {
     this._usersService
-      .list2()
+      .list1()
       .pipe(
         pluck('data'),
         tap((user) => {
@@ -66,5 +58,9 @@ export class HttpRequestsComponent implements OnInit {
         }),
       )
       .subscribe();
+  }
+
+  public onSubmit(): void {
+    console.log('hello');
   }
 }

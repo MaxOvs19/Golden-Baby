@@ -14,7 +14,13 @@ export class UsersService {
   //   return this._http.get<IResponse>('https://reqres.in/api/users');
   // }
 
-  public list2(): Observable<IResponse> {
+  public list1(): Observable<IResponse> {
     return this._http.get<IResponse>('assets/data/users.json');
+  }
+
+  //Ex 2
+
+  public list2(): Observable<IResponse> {
+    return this._http.get<IResponse>('https://reqres.in/api/users');
   }
 }

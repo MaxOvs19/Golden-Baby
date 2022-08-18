@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
 import { pluck, tap, map } from 'rxjs';
 
 import { IUser } from './interfaces/user.interface';
@@ -36,21 +36,42 @@ import { UsersService } from './services/users.service';
   styleUrls: ['./http-requests.component.scss'],
 })
 export class HttpRequestsComponent implements OnInit {
-  public UsersForm!: FormGroup;
+  public usersForm!: FormGroup;
 
   public users: IUser[] = [];
 
-  constructor(private readonly _usersService: UsersService) {}
+  constructor(
+    private readonly _usersService: UsersService,
+    private readonly formBuilder: FormBuilder,
+  ) {}
+
   public ngOnInit(): void {
-    this.getUsers();
+    // this.getUsers();
+    this.createForm();
   }
 
-  // constructor(private readonly formBuilder: FormBuilder) {}
+  // public getUsers(): void {
+  //   this._usersService
+  //     .list2()
+  //     .pipe(
+  //       pluck('data'),
+  //       tap((user) => {
+  //         this.users = user;
+  //         console.log(user);
+  //       }),
+  //     )
+  //     .subscribe();
+  // }
 
-  public getUsers(): void {
+  public onSubmit(): void {
+    const feedbackUser: number = this.usersForm.getRawValue();
+
     this._usersService
       .list1()
       .pipe(
+        tap(() => {
+          console.log(feedbackUser);
+        }),
         pluck('data'),
         tap((user) => {
           this.users = user;
@@ -58,9 +79,20 @@ export class HttpRequestsComponent implements OnInit {
         }),
       )
       .subscribe();
+    console.log(feedbackUser);
   }
 
-  public onSubmit(): void {
-    console.log('hello');
+  private createForm(): void {
+    this.usersForm = this.formBuilder.group({
+      page: [''],
+    });
+
+    this.usersForm.valueChanges
+      .pipe(
+        tap((v) => {
+          console.log('Страница', v);
+        }),
+      )
+      .subscribe();
   }
 }

@@ -4,8 +4,15 @@
 
 <div class="container">
   <h2>Users:</h2>
-  <form [formGroup]="UsersForm">
-    <input type="number" placeholder="введите страницу" max="2" min="1" formControlName="User" />
+  <form [formGroup]="usersForm">
+    <input
+      type="number"
+      placeholder="введите страницу"
+      max="2"
+      min="1"
+      formControlName="page"
+      class=""
+    />
     <button type="submit" (click)="onSubmit()">Поиск</button>
 
     <div class="row">

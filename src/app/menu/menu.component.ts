@@ -61,5 +61,6 @@ export class MenuComponent implements OnInit {
     console.log(this.week);
     console.log(this.week);
     console.log(this.week);
+    console.log(this.week);
   }
 }

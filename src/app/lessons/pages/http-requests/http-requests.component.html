@@ -16,7 +16,7 @@
     <button type="submit" (click)="onSubmit()">Поиск</button>
 
     <div class="row">
-      <ng-container *ngFor="let user of users">
+      <ng-container *ngFor="let user of users; trackBy: trackUserById">
         <mat-card class="example-card">
           <mat-card-header>
             <div mat-card-avatar class="example-header-image">

@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
-import { pluck, tap, map } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { pluck, tap } from 'rxjs';
 
 import { IUser } from './interfaces/user.interface';
 import { UsersService } from './services/users.service';
@@ -37,17 +37,19 @@ import { UsersService } from './services/users.service';
 })
 export class HttpRequestsComponent implements OnInit {
   public usersForm!: FormGroup;
-
   public users: IUser[] = [];
 
   constructor(
+    private readonly _formBuilder: FormBuilder,
     private readonly _usersService: UsersService,
-    private readonly formBuilder: FormBuilder,
   ) {}
 
   public ngOnInit(): void {
-    // this.getUsers();
     this.createForm();
+  }
+
+  public trackUserById(index: number, user: IUser): number {
+    return user.id;
   }
 
   // public getUsers(): void {
@@ -64,35 +66,22 @@ export class HttpRequestsComponent implements OnInit {
   // }
 
   public onSubmit(): void {
-    const feedbackUser: number = this.usersForm.getRawValue();
+    const page: number = this.usersForm.controls['page']?.value ?? 1;
 
     this._usersService
-      .list1()
+      .list(page)
       .pipe(
-        tap(() => {
-          console.log(feedbackUser);
-        }),
         pluck('data'),
-        tap((user) => {
-          this.users = user;
-          console.log(user);
+        tap((users) => {
+          this.users = users;
         }),
       )
       .subscribe();
-    console.log(feedbackUser);
   }
 
   private createForm(): void {
-    this.usersForm = this.formBuilder.group({
+    this.usersForm = this._formBuilder.group({
       page: [''],
     });
-
-    this.usersForm.valueChanges
-      .pipe(
-        tap((v) => {
-          console.log('Страница', v);
-        }),
-      )
-      .subscribe();
   }
 }

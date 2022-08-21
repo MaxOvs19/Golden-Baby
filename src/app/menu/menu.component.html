@@ -12,132 +12,70 @@
       <p>стандартам качества детского питания</p>
     </div>
 
-    <div class="menu-page__name-week">
+    <div class="menu-page__week">
       <p>1 Неделя</p>
-    </div>
-
-    <div class="menu-page__menu">
       <img src="assets/img/menu-cook-first.png" class="cook__right-top" />
       <img src="assets/img/menu-cook-third.png" class="cook__left-top" />
+    </div>
 
-      <div class="body">
-        <div class="body__title">
-          <div class="body__title_link body__title_link_first"></div>
-          <div class="body__title_link">
-            <a>Понедельник</a>
-          </div>
-
-          <div class="body__title_link">
-            <a>Вторник</a>
-          </div>
-
-          <div class="body__title_link">
-            <a>Среда</a>
-          </div>
-
-          <div class="body__title_link">
-            <a>Четверг</a>
-          </div>
-
-          <div class="body__title_link">
-            <a>Пятница</a>
-          </div>
-        </div>
-
-        <div class="body__content">
+    <mat-tab-group class="menu-page__menu menu-page__menu_top">
+      <ng-container *ngFor="let dayOfWeek of week">
+        <mat-tab [label]="dayOfWeek.dayWeek">
           <div class="body__text">
             <h3>Завтрак</h3>
-            <p>Каша манная молочная, чай, хлеб пшеничный с малом и сыром</p>
+            <p>{{ dayOfWeek.breakfast }}</p>
           </div>
-
           <div class="body__text">
             <h3>Перекус</h3>
-            <p>Фрукты</p>
+            <p>{{ dayOfWeek.snack }}</p>
           </div>
-
           <div class="body__text">
             <h3>Обед</h3>
-            <p>
-              Свекла отворная, щи на мясном бульоне, ежики (мясо курицы) в томатном соусе, салат из
-              свежых овощей, компот из свежих фруктов, хлеб ржаной
-            </p>
+            <p>{{ dayOfWeek.lunch }}</p>
           </div>
-
           <div class="body__text">
             <h3>Полдник</h3>
-            <p>Печенье, ряженка</p>
+            <p>{{ dayOfWeek.afternoonTea }}</p>
           </div>
-
           <div class="body__text">
             <h3>Ужин</h3>
-            <p>Рыбная котлета, гречка, огурец</p>
+            <p>{{ dayOfWeek.dinner }}</p>
           </div>
-        </div>
-      </div>
-    </div>
+        </mat-tab>
+      </ng-container>
+    </mat-tab-group>
 
-    <div class="menu-page__name-week">
+    <div class="menu-page__week">
       <p>2 Неделя</p>
-    </div>
-
-    <div class="menu-page__menu menu-page__menu_bottom">
       <img src="assets/img/menu-cook-fouth.png" class="cook__left-bottom" />
       <img src="assets/img/menu-cook-second.png" class="cook__right-bottom" />
+    </div>
 
-      <div class="body">
-        <div class="body__title">
-          <div class="body__title_link body__title_link_first"></div>
-          <div class="body__title_link">
-            <a>Понедельник</a>
-          </div>
-
-          <div class="body__title_link">
-            <a>Вторник</a>
-          </div>
-
-          <div class="body__title_link">
-            <a>Среда</a>
-          </div>
-
-          <div class="body__title_link">
-            <a>Четверг</a>
-          </div>
-
-          <div class="body__title_link">
-            <a>Пятница</a>
-          </div>
-        </div>
-
-        <div class="body__content">
+    <mat-tab-group class="menu-page__menu menu-page__menu_bottom">
+      <ng-container *ngFor="let dayOfWeek of week">
+        <mat-tab [label]="dayOfWeek.dayWeek">
           <div class="body__text">
             <h3>Завтрак</h3>
-            <p>Каша манная молочная, чай, хлеб пшеничный с малом и сыром</p>
+            <p>{{ dayOfWeek.breakfast }}</p>
           </div>
-
           <div class="body__text">
             <h3>Перекус</h3>
-            <p>Фрукты</p>
+            <p>{{ dayOfWeek.snack }}</p>
           </div>
-
           <div class="body__text">
             <h3>Обед</h3>
-            <p>
-              Свекла отворная, щи на мясном бульоне, ежики (мясо курицы) в томатном соусе, салат из
-              свежых овощей, компот из свежих фруктов, хлеб ржаной
-            </p>
+            <p>{{ dayOfWeek.lunch }}</p>
           </div>
-
           <div class="body__text">
             <h3>Полдник</h3>
-            <p>Печенье, ряженка</p>
+            <p>{{ dayOfWeek.afternoonTea }}</p>
           </div>
-
           <div class="body__text">
             <h3>Ужин</h3>
-            <p>Рыбная котлета, гречка, огурец</p>
+            <p>{{ dayOfWeek.dinner }}</p>
           </div>
-        </div>
-      </div>
-    </div>
+        </mat-tab>
+      </ng-container>
+    </mat-tab-group>
   </div>
 </div>

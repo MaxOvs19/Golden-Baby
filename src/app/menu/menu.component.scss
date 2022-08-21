@@ -11,25 +11,31 @@
   }
 
   &__description-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-col-center();
   }
 
-  &__name-week {
+  h3 {
+    font-weight: 600;
+  }
+
+  &__week {
     margin: 25px 0 20px 124px;
+    position: relative;
   }
 
   &__menu {
     position: relative;
     display: flex;
-    width: 934px;
-    height: 336px;
+
+    width: 835px;
+    height: 236px;
+
     background: $white;
     box-shadow: $base-box-shadow;
     border-radius: 10px;
     font-size: $size;
     margin: 0 auto;
+    padding: 50px;
 
     .body {
       display: flex;
@@ -39,46 +45,15 @@
       &__title {
         display: flex;
         height: 40px;
-
-        &_link {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-grow: 1;
-
-          border: $border-base;
-          border-top: none;
-          border-right: none;
-
-          font-weight: 600;
-
-          &:hover {
-            color: $white;
-            background-color: #915fe7;
-          }
-
-          a {
-            text-decoration: none;
-          }
-
-          &_first {
-            border-left: none;
-            background-color: $white !important;
-          }
-        }
       }
 
       &__content {
         h3 {
           display: flex;
           align-items: center;
-
           width: 83px;
           height: 35px;
-          font-size: $size;
           border-right: $border-base;
-
-          font-weight: 600;
         }
 
         p {
@@ -88,10 +63,23 @@
 
       &__text {
         display: flex;
-        justify-content: space-between;
         align-items: center;
         border-bottom: $border-base;
+
+        h3 {
+          padding: 10px 15px 10px 0;
+          width: 85px;
+          border-right: $border-base;
+        }
+        p {
+          padding-left: 10px;
+          max-width: 720px;
+        }
       }
+    }
+
+    &_top {
+      margin-bottom: 60px;
     }
 
     &_bottom {
@@ -101,27 +89,48 @@
 
   .cook {
     &__right-top {
+      z-index: 9;
       position: absolute;
-      right: -123px;
-      top: -142px;
+      right: -15px;
+      top: -105px;
     }
 
     &__left-top {
+      z-index: 9;
       position: absolute;
-      left: -160px;
-      top: -155px;
+      left: -165px;
+      top: -125px;
     }
 
     &__right-bottom {
+      z-index: 9;
       position: absolute;
-      right: -198px;
-      bottom: 1px;
+      right: -70px;
+      bottom: -365px;
     }
 
     &__left-bottom {
+      z-index: 9;
       position: absolute;
-      bottom: 17px;
-      left: -139px;
+      bottom: -325px;
+      left: -140px;
+    }
+  }
+}
+
+::ng-deep {
+  .mat-tab-labels {
+    justify-content: flex-end;
+
+    .mat-tab-label {
+      min-width: 147px;
+      height: 40px;
+      border-right: $border-base;
+      border-left: $border-base;
+      padding: 0;
+    }
+    .mat-tab-label-content {
+      font-weight: 600;
     }
   }
 }

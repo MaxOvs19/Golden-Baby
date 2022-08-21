@@ -7,7 +7,7 @@ import { Imenu } from './interfaces/menu.interface';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent {
   // Mock
   public week: Imenu[] = [
     {
@@ -56,11 +56,4 @@ export class MenuComponent implements OnInit {
       dinner: 'Рыбная котлета, гречка, огурец',
     },
   ];
-
-  public ngOnInit(): void {
-    console.log(this.week);
-    console.log(this.week);
-    console.log(this.week);
-    console.log(this.week);
-  }
 }

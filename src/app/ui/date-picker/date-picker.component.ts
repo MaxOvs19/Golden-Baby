@@ -79,7 +79,7 @@ export class DatePickerComponent implements OnInit, ControlValueAccessor {
 
   private readonly _length = 35;
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
   private _onChange: (value: any) => void = (v: any) => {};
 
   public get date$(): Observable<Date> {
@@ -152,19 +152,23 @@ export class DatePickerComponent implements OnInit, ControlValueAccessor {
     this.initCalendarProps();
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public writeValue(value: any): void {
     this.date = value;
     this._onChange(value);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public registerOnChange(fn: any): void {
     this._onChange = fn;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
   public registerOnTouched(fn: any): void {
     // throw new Error('Method not implemented.');
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public setDisabledState?(isDisabled: boolean): void {
     // throw new Error('Method not implemented.');
   }

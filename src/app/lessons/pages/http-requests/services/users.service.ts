@@ -37,4 +37,16 @@ export class UsersService {
       params,
     });
   }
+
+  // public getUser(id: number): Observable<IResponse> {
+  //   const url = 'https://reqres.in/api/users/';
+  //   const newUrl = url + id.toString();
+
+  //   return this._http.get<IResponse>(newUrl);
+  // }
+  public getUser(): Observable<IResponse> {
+    const url = 'https://reqres.in/api/users/1';
+
+    return this._http.get<IResponse>(url);
+  }
 }

@@ -8,6 +8,10 @@ const routes: Routes = [
     path: '',
     component: HttpRequestsComponent,
   },
+  {
+    path: 'user',
+    loadChildren: () => import('./pages/user/user.module').then(({ UserModule }) => UserModule),
+  },
 ];
 
 @NgModule({

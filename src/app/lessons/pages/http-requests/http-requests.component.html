@@ -16,7 +16,7 @@
         <mat-card class="example-card">
           <mat-card-header>
             <div mat-card-avatar class="example-header-image">
-              <a routerLink="user" class="link-user">
+              <a [routerLink]="['user', user.id]" class="link-user">
                 <img mat-card-image src="{{ user.avatar }}" />
               </a>
             </div>

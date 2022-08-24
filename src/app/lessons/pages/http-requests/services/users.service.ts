@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { IResponse } from '../interfaces/response.interface';
+import { IUser } from '../interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -27,26 +28,20 @@ export class UsersService {
   //   return this._http.get<IResponse>('https://reqres.in/api/users?page=2');
   // }
 
-  public list(page: number): Observable<IResponse> {
+  public list(page: number): Observable<IResponse<IUser[]>> {
     // imutable
     const url = 'https://reqres.in/api/users';
     const params = new HttpParams().append('page', page.toString());
     // { 'page' : 2 }
     // query string: ?page=2
-    return this._http.get<IResponse>(url, {
+    return this._http.get<IResponse<IUser[]>>(url, {
       params,
     });
   }
 
-  // public getUser(id: number): Observable<IResponse> {
-  //   const url = 'https://reqres.in/api/users/';
-  //   const newUrl = url + id.toString();
+  public get(id: number): Observable<IResponse<IUser>> {
+    const url = `https://reqres.in/api/users/${id}`;
 
-  //   return this._http.get<IResponse>(newUrl);
-  // }
-  public getUser(): Observable<IResponse> {
-    const url = 'https://reqres.in/api/users/1';
-
-    return this._http.get<IResponse>(url);
+    return this._http.get<IResponse<IUser>>(url);
   }
 }

@@ -39,7 +39,13 @@ export class UsersService {
     });
   }
 
-  public get(id: number): Observable<IResponse<IUser>> {
+  // public get(id: number): Observable<IResponse<IUser>> {
+  //   const url = `https://reqres.in/api/users/${id}`;
+
+  //   return this._http.get<IResponse<IUser>>(url);
+  // }
+
+  public get(id: string): Observable<IResponse<IUser>> {
     const url = `https://reqres.in/api/users/${id}`;
 
     return this._http.get<IResponse<IUser>>(url);

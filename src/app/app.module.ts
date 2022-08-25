@@ -8,6 +8,7 @@ import { FooterModule } from './ui/footer';
 import { HeaderModule } from './ui/header';
 import { LinkReturnModule } from './ui/link-return';
 import { InputModule } from './ui/input/input.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { InputModule } from './ui/input/input.module';
     FooterModule,
     LinkReturnModule,
     InputModule,
+    HttpClientModule,
   ],
   bootstrap: [AppComponent],
 })

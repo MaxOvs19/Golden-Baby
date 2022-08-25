@@ -3,3 +3,4 @@
 
 npm run format
 npm run lint
+ng build -c production

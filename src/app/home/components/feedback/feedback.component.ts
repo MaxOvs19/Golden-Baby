@@ -1,6 +1,6 @@
-import { tap } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { tap } from 'rxjs/operators';
 
 import { IFeedback } from '../../interfaces/feedback.interface';
 import { FeedbackService } from '../../services/feedback.service';
@@ -14,8 +14,8 @@ export class FeedbackComponent implements OnInit {
   public feedbackForm!: FormGroup;
 
   constructor(
-    private readonly formBuilder: FormBuilder,
-    private readonly _fbservice: FeedbackService,
+    private readonly _formBuilder: FormBuilder,
+    private readonly _feedbackService: FeedbackService,
   ) {}
 
   public ngOnInit(): void {
@@ -33,7 +33,7 @@ export class FeedbackComponent implements OnInit {
   public submit(): void {
     const feedback: IFeedback = this.feedbackForm.getRawValue();
 
-    this._fbservice
+    this._feedbackService
       .send(feedback)
       .pipe(
         tap((v) => {
@@ -45,7 +45,7 @@ export class FeedbackComponent implements OnInit {
   }
 
   private createForm(): void {
-    this.feedbackForm = this.formBuilder.group({
+    this.feedbackForm = this._formBuilder.group({
       parentName: ['', [Validators.required, Validators.pattern(/^[а-я\s]+$/i)]],
       childName: ['', [Validators.required]],
       birthday: ['', [Validators.required]],

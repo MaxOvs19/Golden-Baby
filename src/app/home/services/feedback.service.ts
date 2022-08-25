@@ -2,6 +2,7 @@ import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
+
 import { IFeedback } from '../interfaces/feedback.interface';
 
 @Injectable({
@@ -20,6 +21,7 @@ export class FeedbackService {
       comment: feedback.comment,
       agreement: feedback.agreement,
     };
+
     return this._http.post(url, body);
   }
 }

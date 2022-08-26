@@ -1,0 +1,23 @@
+@import 'typography';
+
+.container {
+  text-align: center;
+  padding: 6px 56px 10px 56px;
+
+  h1 {
+    font-family: $forum-font;
+    font-size: 24px;
+  }
+
+  p {
+    font-size: $size;
+    width: 248px;
+  }
+}
+
+::ng-deep {
+  .mat-dialog-container {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+  }
+}

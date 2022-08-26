@@ -57,8 +57,9 @@
 
   <div class="feedback__button">
     <app-button
+      mat-button
       title="Отправить"
-      [disabled]="!!feedbackForm?.invalid"
+      [disabled]="!!feedbackForm.invalid"
       (click)="submit()"
     ></app-button>
   </div>

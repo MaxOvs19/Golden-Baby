@@ -1,8 +1,12 @@
+import { ButtonComponent } from './../../../ui/button/button.component';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { tap } from 'rxjs/operators';
+import { FeedbackDialogComponent } from 'src/app/ui/dialogs/feedback-dialog/feedback-dialog.component';
 
 import { IFeedback } from '../../interfaces/feedback.interface';
+
 import { FeedbackService } from '../../services/feedback.service';
 
 @Component({
@@ -16,6 +20,7 @@ export class FeedbackComponent implements OnInit {
   constructor(
     private readonly _formBuilder: FormBuilder,
     private readonly _feedbackService: FeedbackService,
+    private readonly _dialog: MatDialog,
   ) {}
 
   public ngOnInit(): void {
@@ -41,6 +46,8 @@ export class FeedbackComponent implements OnInit {
         }),
       )
       .subscribe();
+
+    this._dialog.open(FeedbackDialogComponent);
     console.log(feedback);
   }
 

@@ -38,17 +38,19 @@ export class FeedbackComponent implements OnInit {
   public submit(): void {
     const feedback: IFeedback = this.feedbackForm.getRawValue();
 
+    // if (this.feedbackForm.invalid === false) {
     this._feedbackService
       .send(feedback)
       .pipe(
-        tap((v) => {
-          console.log(v);
+        tap(() => {
+          this.feedbackForm.reset();
+          this._dialog.open(FeedbackDialogComponent);
         }),
       )
       .subscribe();
 
-    this._dialog.open(FeedbackDialogComponent);
     console.log(feedback);
+    // }
   }
 
   private createForm(): void {

@@ -1,12 +1,12 @@
-import { ButtonComponent } from './../../../ui/button/button.component';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { tap } from 'rxjs/operators';
-import { FeedbackDialogComponent } from 'src/app/ui/dialogs/feedback-dialog/feedback-dialog.component';
+import { distinctUntilChanged, filter, startWith, switchMap, tap } from 'rxjs/operators';
+import { of } from 'rxjs';
+
+import { FeedbackDialogComponent } from '@ui/dialogs/feedback-dialog';
 
 import { IFeedback } from '../../interfaces/feedback.interface';
-
 import { FeedbackService } from '../../services/feedback.service';
 
 @Component({
@@ -25,6 +25,19 @@ export class FeedbackComponent implements OnInit {
 
   public ngOnInit(): void {
     this.createForm();
+
+    // HW[RxJS]: switchMap, mergeMap, concatMap, exaustMap. Differences
+
+    // of(1, 2, 3, 4, 4, 5, 6, 6, 6, 6, 6, 6, 4)
+    //   .pipe(
+    //     // startWith('HR'), Start stream with 'HR' value
+    //     distinctUntilChanged(), // prev !== current
+    //     // distinctUntilChanged((prev, current) => prev !== current && current % 2 === 0),
+    //     tap((v) => {
+    //       console.log('v: ', v);
+    //     }),
+    //   )
+    //   .subscribe();
   }
 
   public control(name: string): AbstractControl | null {
@@ -38,27 +51,32 @@ export class FeedbackComponent implements OnInit {
   public submit(): void {
     const feedback: IFeedback = this.feedbackForm.getRawValue();
 
-    if (this.feedbackForm.invalid === false) {
-      this._feedbackService
-        .send(feedback)
-        .pipe(
-          tap(() => {
-            this.feedbackForm.reset();
-            this._dialog.open(FeedbackDialogComponent);
-          }),
-        )
-        .subscribe();
+    this._feedbackService
+      .send(feedback)
+      .pipe(
+        switchMap(() => {
+          return this._dialog.open(FeedbackDialogComponent).afterClosed();
+        }),
+        filter((result) => !!result),
+        tap(() => {
+          // TODO: Need to find other solution for current route reloading
+          window.location.reload();
+        }),
+      )
+      .subscribe();
 
-      console.log(feedback);
-    }
+    console.log(feedback);
   }
 
   private createForm(): void {
     this.feedbackForm = this._formBuilder.group({
-      parentName: ['', [Validators.required, Validators.pattern(/^[а-я\s]+$/i)]],
-      childName: ['', [Validators.required]],
-      birthday: ['', [Validators.required]],
-      phone: ['', [Validators.pattern(/^\+7\s\d{3}\s\d{3}\s\d{2}\s\d{2}$/), Validators.required]],
+      parentName: ['проклу', [Validators.required, Validators.pattern(/^[а-я\s]+$/i)]],
+      childName: ['ауц', [Validators.required]],
+      birthday: [new Date(), [Validators.required]],
+      phone: [
+        '+7 000 000 22 11',
+        [Validators.pattern(/^\+7\s\d{3}\s\d{3}\s\d{2}\s\d{2}$/), Validators.required],
+      ],
       comment: [''],
       checkbox: [false, [Validators.requiredTrue]],
     });

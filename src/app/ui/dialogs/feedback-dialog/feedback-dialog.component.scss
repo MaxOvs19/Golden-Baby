@@ -1,6 +1,7 @@
 @import 'typography';
 
 .container {
+  position: relative;
   text-align: center;
   padding: 6px 56px 10px 56px;
 
@@ -13,6 +14,13 @@
     font-size: $size;
     width: 248px;
   }
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
 }
 
 ::ng-deep {

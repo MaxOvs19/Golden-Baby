@@ -1,4 +1,4 @@
-<form class="feedback" [formGroup]="feedbackForm">
+<form class="feedback" [formGroup]="feedbackForm" (submit)="submit()">
   <h2>Оставьте заявку</h2>
   <h4>Заполните форму и мы Вам перезвоним</h4>
 
@@ -55,12 +55,11 @@
     </label>
   </div>
 
+  <div>
+    {{ feedbackForm.invalid }}
+  </div>
+
   <div class="feedback__button">
-    <app-button
-      mat-button
-      title="Отправить"
-      [disabled]="!!feedbackForm.invalid"
-      (click)="submit()"
-    ></app-button>
+    <app-button title="Отправить" [disabled]="feedbackForm.invalid"></app-button>
   </div>
 </form>

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
-import { tap } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
+import { filter, switchMap, tap } from 'rxjs/operators';
+
+import { FeedbackDialogComponent } from '@ui/dialogs/feedback-dialog';
 
 import { IFeedback } from '../../interfaces/feedback.interface';
 import { FeedbackService } from '../../services/feedback.service';
@@ -16,6 +19,7 @@ export class FeedbackComponent implements OnInit {
   constructor(
     private readonly _formBuilder: FormBuilder,
     private readonly _feedbackService: FeedbackService,
+    private readonly _dialog: MatDialog,
   ) {}
 
   public ngOnInit(): void {
@@ -36,19 +40,22 @@ export class FeedbackComponent implements OnInit {
     this._feedbackService
       .send(feedback)
       .pipe(
-        tap((v) => {
-          console.log(v);
+        switchMap(() => {
+          return this._dialog.open(FeedbackDialogComponent).afterClosed();
+        }),
+        filter((result) => !!result),
+        tap(() => {
+          window.location.reload();
         }),
       )
       .subscribe();
-    console.log(feedback);
   }
 
   private createForm(): void {
     this.feedbackForm = this._formBuilder.group({
       parentName: ['', [Validators.required, Validators.pattern(/^[а-я\s]+$/i)]],
       childName: ['', [Validators.required]],
-      birthday: ['', [Validators.required]],
+      birthday: [new Date(), [Validators.required]],
       phone: ['', [Validators.pattern(/^\+7\s\d{3}\s\d{3}\s\d{2}\s\d{2}$/), Validators.required]],
       comment: [''],
       checkbox: [false, [Validators.requiredTrue]],

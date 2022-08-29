@@ -14,6 +14,8 @@ import { ButtonModule } from '../ui/button';
 import { SliderComponent } from './components/slider/slider.component';
 import { InputModule } from '../ui/input';
 import { DatePickerModule } from '../ui/date-picker';
+import { FeedbackDialogModule } from '../ui/dialogs/feedback-dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { DatePickerModule } from '../ui/date-picker';
     ReactiveFormsModule,
     InputModule,
     DatePickerModule,
+    FeedbackDialogModule,
+    MatDialogModule,
   ],
 })
 export class HomeModule {}

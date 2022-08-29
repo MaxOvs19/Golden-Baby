@@ -5,8 +5,8 @@ import { filter, switchMap, tap } from 'rxjs/operators';
 
 import { FeedbackDialogComponent } from '@ui/dialogs/feedback-dialog';
 
-import { IFeedback } from '../../interfaces/feedback.interface';
-import { FeedbackService } from '../../services/feedback.service';
+import { IFeedback } from './interfaces/feedback.interface';
+import { FeedbackService } from './services/feedback.service';
 
 @Component({
   selector: 'app-feedback',

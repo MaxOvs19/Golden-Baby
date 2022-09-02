@@ -3,7 +3,7 @@
 @import 'colors';
 @import 'typography';
 
-.price-page {
+.price {
   position: relative;
 
   &__main-title {
@@ -19,7 +19,7 @@
     }
 
     h4 {
-      margin-top: 11px;
+      margin-top: 15px;
       font-weight: 400;
       font-size: 18px;
     }
@@ -113,7 +113,7 @@
     width: 740px;
     box-shadow: $base-box-shadow;
     border-radius: 10px;
-    margin: 20px auto 10px;
+    margin: 25px auto 10px;
 
     background: $white;
   }
@@ -143,7 +143,7 @@
   .super-hero-prise {
     &__top {
       position: absolute;
-      right: 118px;
+      right: 90px;
       top: 26px;
     }
 

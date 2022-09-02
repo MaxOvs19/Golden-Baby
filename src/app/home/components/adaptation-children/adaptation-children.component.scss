@@ -10,9 +10,7 @@
 
   &__title {
     @include flex-col-center();
-
     margin: 85px auto 100px auto;
-
     width: 650px;
 
     h2 {
@@ -105,7 +103,7 @@
     background-position: top right 55px;
   }
 
-  .number {
+  .num {
     @include flex-col-center();
 
     justify-content: center;

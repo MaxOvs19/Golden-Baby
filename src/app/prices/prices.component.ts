@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { FeedbackComponent } from '@ui/feedback';
 
 @Component({
   selector: 'app-prices',
@@ -7,9 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./prices.component.scss'],
 })
 export class PricesComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private readonly _dialog: MatDialog) {}
 
   public goShcedule() {
     this.router.navigate(['/schedule']);
+  }
+
+  public openForm(): void {
+    this._dialog.open(FeedbackComponent);
   }
 }

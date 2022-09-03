@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LinkReturnComponent } from './link-return.component';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+
+import { LinkReturnComponent } from './link-return.component';
 
 @NgModule({
   declarations: [LinkReturnComponent],

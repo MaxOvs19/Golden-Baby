@@ -1,9 +1,11 @@
-import { tap, switchMap, toArray } from 'rxjs/operators';
-import { BehaviorSubject, Observable, range, zip } from 'rxjs';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { ChangeDetectionStrategy, Component, forwardRef, Input, OnInit } from '@angular/core';
-import { addMonths, endOfMonth, startOfMonth, subMonths } from 'date-fns';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { addMonths, endOfMonth, startOfMonth, subMonths } from 'date-fns';
+import { BehaviorSubject, Observable, range, zip } from 'rxjs';
+
+import { switchMap, tap, toArray } from 'rxjs/operators';
+
+import { ChangeDetectionStrategy, Component, Input, OnInit, forwardRef } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { Mode } from './types/mode.type';
 

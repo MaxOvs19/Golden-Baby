@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
 import { filter, switchMap, tap } from 'rxjs/operators';
+
+import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 
 import { FeedbackDialogComponent } from '@ui/dialogs/feedback-dialog';
 

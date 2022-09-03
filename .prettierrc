@@ -2,5 +2,9 @@
   "printWidth": 100,
   "singleQuote": true,
   "trailingComma": "all",
-  "semi": true
+  "semi": true,
+  "importOrder": ["^rxjs/(.*)$","^rxjs/operators/(.*)$",  "^@angular/(.*)$", "^@ui/(.*)$", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "importOrderParserPlugins" : ["typescript", "decorators-legacy"]
 }

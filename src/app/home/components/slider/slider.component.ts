@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-slider',

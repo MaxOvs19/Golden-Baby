@@ -1,7 +1,7 @@
-<div class="price-page">
+<div class="price">
   <div class="container">
     <app-link-return></app-link-return>
-    <div class="price-page__main-title">
+    <div class="price__main-title">
       <h1>Стоимость посещения сада</h1>
       <h4>Здесь Вы можете ознакомиться с ценами на наши услуги</h4>
     </div>
@@ -38,7 +38,7 @@
         </div>
       </div>
       <div class="price-list__end">
-        <button class="price-list__orange-button">Записаться</button>
+        <button class="price-list__orange-button" (click)="openForm()">Записаться</button>
         <h6>25 000 ₽ / месяц</h6>
       </div>
     </div>

@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatDialogModule } from '@angular/material/dialog';
 import { RouterModule } from '@angular/router';
 
 import { ButtonModule } from '@ui/button';
@@ -19,7 +18,6 @@ import { FeedbackComponent } from './feedback.component';
     DatePickerModule,
     ButtonModule,
     ReactiveFormsModule,
-    MatDialogModule,
   ],
   exports: [FeedbackComponent],
 })

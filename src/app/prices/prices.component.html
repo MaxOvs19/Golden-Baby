@@ -11,80 +11,49 @@
       class="super-hero-prise super-hero-prise__top"
     />
 
-    <div class="price-list">
-      <div class="price-list__title">
-        <h2>Полный день в саду</h2>
-      </div>
-
-      <div class="price-list__body">
-        <div class="price-list__age">
-          <h5>Возраст:</h5>
-          <p>от 1,5 до 5,5 лет</p>
+    <ng-container *ngFor="let description of price">
+      <div class="price-list">
+        <div class="price-list__title">
+          <h2>{{ description.title }}</h2>
         </div>
 
-        <div class="price-list__description">
-          <h5>В стоимость входит:</h5>
-          <p>5-ти разовое питание</p>
-          <p>Игровая деятельность</p>
-          <p>Прогулки</p>
-          <p>Дневной сон</p>
-          <p>Групповые игры на английском языке</p>
-          <p>Групповые логопедические игры</p>
+        <div class="price-list__body">
+          <div class="price-list__age">
+            <h5>Возраст:</h5>
+            <p>{{ description.age }}</p>
+          </div>
+
+          <div class="price-list__description">
+            <h5>В стоимость входит:</h5>
+
+            <p>{{ description.includedPrice[0] }}</p>
+            <p>{{ description.includedPrice[1] }}</p>
+            <p>{{ description.includedPrice[2] }}</p>
+            <p>{{ description.includedPrice[3] }}</p>
+            <p>{{ description.includedPrice[4] }}</p>
+            <p>{{ description.includedPrice[5] }}</p>
+          </div>
+
+          <div class="price-list__time">
+            <h5>Время:</h5>
+            <p>{{ description.time }}</p>
+          </div>
         </div>
-
-        <div class="price-list__time">
-          <h5>Время:</h5>
-          <p>С 8-00 до 19-00</p>
-        </div>
-      </div>
-      <div class="price-list__end">
-        <button class="price-list__orange-button" (click)="openForm()">Записаться</button>
-        <h6>25 000 ₽ / месяц</h6>
-      </div>
-    </div>
-
-    <div class="price-list">
-      <div class="price-list__title">
-        <h2>Короткий день в саду</h2>
-      </div>
-
-      <div class="price-list__body">
-        <div class="price-list__age">
-          <h5>Возраст:</h5>
-          <p>от 1,5 до 5,5 лет</p>
-        </div>
-
-        <div class="price-list__description">
-          <h5>В стоимость входит:</h5>
-          <p>2-х разовое питание</p>
-          <p>Игровая деятельность</p>
-          <p>Прогулки</p>
-          <p>Групповые игры на английском языке</p>
-          <p>Групповые логопедические игры</p>
-        </div>
-
-        <div class="price-list__time">
-          <h5>Время:</h5>
-          <p>С 8-00 до 12-30</p>
+        <div class="price-list__end">
+          <button class="price-list__orange-button" (click)="openForm()">Записаться</button>
+          <h6>{{ description.price }}/ месяц</h6>
         </div>
       </div>
-      <div class="price-list__end">
-        <button class="price-list__orange-button">Записаться</button>
-        <h6>15 000 ₽ / месяц</h6>
+    </ng-container>
+
+    <ng-container *ngFor="let item of fee">
+      <div class="fee" style="margin-top: 65px">
+        <h2>{{ item.title }}</h2>
+        <h6>{{ item.price }}</h6>
+        <p>{{ item.description }}</p>
       </div>
-    </div>
+    </ng-container>
 
-    <div class="fee" style="margin-top: 65px">
-      <h2>Вступительный взнос</h2>
-      <h6>15 000 ₽</h6>
-      <p>Взнос является единоразовым при поступлении</p>
-    </div>
-
-    <div class="fee">
-      <h2>Ежегодный взнос</h2>
-      <h6>5 000 ₽</h6>
-      <p>Вносится со второго года пребывания</p>
-    </div>
     <img
       src="assets/img/super-hero-prise__bottom.png"
       class="super-hero-prise super-hero-prise__bottom"

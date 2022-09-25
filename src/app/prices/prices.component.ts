@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 
 import { FeedbackComponent } from '@ui/feedback';
 
-import { Icontribution } from './interfaces/contribution.prices.interface';
-import { Iprice } from './interfaces/prices.interface';
+import { IContribution } from './interfaces/contribution.prices.interface';
+import { IPrice } from './interfaces/prices.interface';
 
 @Component({
   selector: 'app-prices',
@@ -13,12 +13,14 @@ import { Iprice } from './interfaces/prices.interface';
   styleUrls: ['./prices.component.scss'],
 })
 export class PricesComponent {
-  constructor(private router: Router, private readonly _dialog: MatDialog) {}
-  public price: Iprice[] = [
+  public prices: IPrice[] = [
     {
       title: 'Полный день в саду',
-      age: 'от 1,5 до 5,5 лет',
-      includedPrice: [
+      age: {
+        from: 1.5,
+        to: 5.5,
+      },
+      items: [
         '5-ти разовое питание ',
         'Игровая деятельность',
         'Прогулки',
@@ -26,13 +28,20 @@ export class PricesComponent {
         'Групповые игры на английском языке',
         'Групповые логопедические игры',
       ],
-      time: 'C 8-00 до 19-00',
-      price: '25 000 ₽',
+      time: {
+        from: '8-00',
+        to: '19-00',
+      },
+
+      price: 25000,
     },
     {
       title: 'Короткий день в саду',
-      age: 'от 1,5 до 5,5 лет',
-      includedPrice: [
+      age: {
+        from: 1.5,
+        to: 5.5,
+      },
+      items: [
         '2-х разовое питание',
         'Игровая деятельность',
         'Прогулки',
@@ -40,26 +49,31 @@ export class PricesComponent {
         'Групповые игры на английском языке',
         'Групповые логопедические игры',
       ],
-      time: 'С 8-00 до 12-30',
-      price: '15 000 ₽',
+      time: {
+        from: '8-00',
+        to: '12-30',
+      },
+      price: 15000,
     },
   ];
 
-  public fee: Icontribution[] = [
+  public fee: IContribution[] = [
     {
       title: 'Вступительный взнос',
       description: 'Взнос является единоразовым при поступлении',
-      price: '15 000 ₽',
+      price: 15000,
     },
     {
       title: 'Ежегодный взнос',
       description: 'Вносится со второго года пребывания',
-      price: '5 000 ₽',
+      price: 5000,
     },
   ];
 
+  constructor(private readonly _router: Router, private readonly _dialog: MatDialog) {}
+
   public goShcedule() {
-    this.router.navigate(['/schedule']);
+    this._router.navigate(['/schedule']);
   }
 
   public openForm(): void {

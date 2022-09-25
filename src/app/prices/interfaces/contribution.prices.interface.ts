@@ -1,5 +1,5 @@
-export interface Icontribution {
+export interface IContribution {
   title: string;
   description: string;
-  price: string;
+  price: number;
 }

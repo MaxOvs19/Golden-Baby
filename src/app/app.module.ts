@@ -8,6 +8,7 @@ import { HeaderModule } from '@ui/header';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LocaleModule } from './locale/locale.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import { AppComponent } from './app.component';
     HeaderModule,
     FooterModule,
     HttpClientModule,
+    LocaleModule.forRoot(),
   ],
   bootstrap: [AppComponent],
 })
